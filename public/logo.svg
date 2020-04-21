@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 2766 2766"
+   shape-rendering="geometricPrecision"
+   text-rendering="geometricPrecision"
+   image-rendering="optimizeQuality"
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   version="1.1"
+   id="svg3767"
+   sodipodi:docname="calendar-checkmark-line.svg"
+   inkscape:version="0.92.5 (0.92.5+69)">
+  <metadata
+     id="metadata3773">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3771" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2096"
+     id="namedview3769"
+     showgrid="false"
+     inkscape:zoom="0.62472885"
+     inkscape:cx="814.75347"
+     inkscape:cy="1447.0278"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3767" />
+  <path
+     d="M1135 345h484m700 0h237c76 0 138 62 138 138v2073c0 76-62 138-138 138H210c-76 0-138-62-138-138V483c0-76 62-138 138-138h254"
+     fill="none"
+     id="path3763" />
+  <path
+     d="M1837 106c0-59 58-106 130-106s130 48 130 106v466c0 59-58 106-130 106s-130-48-130-106V106zm-1171 0C666 47 724 0 796 0s130 48 130 106v466c0 59-58 106-130 106s-130-48-130-106V106zm256 1797c-29-28-29-73-2-102 28-29 73-29 102-2l223 215 496-531c27-29 73-31 102-4s31 73 4 102l-546 584-1 1c-28 29-73 29-102 2l-275-266zm-779-883h2478V483c0-18-7-35-19-46-12-12-28-19-46-19h-237c-40 0-72-32-72-72s32-72 72-72h237c58 0 110 24 148 62s62 91 62 148v2073c0 58-24 110-62 148s-91 62-148 62H210c-58 0-110-24-148-62s-62-91-62-148V484c0-58 24-110 62-148s91-62 148-62h254c40 0 72 32 72 72s-32 72-72 72H210c-18 0-35 7-47 19s-19 28-19 47v537zm2478 144H143v1392c0 18 7 35 19 47s28 19 47 19h2346c18 0 35-7 47-19s19-28 19-47V1164zM1134 417c-40 0-72-32-72-72s32-72 72-72h484c40 0 72 32 72 72s-32 72-72 72h-484z"
+     fill="#050505"
+     fill-rule="nonzero"
+     id="path3765"
+     style="fill:#61dafb;fill-opacity:0.99152541" />
+</svg>
