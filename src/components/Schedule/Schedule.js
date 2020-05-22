@@ -1,19 +1,18 @@
 import React from 'react';
-import './Schedule.css';
 
 const Schedule = (props: ComponentProps) => {
   return (
     <div>
-      <p>Your current schedule is: </p>
+      <p>Today's subjects are: </p>
       <ul>
         {
-          props.subjects.map( (subject, index) =>
-            <li key={index}>{subject.name} is a: {subject.interest}</li>
+          props.schedule.map((subject, index) =>
+            <li key={index}>{subject.name} for {subject.cut} hours</li>
           )
         }
       </ul>
     </div>
-  );
+  )
 }
 
 export default Schedule;
