@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Schedule from '../Schedule/Schedule';
+import SubjectList from '../SubjectList/SubjectList';
 import ScheduleForm from '../ScheduleForm/ScheduleForm';
+import HoursForm from '../HoursForm/HoursForm';
+import Schedule from '../Schedule/Schedule';
 
 class Daily_Schedule extends Component {
   constructor(props) {
@@ -10,8 +12,11 @@ class Daily_Schedule extends Component {
       interest: 'passion',
       subjects: [
         {name: 'React', interest: 'Passion'},
-        {name: 'Python', interest: 'Python'}
-      ]
+        {name: 'Python', interest: 'Passion'}
+      ],
+      hoursAvailable: 0,
+      schedule: [],
+      submitted: false,
     }
   }
 
@@ -24,25 +29,54 @@ class Daily_Schedule extends Component {
     let newSubject = {};
     newSubject.name=this.state.subjectInput;
     newSubject.interest=this.state.interest;
+
     let currentSubjects = this.state.subjects;
     currentSubjects.push(newSubject);
+
     this.setState({ subjects: currentSubjects })
-    console.log(currentSubjects);
+    e.preventDefault();
+  }
+
+  handleHoursSubmit = e => {
+    let hours = this.state.hoursAvailable;
+    let denom = this.state.subjects.length;
+    let cut = hours/denom;
+    let scheduleTemp = []
+    this.state.subjects.map(subject => {
+      let obj = {};
+      obj['name'] = subject.name;
+      obj['cut'] = cut;
+      return scheduleTemp.push(obj);
+    });
+    this.setState({schedule: scheduleTemp})
+    this.setState({submitted: true})
     e.preventDefault();
   }
 
   render() {
+    const { subjects, subject, schedule, interest } = this.state;
     return (
-      <section className='daily-schedule'>
-        <Schedule
-          subjects={ this.state.subjects } />
-        <ScheduleForm
-          subject={this.state.subject}
-          interest={this.state.interest}
-          handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}
-        />
-      </section>
+      <div>
+      {
+        this.state.submitted ?
+          <section className='daily-Schedule'>
+            <Schedule schedule={schedule} />
+          </section>
+        :
+          <section className='daily-info'>
+            <SubjectList
+              subjects={ subjects } />
+            <HoursForm
+              handleInputChange={this.handleInputChange}
+              handleHoursSubmit={this.handleHoursSubmit} />
+            <ScheduleForm
+              subject={subject}
+              interest={interest}
+              handleInputChange={this.handleInputChange}
+              handleSubmit={this.handleSubmit} />
+          </section>
+      }
+    </div>
     );
   }
 
