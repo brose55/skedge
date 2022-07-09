@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
     <header className="App-header">
     <nav
@@ -12,7 +12,8 @@ const Header = () => {
         }}
     >
         <Link to="/signin"><code>signIn</code></Link> |{" "}
-        <Link to="/daily"><code>register</code></Link>
+        <Link to="/register"><code>register</code></Link> |{" "}
+        <Link to="/daily"><code>daily</code></Link>
     </nav>
     <p>
         Edit <code>src/App.js</code> and save to reload.
@@ -23,7 +24,7 @@ const Header = () => {
         target="_blank"
         rel="noopener noreferrer"
     >
-        Learn React
+        Learn React {props.isSignedIn}
     </a>
     </header>
     )

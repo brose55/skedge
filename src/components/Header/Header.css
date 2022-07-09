@@ -9,6 +9,9 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav a, nav a:visited, .App-link, .App-link:visited {
+  color: #0af29f;
 }
+
+
+/* color: #61dafb; */
