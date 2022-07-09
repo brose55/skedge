@@ -5,15 +5,17 @@ import Home from './components/Home/Home';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import Daily from './components/Daily/Daily';
+import Success from './components/Success/Success';
 
 const MainRoutes = (props) => {
   return (
     <Routes>
       <Route path="/" element={<InnerContent />}>
         <Route index element={<Home isSignedIn={props.isSignedIn} setSignIn={props.setSignIn} />} />
-        <Route path="signin" element={<SignIn />} />
-        <Route path="register" element={<Register />} />
+        <Route path="signin" element={<SignIn isSignedIn={props.isSignedIn} setSignIn={props.setSignIn} />} />
+        <Route path="register" element={<Register isSignedIn={props.isSignedIn} setSignIn={props.setSignIn} />} />
         <Route path="daily" element={<Daily />} />
+        <Route path="success" element={<Success />}></Route>
         <Route
           path="*"
           element={

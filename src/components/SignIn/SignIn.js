@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import "./SignIn.css";
 
-function SignIn() {
+function SignIn(props) {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -11,9 +12,18 @@ function SignIn() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log('Form Submitted', formState);
+  // const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log('Form Submitted', formState);
+  // };
+
+  let navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    props.setSignIn(props.isSignedIn ? false : true)
+    console.log("Form Submitted", formState);
+    navigate("../daily", { replace: true })
   };
 
   const { email, password } = formState;
