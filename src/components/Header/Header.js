@@ -11,6 +11,7 @@ const Header = (props) => {
         paddingBottom: "1rem",
         }}
     >
+        <Link to="/"><code>home</code></Link> |{" "}
         <Link to="/signin"><code>signIn</code></Link> |{" "}
         <Link to="/register"><code>register</code></Link> |{" "}
         <Link to="/daily"><code>daily</code></Link>

@@ -1,28 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 function Register(props) {
-
+  
   const [formState, setFormState] = useState({
     username: "",
     email: "",
     password: "",
   });
-
+  
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
+  
+  let navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
+  //   await console.log(event.target);
+  //   navigate("../success", { replace: true });
+  // }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     props.setSignIn(props.isSignedIn ? false : true)
     console.log("Form Submitted", formState);
+    navigate("../success", { replace: true })
   };
 
   const { username, email, password } = formState;
   return (
     <main style={{ padding: "1rem 0" }}>
-      <h2>Sign In {props.isSignedIn}</h2>
+      <h2>Register {props.isSignedIn}</h2>
       <form id="sign-in-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">username:</label>
