@@ -25,7 +25,7 @@ const Header = (props) => {
         target="_blank"
         rel="noopener noreferrer"
     >
-        Learn React {props.isSignedIn}
+        Learn React {props.isSignedIn ? "user" : "guest"}
     </a>
     </header>
     )
