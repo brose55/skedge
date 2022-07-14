@@ -1,4 +1,3 @@
-import React from "react";
 import "./Light.css";
 
 export default function Light(props) {
