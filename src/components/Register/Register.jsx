@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../contexts/AuthContext";
 import "./Register.css";
 
-function Register(props) {
+function Register() {
+
+  const { setSignedIn } = useContext(AuthContext)
   
   const [formState, setFormState] = useState({
     username: "",
@@ -24,7 +27,7 @@ function Register(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    props.setSignIn(props.isSignedIn ? false : true)
+    setSignedIn(true)
     console.log("Form Submitted", formState);
     navigate("../success", { replace: true })
   };
@@ -32,7 +35,7 @@ function Register(props) {
   const { username, email, password } = formState;
   return (
     <main style={{ padding: "1rem 0" }}>
-      <h2>Register {props.isSignedIn}</h2>
+      <h2>Register</h2>
       <form id="sign-in-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">username:</label>

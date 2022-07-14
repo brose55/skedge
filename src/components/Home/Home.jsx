@@ -1,15 +1,13 @@
-import React from 'react'
+import { useContext } from 'react'
+import AuthContext from '../../contexts/AuthContext'
 import './Home.css'
 
 const Home = (props) => {
-  const handleClick = () => {
-    props.setSignIn(props.isSignedIn ? false : true)
-  }
+  const { isSignedIn } = useContext(AuthContext)
 
   return (
     <div>
-    <p>This is the home {props.isSignedIn ? 'user' : 'guest'} </p>
-    <button onClick={handleClick}>Click</button>
+    <p>This is the home, {isSignedIn ? 'user' : 'guest'} </p>
     </div>
   )
 }

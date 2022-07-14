@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import AuthContext from "../../contexts/AuthContext";
 import "./SignIn.css";
 
 function SignIn(props) {
+  const { setSignedIn } = useContext(AuthContext);
+
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -21,7 +24,7 @@ function SignIn(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    props.setSignIn(props.isSignedIn ? false : true)
+    setSignedIn(true)
     console.log("Form Submitted", formState);
     navigate("../daily", { replace: true })
   };

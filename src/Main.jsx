@@ -7,9 +7,9 @@ import './Main.css';
 const Main = (props) => {
   return (
     <div className='main'>
-      <Header className='one' isSignedIn={props.isSignedIn} setTheme={props.setTheme} theme={props.theme} />
+      <Header className='one' setTheme={props.setTheme} theme={props.theme} />
       <main className="two">
-        <MainRoutes isSignedIn={props.isSignedIn} setSignIn={props.setSignIn} />
+        <MainRoutes />
       </main>
       <Footer className='three' />
     </div>

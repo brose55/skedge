@@ -1,8 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import AuthContext from '../../contexts/AuthContext'
+import AuthSwitcher from './AuthSwitcher'
 import './Header.css'
+import ProtectedLinks from './ProtectedLinks'
+import PublicLinks from './PublicLinks'
 
 const Header = (props) => {
+    const { isSignedIn } = useContext(AuthContext);
+
     return (
     <header className="App-header">
     <nav
@@ -11,12 +16,15 @@ const Header = (props) => {
         paddingBottom: "1rem",
         }}
     >
-        <Link to="/"><code>home</code></Link> |{" "}
-        <Link to="/signin"><code>signIn</code></Link> |{" "}
-        <Link to="/register"><code>register</code></Link> |{" "}
-        <Link to="/daily"><code>daily</code></Link>
+        {
+            isSignedIn ?
+                <ProtectedLinks />
+            :
+                <PublicLinks />
+        }
     </nav>
     <button onClick={() => props.setTheme(props.theme==='dark' ? 'light' : 'dark')}>Change Theme</button>
+    <AuthSwitcher />
     <p>
         Edit <code>src/App.js</code> and save to reload.
     </p>
@@ -26,7 +34,7 @@ const Header = (props) => {
         target="_blank"
         rel="noopener noreferrer"
     >
-        Learn React {props.isSignedIn ? "user" : "guest"}
+        Learn React {isSignedIn ? "user" : "guest"}
     </a>
     </header>
     )

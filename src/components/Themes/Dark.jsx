@@ -1,4 +1,3 @@
-import React from 'react';
 import './Dark.css';
 
 export default function Dark(props) {
