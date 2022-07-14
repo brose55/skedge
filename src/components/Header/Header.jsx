@@ -16,6 +16,7 @@ const Header = (props) => {
         <Link to="/register"><code>register</code></Link> |{" "}
         <Link to="/daily"><code>daily</code></Link>
     </nav>
+    <button onClick={() => props.setTheme(props.theme==='dark' ? 'light' : 'dark')}>Change Theme</button>
     <p>
         Edit <code>src/App.js</code> and save to reload.
     </p>
