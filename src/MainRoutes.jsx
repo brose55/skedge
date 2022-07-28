@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import PublicRoutes from './components/PublicRoutes'
 import InnerContent from './InnerContent';
@@ -21,11 +21,10 @@ const MainRoutes = () => {
 						}
 					/>
 					<Route path="daily" element={<Daily />} />
-					<Route path="success" element={<Success />} />
 					<Route
 						path="*"
 						element={
-              <main style={{ padding: "1rem" }}>
+							<main style={{ padding: "1rem" }}>
 								<p>There's nothing here!</p>
 							</main>
 						}
@@ -37,16 +36,17 @@ const MainRoutes = () => {
         <Route
           path="signin"
           element={
-            <SignIn />
+						<SignIn />
           }
         />
         <Route
           path="register"
           element={
-            <Register
+						<Register
             />
           }
         />
+				<Route path="success" element={<Success />} />
       </Route>
 		</Routes>
 	);
