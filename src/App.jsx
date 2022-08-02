@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import Dark from "./components/Themes/Dark";
-import Light from "./components/Themes/Light";
 import AuthContext from "./contexts/AuthContext";
 import Main from "./Main";
+import './themes/dark.css'
+import './themes/light.css'
 
 function App() {
   const [isSignedIn, setSignedIn] = useState(true);
@@ -12,23 +12,12 @@ function App() {
 
 
   return (
-		<div className="App">
+		<div id={theme} className="App">
 			<AuthContext.Provider value={authValue}>
-				{theme === "dark" ? (
-					<Dark>
-						<Main
-							setTheme={setTheme}
-							theme={theme}
-						/>
-					</Dark>
-				) : (
-					<Light>
-						<Main
-							setTheme={setTheme}
-							theme={theme}
-						/>
-					</Light>
-				)}
+				<Main
+					theme={theme} 
+					setTheme={setTheme}
+				/>
 			</AuthContext.Provider>
 		</div>
 	);
