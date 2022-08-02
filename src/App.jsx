@@ -6,7 +6,7 @@ import AuthContext from "./contexts/AuthContext";
 import Main from "./Main";
 
 function App() {
-  const [isSignedIn, setSignedIn] = useState(false);
+  const [isSignedIn, setSignedIn] = useState(true);
   const authValue = { isSignedIn, setSignedIn};
   const [theme, setTheme] = useState('dark')
 
