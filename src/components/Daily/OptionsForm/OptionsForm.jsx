@@ -3,7 +3,6 @@ import { useState } from "react";
 const OptionsForm = ({ setOptions }) => {
 	const [formState, setFormState] = useState({
 		time: '4',
-		breaks: 'suggested',
     learningStyle: 'startStrong'
 	});
   
@@ -16,7 +15,7 @@ const OptionsForm = ({ setOptions }) => {
 		setOptions(formState)
 	};
   
-  const { time, breaks, learningStyle } = formState;
+  const { time, learningStyle } = formState;
   
 	return (
 		<main style={{ padding: "1rem 0" }}>
@@ -36,7 +35,8 @@ const OptionsForm = ({ setOptions }) => {
 						</select>
 					</label>
 				</div>
-				<div>
+				{/* TODO: implement breaks */}
+				{/* <div>
 					<label htmlFor="breaks">
 						Breaks:
 						<select name="breaks" value={breaks} onChange={handleChange}>
@@ -45,7 +45,7 @@ const OptionsForm = ({ setOptions }) => {
 							<option value="none">none</option>
 						</select>
 					</label>
-				</div>
+				</div> */}
 				<div>
 					<label htmlFor="learningStyle">
 						Learning Style:

@@ -1,28 +1,15 @@
 import shuffleArray from "./shuffle"
 
 const calculateDay = (interests, options) => {
-	// TODO: fill out function
-	// TODO: extrapolate break time do different functions or class
-	const { time, breaks, learningStyle } = options;
-	let breakTime = 5;
-	// is the max
-	if (time > 2 && time < 4) {
-		breakTime = 10;
-	} else if (time > 4) {
-		breakTime = 15;
-	}
+	const { time, learningStyle } = options;
 	let minutes = time * 60;
-	minutes -= breakTime * interests.length;
-
 	let totalWeight = 0;
-
 	const shuffledArray = shuffleArray(interests);
-	let counter = 0;
-
 	let first;
 	let low = [];
 	let med = [];
 	let high = [];
+	let counter = 0;
 
 	interests.forEach((interest) => {
 		if (counter === 0 && interest.weight === 1 && learningStyle === "warmUp") {
@@ -44,7 +31,8 @@ const calculateDay = (interests, options) => {
 
 	let block = minutes / totalWeight;
 	let topics;
-	if (options.learningStyle === "warmUp") {
+	
+  if (options.learningStyle === "warmUp") {
 		topics = [first, ...high, ...med, ...low];
 	} else if (options.learningStyle === "rng") {
 		topics = shuffledArray;
@@ -63,30 +51,6 @@ const calculateDay = (interests, options) => {
 	});
 
 	return schedule;
-	// calculate breaks
-	// if breaks = suggested use 15min after each
-	// if (breaks === 'suggested') {
-	//   // calculateBreaks.suggested
-	// } else if (breaks === ) {
-
-	// } else {
-
-	// }
-	// if breaks = pomodoro use pomodoro style
-	// if breaks = decide use 5, 10, 15min after each
-	// if breaks = don't worry, don't schedule breaks
-
-	// interests.forEach(interest => {
-	//   // TODO: Extrapolate learning style functions
-	// 	// if learningStyle = startStrong
-	//     // high to low
-	// 	// if learningStyle = endStrong
-	//     // low to high
-	// 	// if learningStyle = warmUpThenBusiness
-	//     // one low, then high to low
-	// 	// if learningStyle = rngenius
-	//     // random order
-	// });
 };
 
 
