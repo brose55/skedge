@@ -12,9 +12,11 @@ function Daily() {
 	return (
 		<main style={{ padding: "1rem 0" }}>
 			<Display interests={interests} options={options}/>
-			<InterestsForm interests={interests} setInterests={setInterests} />
-			<Interests interests={interests} />
-			<OptionsForm setOptions={setOptions} />
+			<div className="daily-forms">
+				<Interests interests={interests} />
+				<InterestsForm interests={interests} setInterests={setInterests} />
+				<OptionsForm setOptions={setOptions} />
+			</div>
 		</main>
 	);
 }

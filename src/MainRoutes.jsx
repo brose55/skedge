@@ -29,6 +29,7 @@ const MainRoutes = () => {
 							</main>
 						}
 					/>
+					{/* TODO: Info/FAQs */}
 				</Route>
 			</Route>
       
@@ -46,6 +47,8 @@ const MainRoutes = () => {
             />
           }
         />
+				{/* TODO: About */}
+				{/* TODO: Make Success Page */}
 				<Route path="success" element={<Success />} />
       </Route>
 		</Routes>

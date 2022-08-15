@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import calculateWeight from '../../../utils/calculateWeight';
 import './InterestForm.css'
 
@@ -10,6 +10,8 @@ const InterestForm = ({ interests, setInterests }) => {
   });
   const { interest, interestLevel } = formState;
 
+	const interestInput = useRef(null)
+
   const handleChange = (e) => {
 		setFormState({ ...formState, [e.target.name]: e.target.value });
 	};
@@ -17,26 +19,33 @@ const InterestForm = ({ interests, setInterests }) => {
   const handleSubmit = (e) => {
 		e.preventDefault();
     setInterests([ 
-      ...interests, 
+			...interests, 
       {
-        value: interest.toLowerCase(), 
+				value: interest.toLowerCase(), 
         level: interestLevel,
         weight: calculateWeight(interestLevel)
       }
     ])
-    
+		// clear form input and refocus
+		interestInput.current.value = ''
+		interestInput.current.focus()
 	};
 
-
+	useEffect(() => {
+		// focus on rendering
+		interestInput.current.focus()
+	}, [])
+	
   return (
-		<main style={{ padding: "1rem 0" }}>
-			<h2>Add hobbies here:</h2>
+		<section style={{ padding: "1rem 0" }}>
+			<h2>Add interests here:</h2>
 			<form id="daily-form" onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor="interest">Interest:</label>
 					<input
 						type="text"
 						name="interest"
+						ref={interestInput}
 						defaultValue={interest}
 						onChange={handleChange}
 					/>
@@ -53,7 +62,7 @@ const InterestForm = ({ interests, setInterests }) => {
 				</div>
 				<button type="submit">Submit</button>
 			</form>
-		</main>
+		</section>
 	);
 }
  

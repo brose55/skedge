@@ -31,7 +31,13 @@ const calculateDay = (interests, options) => {
 
 	let block = minutes / totalWeight;
 	let topics;
+
+	// another shuffle to be safe
+	// high = shuffleArray(high)
+	// med = shuffleArray(med)
+	// low = shuffleArray(low)
 	
+	// logic for learning styles
   if (options.learningStyle === "warmUp") {
 		topics = [first, ...high, ...med, ...low];
 	} else if (options.learningStyle === "rng") {
@@ -44,10 +50,9 @@ const calculateDay = (interests, options) => {
 
 	let schedule = [];
 
-	topics.forEach((topic) => {
-		topic.time = block * topic.weight;
+	topics.forEach(topic => {
+		topic.time = Math.floor(block * topic.weight);
 		schedule.push(topic);
-		schedule.push({ level: 'break', time: breakTime });
 	});
 
 	return schedule;

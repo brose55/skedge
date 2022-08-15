@@ -2,3 +2,8 @@
   background-color: black;
   color: aqua;
 }
+
+#dark input, select, button {
+  background-color: #23272E;
+  color: aqua;
+}
