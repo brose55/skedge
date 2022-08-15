@@ -1,0 +1,8 @@
+.daily-forms {
+  display: flex;
+  justify-content: space-around;
+}
+
+.daily-forms * {
+  width: 25vw;
+}

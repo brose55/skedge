@@ -2,7 +2,8 @@ import './Interests.css'
 
 const Interests = ({ interests }) => {
   return (
-    <div>
+    <section style={{padding: "1rem 0"}}>
+			<h2>Interests: </h2>
 		<ul>
 			{interests.map(({ value, level }, i) => (
         <li key={value + i}>
@@ -10,7 +11,7 @@ const Interests = ({ interests }) => {
 				</li>
 			))}
 		</ul>
-    </div>
+    </section>
 	);
 }
  

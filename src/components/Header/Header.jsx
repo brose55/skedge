@@ -25,17 +25,6 @@ const Header = (props) => {
     </nav>
     <button onClick={() => props.setTheme(props.theme==='dark' ? 'light' : 'dark')}>Change Theme</button>
     <AuthSwitcher />
-    <p>
-        Edit <code>src/App.js</code> and save to reload.
-    </p>
-    <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Learn React {isSignedIn ? "user" : "guest"}
-    </a>
     </header>
     )
 }

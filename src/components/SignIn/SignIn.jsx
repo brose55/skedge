@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import AuthContext from "../../contexts/AuthContext";
 import "./SignIn.css";
@@ -14,14 +14,16 @@ function SignIn(props) {
 
   const [loginError, setLoginError] = useState(null)
 
+  const signInInput = useRef(null)
+
+  	useEffect(() => {
+			// focus on rendering
+			signInInput.current.focus();
+		}, []);
+
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
-
-  // const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log('Form Submitted', formState);
-  // };
 
   let navigate = useNavigate()
 
@@ -38,30 +40,35 @@ function SignIn(props) {
 
   const { email, password } = formState;
   return (
-    <main style={{ padding: "1rem 0" }}>
-      <h2>Sign In</h2>
-      <p>{loginError}</p>
-      <form id="sign-in-form" onSubmit={handleSubmit}>
-        <div>
+    <main className="sign-in">
+      <section className="left">
+        <header>
+          <h2 className="animation a1">welcome back...</h2>
+          <h4 className="animation a2">sign in using your email and password...</h4>
+          <p>{loginError}</p>
+        </header>
+        <form id="sign-in-form" onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             name="email"
+            className="form-field animation a3"
+            ref={signInInput}
             defaultValue={email}
             onChange={handleChange}
-          />
-        </div>
-        <div>
+            />
           <label htmlFor="password">Password:</label>
           <input
             type="password"
             name="password"
+            className="form-field animation a4"
             defaultValue={password}
             onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+            />
+        <button className="form-field animation a5" type="submit">Submit</button>
+        </form>
+    </section>
+    <section className="right"></section>
     </main>
   );
 }

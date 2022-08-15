@@ -20,17 +20,10 @@ function Register() {
   
   let navigate = useNavigate();
 
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-  //   await console.log(event.target);
-  //   navigate("../success", { replace: true });
-  // }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post(`${process.env.REACT_APP_DEV_URL}/api/users`, formState)
-      // setSignedIn(true)
       navigate("../success", { replace: true })
     } catch (err) {
       setRegisterError(err.message)
