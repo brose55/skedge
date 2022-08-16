@@ -1,27 +1,29 @@
 .daily-blocks {
   display: flex;
   width: 90%;
-  min-height: 20vh;
   margin: 0 auto;
-  background-color: gray;
+  background-color: #303846;
   justify-content: space-between;
 }
 
+/* TODO: add vertical/horizontal layout */
+
 .daily-blocks p {
   margin: 0;
+  border: 1px solid aquamarine;
 }
 
 .high {
-  border: 1px solid aquamarine;
+  /* border: 1px solid aquamarine; */
   flex: 3 1;
 }
 
 .med {
-  border: 1px solid aqua;
+  /* border: 1px solid aqua; */
   flex: 2 1;
 }
 
 .low {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   flex: 1 1;
 }

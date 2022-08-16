@@ -2,7 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <p>Visit me here: FakeLink</p>
+    <footer>Visit me here: FakeLink</footer>
   )
 }
  

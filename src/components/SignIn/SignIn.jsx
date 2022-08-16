@@ -44,28 +44,27 @@ function SignIn(props) {
       <section className="left">
         <header>
           <h2 className="animation a1">welcome back...</h2>
-          <h4 className="animation a2">sign in using your email and password...</h4>
           <p>{loginError}</p>
         </header>
         <form id="sign-in-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email:</label>
           <input
             type="email"
             name="email"
-            className="form-field animation a3"
+            className="form-field animation a2"
             ref={signInInput}
             defaultValue={email}
+            placeholder='email...'
             onChange={handleChange}
             />
-          <label htmlFor="password">Password:</label>
           <input
             type="password"
             name="password"
-            className="form-field animation a4"
+            className="form-field animation a3"
             defaultValue={password}
+            placeholder='password...'
             onChange={handleChange}
             />
-        <button className="form-field animation a5" type="submit">Submit</button>
+        <button className="form-field animation a4" type="submit">Submit</button>
         </form>
     </section>
     <section className="right"></section>

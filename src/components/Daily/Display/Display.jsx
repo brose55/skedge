@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import calculateDay from '../../../utils/calculateDay';
 import './Display.css'
 
 const Display = ({ interests, options }) => {
+	const [counter, setCounter] = useState(0)
   if (options) {
 		// TODO: send to calculateDay function
 		// will return an array of object blocks with time in order
@@ -13,12 +15,13 @@ const Display = ({ interests, options }) => {
 					{
 						schedule.map((block, i) => {
 							return (
+								// order: the order lol
 								// level: high, med, low
 								// values: hobby value
 								// time: time in minutes
 								// weight: directly related to level, higher = more important
 								<p key={`daily_schedule_${i}`} className={block.level}>
-									{block.value}: {block.time} minutes, {block.level} priority
+									{block.order}. {block.value}: {block.time} minutes, {block.level} priority
 								</p>
 							);
 						})

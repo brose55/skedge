@@ -19,7 +19,7 @@ const OptionsForm = ({ setOptions }) => {
   
 	return (
 		<section style={{ padding: "1rem 0" }}>
-			<h2>Options:</h2>
+			<h2>options...</h2>
 			<form id="options-form" onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor="time">
