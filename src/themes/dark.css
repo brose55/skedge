@@ -1,9 +1,37 @@
 #dark {
-  background-color: black;
-  color: aqua;
+  background-color: #282c34;
+  color: #0AF29F;
 }
 
-#dark input, select, button {
-  background-color: #23272E;
-  color: aqua;
+#dark * {
+  color: #0AF29F;
 }
+
+#dark input, 
+select {
+  background-color: #23272E;
+}
+
+#dark nav a,
+nav a:visited,
+.App-link,
+.App-link:visited {
+  color: #0aF29f;
+}
+
+#dark .App-header {
+  background-color: #242526;;
+}
+
+#dark button {
+  background-color: #23272E;
+}
+
+.form-field:focus {
+  border-color: #0aF29f;
+}
+
+#dark footer {
+  background-color: #242526;
+}
+

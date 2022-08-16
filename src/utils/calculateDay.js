@@ -50,7 +50,8 @@ const calculateDay = (interests, options) => {
 
 	let schedule = [];
 
-	topics.forEach(topic => {
+	topics.forEach((topic, i) => {
+		topic.order = i+1
 		topic.time = Math.floor(block * topic.weight);
 		schedule.push(topic);
 	});

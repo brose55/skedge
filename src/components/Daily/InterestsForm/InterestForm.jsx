@@ -38,7 +38,7 @@ const InterestForm = ({ interests, setInterests }) => {
 	
   return (
 		<section style={{ padding: "1rem 0" }}>
-			<h2>Add interests here:</h2>
+			<h2>add interest...</h2>
 			<form id="daily-form" onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor="interest">Interest:</label>

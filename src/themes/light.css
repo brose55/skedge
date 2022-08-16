@@ -1,4 +1,32 @@
-#light  {
-  background-color: pink;
-  color: blueviolet;
+#light {
+  background-color: #f5f5f5;
+  color: #FF3F93;
+}
+
+#light * {
+  color: #FF3F93;
+}
+
+#light input,
+select {
+  background-color: white;
+}
+
+#light nav a,
+nav a:visited,
+.App-link,
+.App-link:visited {
+  color: #FF3F93;
+}
+
+#light .App-header {
+  background-color: #E5E4E2;
+}
+
+#light button {
+  background-color: #E5E4E2; 
+}
+
+#light .form-field:focus {
+  border-color: #FF3F93;
 }
