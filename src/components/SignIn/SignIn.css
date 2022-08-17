@@ -8,7 +8,7 @@
   height: 100vh;
 }
 
-.left {
+.sign-in .left {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -21,7 +21,7 @@
   font-style: italic;
 }
 
-.right {
+.sign-in .right {
   flex: 1;
   background-color: black;
   transition: 1s;
@@ -31,15 +31,15 @@
   background-position: center;
 }
 
-.left header {
+.sign-in .left header {
   padding-top: 30%;
 }
 
-header>h2 {
+.sign-in header>h2 {
   margin: 0;
 }
 
-header>h4 {
+.sign-in header>h4 {
   margin-top: 10px;
   font-weight: bold;
   font-size: 15px;

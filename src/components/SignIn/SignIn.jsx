@@ -16,10 +16,10 @@ function SignIn(props) {
 
   const signInInput = useRef(null)
 
-  	useEffect(() => {
-			// focus on rendering
-			signInInput.current.focus();
-		}, []);
+  useEffect(() => {
+    // focus on rendering
+    signInInput.current.focus();
+  }, []);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -61,10 +61,12 @@ function SignIn(props) {
             name="password"
             className="form-field animation a3"
             defaultValue={password}
-            placeholder='password...'
+            placeholder='********'
             onChange={handleChange}
             />
-        <button className="form-field animation a4" type="submit">Submit</button>
+            {/* TODO: add link */}
+          <p className="animation a4">don't have an account? <a href="https://google.com">sign up</a></p>
+        <button className="form-field animation a5" type="submit">login</button>
         </form>
     </section>
     <section className="right"></section>

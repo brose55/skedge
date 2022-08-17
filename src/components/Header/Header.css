@@ -1,16 +1,31 @@
 .App-header {
   min-height: 10vh;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
+  padding-inline: 1vw;
+  padding-bottom: 1vh;
 }
 
-.App-header img {
-  height: 5vh;
+.App-header .header-logo {
+  height: 7vh;
   width: auto;
 }
 
+.App-header .site-title {
+  height: 4vh;
+  width: auto;
+}
+
+.App-header section {
+  display: flex;
+  align-items: end;
+}
+
+.App-header section * {
+  padding-right: 1vw;
+}
 
 
 /* color: #61dafb; */

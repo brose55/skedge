@@ -30,3 +30,7 @@ nav a:visited,
 #light .form-field:focus {
   border-color: #FF3F93;
 }
+
+#light #sign-in-form p {
+  color: black;
+}
