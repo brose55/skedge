@@ -1,4 +1,9 @@
-.interests {
+.interest {
   font-style: italic;
   font-weight: bold;
+  display: flex;
+}
+
+.interest button {
+  width: 2vw
 }

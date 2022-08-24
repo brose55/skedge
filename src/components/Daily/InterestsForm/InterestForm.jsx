@@ -39,28 +39,26 @@ const InterestForm = ({ interests, setInterests }) => {
   return (
 		<section style={{ padding: "1rem 0" }}>
 			<h2>add interest...</h2>
-			<form id="daily-form" onSubmit={handleSubmit}>
-				<div>
+			<form id="daily-interest-form" onSubmit={handleSubmit}>
 					<label htmlFor="interest">Interest:</label>
 					<input
 						type="text"
 						name="interest"
 						ref={interestInput}
 						defaultValue={interest}
+						placeholder='coding...'
 						onChange={handleChange}
+						autoComplete='off'
 					/>
-				</div>
-				<div>
 					<label htmlFor="level">
 						Interest Level:
-						<select name='interestLevel' value={interestLevel} onChange={handleChange}>
-							<option value="low">low</option>
-							<option value="med">med</option>
+						<select name='interestLevel' value={interestLevel} onChange={handleChange} className='dropdown'>
 							<option value="high">high</option>
+							<option value="med">med</option>
+							<option value="low">low</option>
 						</select>
 					</label>
-				</div>
-				<button type="submit">Submit</button>
+				<button type="submit">add</button>
 			</form>
 		</section>
 	);

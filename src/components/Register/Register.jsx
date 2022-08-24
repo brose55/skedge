@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
@@ -13,6 +13,13 @@ function Register() {
   });
 
   const [registerError, setRegisterError] = useState(null)
+
+	const registerInput = useRef(null)
+
+	useEffect(() => {
+		// have cursor start in username on render
+		registerInput.current.focus()
+	}, [])
   
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -32,47 +39,50 @@ function Register() {
 
   const { username, email, password, passwordConfirmation } = formState;
   return (
-		<main style={{ padding: "1rem 0" }}>
-			<h2>Register</h2>
-      <p>{registerError}</p>
-			<form id="sign-in-form" onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor="username">username:</label>
-					<input
-						name="username"
-						defaultValue={username}
-						onChange={handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="email">email:</label>
-					<input
-						type="email"
-						name="email"
-						defaultValue={email}
-						onChange={handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="password">password:</label>
-					<input
-						type="password"
-						name="password"
-						defaultValue={password}
-						onChange={handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="passwordConfirmation">password confirmation:</label>
-					<input
-						type="password"
-						name="passwordConfirmation"
-						defaultValue={passwordConfirmation}
-						onChange={handleChange}
-					/>
-				</div>
-				<button type="submit">Submit</button>
-			</form>
+		// TODO: DRY CSS
+		<main className="register">
+			<section className="left"></section>
+			<section className="right">
+				<header>
+					<h4>sign up...</h4>
+					<p>{registerError}</p>
+				</header>
+				<form id="register-form" onSubmit={handleSubmit}>
+						<input
+							name="username"
+							className="form-field"
+							ref={registerInput}
+							defaultValue={username}
+							placeholder="username..."
+							onChange={handleChange}
+						/>
+						<input
+							type="email"
+							name="email"
+							className="form-field"
+							defaultValue={email}
+							placeholder="email..."
+							onChange={handleChange}
+						/>
+						<input
+							type="password"
+							name="password"
+							className="form-field"
+							defaultValue={password}
+							placeholder="password..."
+							onChange={handleChange}
+						/>
+						<input
+							type="password"
+							name="passwordConfirmation"
+							className="form-field"
+							defaultValue={passwordConfirmation}
+							placeholder='password confirmation...'
+							onChange={handleChange}
+						/>
+					<button type="submit">sign up</button>
+				</form>
+			</section>
 		</main>
 	);
 }

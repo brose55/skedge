@@ -1,13 +1,26 @@
 import './Interests.css'
 
-const Interests = ({ interests }) => {
-  return (
+const Interests = ({ interests, setInterests }) => {
+  
+	const handleClick = (e) => {
+		setInterests(
+			interests.filter(
+				interest => interest.value !== e.target.value
+			)
+		)
+	}
+	
+	return (
 		<section style={{ padding: "1rem 0" }}>
 			<h2>interests...</h2>
-			<ul>
+			<ul className="interests">
 				{interests.map(({ value, level }, i) => (
-					<li className='interests' key={value + i}>
-						{value} {level}
+					<li className="interest" key={value + i}>
+						<span>{value}: {level}</span>
+						{/* TODO: change value here to be less confusing */}
+						<button value={value} onClick={handleClick}>
+							x
+						</button>
 					</li>
 				))}
 			</ul>

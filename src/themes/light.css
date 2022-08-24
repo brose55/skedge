@@ -7,8 +7,11 @@
   color: #FF3F93;
 }
 
-#light input,
-select {
+#light input {
+  background-color: white;
+}
+
+#light select {
   background-color: white;
 }
 
@@ -30,3 +33,15 @@ nav a:visited,
 #light .form-field:focus {
   border-color: #FF3F93;
 }
+
+#light #sign-in-form p {
+  color: black;
+}
+
+#light footer {
+  background-color: #E5E4E2;
+}
+
+/* 
+  background-color: #D3D3D3
+*/

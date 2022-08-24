@@ -1,16 +1,57 @@
 .App-header {
   min-height: 10vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-end;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding-inline: 1vw;
+  padding-bottom: 1vh;
 }
 
-.App-header img {
-  height: 5vh;
+.App-header .header-logo {
+  height: 7vh;
   width: auto;
 }
 
+.App-header .site-title {
+  height: 4vh;
+  width: auto;
+  /* margin-right: 5vw; */
+}
 
+.App-header section {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.App-header > :first-child {
+  width: fit-content;
+}
+
+.App-header > :nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.App-header > :last-child {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.header-logo, .theme-button {
+  margin-right: 1vw;
+}
+
+/* .App-header section * {
+  padding-right: 1vw;
+} */
+
+.theme-button {
+  height: 4vh;
+  width: auto;
+  cursor: pointer;
+}
 
 /* color: #61dafb; */

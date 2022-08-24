@@ -13,7 +13,6 @@ const calculateDay = (interests, options) => {
 
 	interests.forEach((interest) => {
 		if (counter === 0 && interest.weight === 1 && learningStyle === "warmUp") {
-			console.log("hello");
 			first = interest;
 			counter++;
 		} else {

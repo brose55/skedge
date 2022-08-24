@@ -1,3 +1,8 @@
+.daily-display img {
+  height: 2vh;
+  width: auto;
+}
+
 .daily-blocks {
   display: flex;
   width: 90%;
@@ -6,6 +11,13 @@
   justify-content: space-between;
 }
 
+.grid {
+  flex-direction: row;
+}
+
+.list {
+  flex-direction: column;
+}
 /* TODO: add vertical/horizontal layout */
 
 .daily-blocks p {

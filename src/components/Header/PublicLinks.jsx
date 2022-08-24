@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const PublicLinks = () => {
 	const location = useLocation()
-	console.log('location', location)
 	return (
 		<div>
 			{location.pathname === "/pub/signin" ? (
