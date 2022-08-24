@@ -13,7 +13,7 @@ function Daily() {
 		<main style={{ padding: "1rem 0" }}>
 			<Display interests={interests} options={options}/>
 			<div className="daily-forms">
-				<Interests interests={interests} />
+				<Interests interests={interests} setInterests={setInterests} />
 				<InterestsForm interests={interests} setInterests={setInterests} />
 				<OptionsForm setOptions={setOptions} />
 			</div>

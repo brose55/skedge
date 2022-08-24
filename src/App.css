@@ -36,4 +36,8 @@ button {
   overflow: hidden;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* pointer-events: none; */

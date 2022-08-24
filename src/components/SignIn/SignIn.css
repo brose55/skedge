@@ -5,7 +5,7 @@
 
 .sign-in {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .sign-in .left {

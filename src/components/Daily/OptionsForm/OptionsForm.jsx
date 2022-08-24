@@ -3,7 +3,8 @@ import { useState } from "react";
 const OptionsForm = ({ setOptions }) => {
 	const [formState, setFormState] = useState({
 		time: '4',
-    learningStyle: 'startStrong'
+    learningStyle: 'startStrong',
+		displayType: 'grid'
 	});
   
 	const handleChange = (e) => {
@@ -15,7 +16,7 @@ const OptionsForm = ({ setOptions }) => {
 		setOptions(formState)
 	};
   
-  const { time, learningStyle } = formState;
+  const { time, learningStyle, displayType } = formState;
   
 	return (
 		<section style={{ padding: "1rem 0" }}>
@@ -23,7 +24,7 @@ const OptionsForm = ({ setOptions }) => {
 			<form id="options-form" onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor="time">
-						Hours Available:
+						hours available:
 						<select name="time" value={time} onChange={handleChange}>
 							<option value="2">2</option>
 							<option value="2.5">2.5</option>
@@ -58,7 +59,7 @@ const OptionsForm = ({ setOptions }) => {
 				</div> */}
 				<div>
 					<label htmlFor="learningStyle">
-						Learning Style:
+						learning style:
 						<select
 							name="learningStyle"
 							value={learningStyle}
@@ -71,7 +72,19 @@ const OptionsForm = ({ setOptions }) => {
 						</select>
 					</label>
 				</div>
-				<button type="submit">Submit</button>
+				<div>
+					<label htmlFor="displayType">
+						display type:
+						<select name="displayType" 
+							value={displayType}
+							onChange={handleChange}
+						>
+							<option value="grid">grid</option>	
+							<option value="list">list</option>	
+						</select>
+					</label>
+				</div>
+				<button type="submit">update</button>
 			</form>
 		</section>
 	);

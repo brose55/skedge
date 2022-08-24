@@ -11,7 +11,7 @@ const Main = (props) => {
       <main className="two">
         <MainRoutes />
       </main>
-      <Footer className='three' />
+      <Footer className='three' theme={props.theme} />
     </div>
   )
 }

@@ -7,8 +7,11 @@
   color: #0AF29F;
 }
 
-#dark input, 
-select {
+#dark input {
+  background-color: #23272E;
+}
+
+#dark select {
   background-color: #23272E;
 }
 
@@ -37,4 +40,12 @@ nav a:visited,
 
 #dark #sign-in-form p {
   color: white;
+}
+
+#dark .interest button {
+  background-color: #282c34;
+}
+
+#dark .interest button {
+  background-color: #282c34;
 }
