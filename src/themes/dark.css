@@ -49,3 +49,8 @@ nav a:visited,
 #dark .interest button {
   background-color: #282c34;
 }
+
+#dark .past-interests button {
+  background-color: #242526;
+  border: 1px solid #242526;
+}

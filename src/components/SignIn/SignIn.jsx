@@ -32,9 +32,9 @@ function SignIn(props) {
     try {
       await axios.post(`${process.env.REACT_APP_DEV_URL}/api/sessions`, formState, {withCredentials: true})
       setSignedIn(true)
-      navigate("../../daily", { replace: true })
+      navigate("../../", { replace: true })
     } catch (err) {
-      setLoginError(err)
+      setLoginError(err.message)
     }
   };
 

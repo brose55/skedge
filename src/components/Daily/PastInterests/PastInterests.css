@@ -1,0 +1,10 @@
+.past-interests {
+  display: flex;
+  justify-content: center;
+}
+
+.past-interests button {
+  padding-inline: 1vw;
+  margin-inline: .5vw;
+  border-radius: 1vw;
+}
