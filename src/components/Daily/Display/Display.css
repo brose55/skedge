@@ -8,21 +8,29 @@
   width: 90%;
   margin: 0 auto;
   background-color: #303846;
-  justify-content: space-between;
 }
 
 .grid {
+  /* justify-content: center; */
   flex-direction: row;
 }
 
 .list {
+  justify-content: space-between;
   flex-direction: column;
+  width: fit-content;
 }
 /* TODO: add vertical/horizontal layout */
 
 .daily-blocks p {
   margin: 0;
   border: 1px solid aquamarine;
+  /* padding: 1vh; */
+}
+
+.daily-blocks.list p {
+  padding-block: 1vh;
+  padding-inline: 1vw;
 }
 
 .high {

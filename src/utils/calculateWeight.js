@@ -1,7 +1,7 @@
-const calculateWeight = (level) => {
-	if (level === "high") {
+const calculateWeight = (priority) => {
+	if (priority === "high") {
 		return 3;
-	} else if (level === "med") {
+	} else if (priority === "med") {
 		return 2;
 	} else {
 		return 1;
