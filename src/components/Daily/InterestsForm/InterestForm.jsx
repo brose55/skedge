@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import calculateWeight from '../../../utils/calculateWeight';
 import './InterestForm.css'
 
-const InterestForm = ({ interests, setInterests }) => {
+const InterestForm = ({ checkListAndUpdate }) => {
 
   const [formState, setFormState] = useState({
     interest: "",
@@ -18,15 +18,13 @@ const InterestForm = ({ interests, setInterests }) => {
 
   const handleSubmit = (e) => {
 		e.preventDefault();
-    setInterests([ 
-			...interests, 
-      {
-				value: interest.toLowerCase(), 
-        level: interestLevel,
-        weight: calculateWeight(interestLevel)
-      }
-    ])
-		// clear form input and refocus
+		console.log('click')
+		const candidate = {
+			value: interest.toLowerCase(),
+			priority: interestLevel,
+			weight: calculateWeight(interestLevel),
+		};
+		checkListAndUpdate(candidate);
 		interestInput.current.value = ''
 		interestInput.current.focus()
 	};
@@ -50,7 +48,7 @@ const InterestForm = ({ interests, setInterests }) => {
 						onChange={handleChange}
 						autoComplete='off'
 					/>
-					<label htmlFor="level">
+					<label htmlFor="priority">
 						Interest Level:
 						<select name='interestLevel' value={interestLevel} onChange={handleChange} className='dropdown'>
 							<option value="high">high</option>

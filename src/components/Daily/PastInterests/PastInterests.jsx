@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import './PastInterests.css'
 
-const PastInterests = () => {
+const PastInterests = ({checkListAndUpdate}) => {
   const [pastInterests, setPastInterests] = useState([
 		{
 			value: "health",
@@ -23,7 +23,7 @@ const PastInterests = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   // const [displayState, setDisplayState] = useState()
   const [interestsError, setInterestsError] = useState(null)
-  
+
   useEffect(() => {
       axios
         .get(`${process.env.REACT_APP_DEV_URL}/api/interests`, {withCredentials: true})
@@ -52,7 +52,10 @@ const PastInterests = () => {
           // which may trigger an alert
           // on confirmation, delete the interest from user's db
           // On click anywhere else, add the interest to the scheduling algorithm 
-					<button key={`past-${interest.value}-${i}`}>
+					<button 
+            key={`past-${interest.value}-${i}`}
+            onClick={() => checkListAndUpdate(interest)}
+          >
 						{interest.value} {interest.priority}
 					</button>
 				))}

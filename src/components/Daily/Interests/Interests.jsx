@@ -3,6 +3,7 @@ import './Interests.css'
 const Interests = ({ interests, setInterests }) => {
   
 	const handleClick = (e) => {
+		console.log('event value', e.target.value);
 		setInterests(
 			interests.filter(
 				interest => interest.value !== e.target.value
@@ -14,9 +15,9 @@ const Interests = ({ interests, setInterests }) => {
 		<section style={{ padding: "1rem 0" }}>
 			<h2>interests...</h2>
 			<ul className="interests">
-				{interests.map(({ value, level }, i) => (
+				{interests.map(({ value, priority }, i) => (
 					<li className="interest" key={value + i}>
-						<span>{value}: {level}</span>
+						<span>{value}: {priority}</span>
 						{/* TODO: change value here to be less confusing */}
 						<button value={value} onClick={handleClick}>
 							x
