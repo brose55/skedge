@@ -5,10 +5,12 @@ import InterestsForm from "./InterestsForm/InterestForm";
 import Interests from "./Interests/Interests";
 import OptionsForm from "./OptionsForm/OptionsForm";
 import PastInterests from "./PastInterests/PastInterests";
+import axios from "axios";
 
 function Daily() {
 	const [interests, setInterests] = useState([]);
 	const [options, setOptions] = useState(null);
+	const [updateInterestsError, setUpdateInterestsError] = useState(null)
 
 	const checkListAndUpdate = (candidateInterest) => {
 		// do a quick loop and see if it already exists...
@@ -25,8 +27,23 @@ function Daily() {
 		}
 	}
 
+	const storeInterests = async () => {
+		try {
+			axios
+				.put(
+					`${process.env.REACT_APP_DEV_URL}/api/interests`, 
+					interests, 
+					{withCredentials: true}
+				)			
+		} catch (err) {
+			setUpdateInterestsError(err.message)
+		}
+
+	}
+
 	return (
 		<main style={{ padding: "1rem 0" }}>
+			<p>{updateInterestsError}</p>
 			<Display interests={interests} options={options} />
 			<PastInterests checkListAndUpdate={checkListAndUpdate} />
 			<div className="daily-forms">
@@ -34,7 +51,7 @@ function Daily() {
 				<InterestsForm
 					checkListAndUpdate={checkListAndUpdate}
 				/>
-				<OptionsForm setOptions={setOptions} />
+				<OptionsForm setOptions={setOptions} storeInterests={storeInterests} />
 			</div>
 		</main>
 	);

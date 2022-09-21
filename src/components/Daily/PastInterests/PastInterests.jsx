@@ -3,23 +3,7 @@ import { useState, useEffect } from 'react'
 import './PastInterests.css'
 
 const PastInterests = ({checkListAndUpdate}) => {
-  const [pastInterests, setPastInterests] = useState([
-		{
-			value: "health",
-			priority: "high",
-			weight: 3,
-		},
-		{
-			value: "python",
-			priority: "high",
-			weight: 3,
-		},
-		{
-			value: "reading",
-			priority: "low",
-			weight: 1,
-		},
-	]);
+  const [pastInterests, setPastInterests] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
   // const [displayState, setDisplayState] = useState()
   const [interestsError, setInterestsError] = useState(null)
@@ -27,7 +11,6 @@ const PastInterests = ({checkListAndUpdate}) => {
   useEffect(() => {
       axios
         .get(`${process.env.REACT_APP_DEV_URL}/api/interests`, {withCredentials: true})
-        // .then(res => res.json())
         .then(result => {
           setPastInterests(result.data)
           setIsLoaded(true)
@@ -38,10 +21,10 @@ const PastInterests = ({checkListAndUpdate}) => {
         })
   }, [])
 
-  // !isLoaded ? (
+  // !pastInterests ? (
 	// 	<p className='loading'>loading...</p>
 	// ) : (
-	return (
+    return (
     <section>
 			<header><h2>past interests...</h2></header>
       {/* <p>{interestsError}</p> */}

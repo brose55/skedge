@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const OptionsForm = ({ setOptions }) => {
+const OptionsForm = ({ setOptions, storeInterests }) => {
 	const [formState, setFormState] = useState({
 		time: '4',
     learningStyle: 'startStrong',
-		displayType: 'grid'
+		displayType: 'list'
 	});
   
 	const handleChange = (e) => {
@@ -14,6 +14,7 @@ const OptionsForm = ({ setOptions }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setOptions(formState)
+		storeInterests()
 	};
   
   const { time, learningStyle, displayType } = formState;

@@ -7,7 +7,7 @@ import './themes/light.css'
 
 function App() {
 	// set isSignedIn to true to develop
-  const [isSignedIn, setSignedIn] = useState(true);
+  const [isSignedIn, setSignedIn] = useState(false);
   const authValue = { isSignedIn, setSignedIn};
   const [theme, setTheme] = useState('dark')
 
