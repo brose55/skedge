@@ -3,7 +3,6 @@ import './Interests.css'
 const Interests = ({ interests, setInterests }) => {
   
 	const handleClick = (e) => {
-		console.log('event value', e.target.value);
 		setInterests(
 			interests.filter(
 				interest => interest.value !== e.target.value

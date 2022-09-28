@@ -5,7 +5,6 @@ import './PastInterests.css'
 const PastInterests = ({checkListAndUpdate}) => {
   const [pastInterests, setPastInterests] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
-  // const [displayState, setDisplayState] = useState()
   const [interestsError, setInterestsError] = useState(null)
 
   useEffect(() => {
@@ -21,50 +20,48 @@ const PastInterests = ({checkListAndUpdate}) => {
         })
   }, [])
 
-  // !pastInterests ? (
-	// 	<p className='loading'>loading...</p>
-	// ) : (
-    return (
-    <section>
-			<header><h2>past interests...</h2></header>
-      {/* <p>{interestsError}</p> */}
-			<section className='past-interests'>
-				{pastInterests.map((interest, i) => (
-          // TODO: A slim list of previous interests with their priority level
-          // Each have a delete button,
-          // which may trigger an alert
-          // on confirmation, delete the interest from user's db
-          // On click anywhere else, add the interest to the scheduling algorithm 
-					<button 
-            key={`past-${interest.value}-${i}`}
-            onClick={() => checkListAndUpdate(interest)}
-          >
-						{interest.value} {interest.priority}
-					</button>
-				))}
-				{/* {
-        pastInterests ?
-      } */}
-			</section>
-		</section>
-	)
-
-  // if (interestsError) {
-  //   return <p>Error: {interestsError}</p>
-  // } else if (!isLoaded) {
-  //   return <p>loading...</p>
-  // } else {
-  //   <ul>
-
-  //   </ul>
-  // }
-  
-  // return (
-  //   <section>
-  //     <p>{interestsError}</p>
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_DEV_URL}/api/interests/${id}`, {withCredentials: true})
+      if (window.confirm('are you sure you want to delete this interest forever?') == true) {
+        setPastInterests(
+          pastInterests.filter(interest => {
+            return interest._id !== id
+          })
+        )        
+      }
+    } catch (err) {
       
-  //   </section>
-  // )
+    }
+  } 
+
+
+  if (interestsError) {
+    return <p>Error: {interestsError}</p>
+  } else if (!isLoaded) {
+    return <p>loading...</p>
+  } else if (pastInterests.length > 0) {
+    return (
+			<section>
+				<header>
+					<h2>past interests...</h2>
+				</header>
+				<section className="past-interests">
+					{pastInterests.map((interest, i) => (
+						<p key={`past-${interest.value}-${i}`}>
+							<span className='past-interest' onClick={() => checkListAndUpdate(interest)}>
+								{interest.value}: {interest.priority}
+							</span>
+              <button onClick={() => handleDelete(interest._id)}>X</button>
+						</p>
+					))}
+				</section>
+			</section>
+		);
+  } else {
+    return null
+  }
+  
 }
  
 export default PastInterests

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState, useRef, useEffect } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import AuthContext from "../../contexts/AuthContext";
 import "./SignIn.css";
 
@@ -18,7 +18,10 @@ function SignIn(props) {
 
   useEffect(() => {
     // focus on rendering
-    signInInput.current.focus();
+    let signInTimer = setTimeout(() => {
+			signInInput.current.focus()
+		}, 2500);
+    return () => { clearTimeout(signInTimer) }
   }, []);
 
   const handleChange = (e) => {
@@ -65,7 +68,7 @@ function SignIn(props) {
             onChange={handleChange}
             />
             {/* TODO: add link */}
-          <p className="animation a4">don't have an account? <a href="https://google.com">sign up</a></p>
+          <p className="animation a4">don't have an account? <Link to='/pub/register'>sign up</Link></p>
         <button className="form-field animation a5" type="submit">login</button>
         </form>
     </section>
