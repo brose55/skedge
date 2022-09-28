@@ -18,7 +18,6 @@ const InterestForm = ({ checkListAndUpdate }) => {
 
   const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('click')
 		const candidate = {
 			value: interest.toLowerCase(),
 			priority: interestLevel,

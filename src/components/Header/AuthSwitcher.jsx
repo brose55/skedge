@@ -7,7 +7,7 @@ const AuthSwitcher = () => {
   
   const signOut = async () => {
     try {
-      axios.delete(`${process.env.REACT_APP_DEV_URL}/api/sessions`, {withCredentials: true})
+      await axios.delete(`${process.env.REACT_APP_DEV_URL}/api/sessions`, {withCredentials: true})
     } catch (err) {
       // TODO: change error handling here
       console.error(err)
@@ -23,7 +23,7 @@ const AuthSwitcher = () => {
   return (
     <button onClick={handleClick}>
       {
-        isSignedIn ? 'sign out' : 'sign in'
+        isSignedIn ? 'sign out' : null
       }
     </button>
   )
