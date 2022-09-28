@@ -8,6 +8,7 @@ import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import Daily from './components/Daily/Daily';
 import Success from './components/Success/Success';
+import Weekly from './components/Weekly/Weekly';
 
 const MainRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const MainRoutes = () => {
 						}
 					/>
 					<Route path="daily" element={<Daily />} />
+					<Route path='weekly' element={<Weekly />} />
 					<Route
 						path="*"
 						element={

@@ -7,9 +7,15 @@ const ProtectedLinks = () => {
       {
         location.pathname === '/'
         ? 
-          <Link to="/daily">
-            <code>daily</code>
-          </Link>
+          <>
+            <Link to="/daily">
+              <code>daily</code>
+            </Link>
+            |
+            <Link to='/weekly'>
+              <code>weekly</code>
+            </Link>
+          </>
         : 
           <Link to="/">
             <code>home</code>

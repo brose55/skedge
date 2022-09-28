@@ -23,7 +23,7 @@ const PastInterests = ({checkListAndUpdate}) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${process.env.REACT_APP_DEV_URL}/api/interests/${id}`, {withCredentials: true})
-      if (window.confirm('are you sure you want to delete this interest forever?') == true) {
+      if (window.confirm('are you sure you want to delete this interest forever?') === true) {
         setPastInterests(
           pastInterests.filter(interest => {
             return interest._id !== id
@@ -31,7 +31,7 @@ const PastInterests = ({checkListAndUpdate}) => {
         )        
       }
     } catch (err) {
-      
+      console.error(err)
     }
   } 
 
