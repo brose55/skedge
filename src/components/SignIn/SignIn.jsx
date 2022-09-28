@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom'
 import AuthContext from "../../contexts/AuthContext";
+import displayError from "../../utils/displayError";
 import "./SignIn.css";
 
 function SignIn(props) {
@@ -37,17 +38,17 @@ function SignIn(props) {
       setSignedIn(true)
       navigate("../../", { replace: true })
     } catch (err) {
-      setLoginError(err.message)
+      setLoginError(err)
     }
   };
-
+  
   const { email, password } = formState;
   return (
     <main className="sign-in">
       <section className="left">
         <header>
           <h2 className="animation a1">welcome back...</h2>
-          <p>{loginError}</p>
+          <p>{loginError ? displayError(loginError) : null}</p>
         </header>
         <form id="sign-in-form" onSubmit={handleSubmit}>
           <input
@@ -67,7 +68,6 @@ function SignIn(props) {
             placeholder='********'
             onChange={handleChange}
             />
-            {/* TODO: add link */}
           <p className="animation a4">don't have an account? <Link to='/pub/register'>sign up</Link></p>
         <button className="form-field animation a5" type="submit">login</button>
         </form>

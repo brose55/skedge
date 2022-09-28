@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
+import displayError from "../../utils/displayError";
 
 function Register() {
   
@@ -33,7 +34,7 @@ function Register() {
       await axios.post(`${process.env.REACT_APP_DEV_URL}/api/users`, formState)
       navigate("../success", { replace: true })
     } catch (err) {
-      setRegisterError(err.message)
+      setRegisterError(err)
     }
   };
 
@@ -45,7 +46,7 @@ function Register() {
 			<section className="right">
 				<header>
 					<h4>sign up...</h4>
-					<p>{registerError}</p>
+					<p>{registerError ? displayError(registerError) : null}</p>
 				</header>
 				<form id="register-form" onSubmit={handleSubmit}>
 						<input
