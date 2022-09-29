@@ -42,10 +42,8 @@ nav a:visited,
   background-color: #E5E4E2;
 }
 
-#light .past-interests button {
+#light .past-interests p {
   border: 1px solid #D3D3D3;
+  background-color: #E5E4E2;
 }
 
-/* 
-  background-color: #D3D3D3
-*/

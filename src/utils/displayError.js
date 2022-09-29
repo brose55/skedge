@@ -14,5 +14,8 @@ export default function displayError(error) {
 					<a href="https://github.com/brose55/skedge/issues">issue...</a>
 				</>
 			);
+		default:
+			console.error(JSON.stringify(error))
+			break;
 	}
 }

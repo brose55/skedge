@@ -1,6 +1,6 @@
-.daily-display img {
-  height: 2vh;
-  width: auto;
+.daily-display {
+  max-height: 22vh;
+  width: 90%;
 }
 
 .daily-blocks {
@@ -19,6 +19,7 @@
   justify-content: space-between;
   flex-direction: column;
   width: fit-content;
+  flex-wrap: wrap;
 }
 /* TODO: add vertical/horizontal layout */
 

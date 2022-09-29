@@ -2,6 +2,9 @@
   font-style: italic;
   font-weight: bold;
   display: flex;
+  width: 15vw;
+  padding-block: .2vh;
+  margin: auto;
 }
 
 .interest button {

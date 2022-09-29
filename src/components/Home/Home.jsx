@@ -1,9 +1,18 @@
+import { useContext, useEffect } from 'react'
 import useSwr from 'swr'
+import AuthContext from '../../contexts/AuthContext'
 import fetcher from '../../utils/fetcher'
 import './Home.css'
 
 const Home = () => {
   const { data } = useSwr(`${process.env.REACT_APP_DEV_URL}/api/users/me`, fetcher)
+  const { setSignedIn } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (data) {
+      setSignedIn(true)
+    }
+  }, [data])
 
   return (
 		<div>
@@ -15,6 +24,7 @@ const Home = () => {
       */}
 			<h1>welcome{data ? `, ${data.username}`: null}...</h1>
 			<h1>TODO</h1>
+      <p>{JSON.stringify(data)}</p>
 		</div>
 	);
 }

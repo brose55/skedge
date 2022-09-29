@@ -5,8 +5,6 @@ import './Display.css'
 const Display = ({ interests, options }) => {
 	// const [counter, setCounter] = useState(0)
   if (options) {
-		// TODO: send to calculateDay function
-		// will return an array of object blocks with time in order
 		const schedule = calculateDay(interests, options)
 		return (
 			<div className='daily-display'>

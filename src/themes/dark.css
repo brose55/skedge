@@ -23,7 +23,7 @@ nav a:visited,
 }
 
 #dark .App-header {
-  background-color: #242526;;
+  background-color: #242526;
 }
 
 #dark button {
@@ -50,7 +50,7 @@ nav a:visited,
   background-color: #282c34;
 }
 
-#dark .past-interests button {
-  background-color: #242526;
+#dark .past-interests p {
   border: 1px solid #242526;
+  background-color: #23272E;
 }
