@@ -1,9 +1,13 @@
 .daily-forms {
   display: flex;
   justify-content: space-around;
+  margin-inline: 5vw;
 }
 
 .daily-forms * {
-  width: 25vw;
-  border: none;
+  width: 23vw;
+}
+
+.daily-forms section {
+  box-shadow: 4px 4px 5px #242526;
 }

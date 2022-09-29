@@ -9,6 +9,14 @@
   border-radius: 1vw;
 }
 
+.past-interests button {
+  margin-left: .2vw;
+}
+
+.past-interests span {
+  padding-left: 1vw;
+}
+
 .past-interest {
   cursor: pointer;
   margin-right: .5vw;

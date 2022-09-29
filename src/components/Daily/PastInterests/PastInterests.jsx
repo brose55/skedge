@@ -6,6 +6,7 @@ const PastInterests = ({checkListAndUpdate}) => {
   const [pastInterests, setPastInterests] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
   const [interestsError, setInterestsError] = useState(null)
+  const [style, setStyle] = useState({ visibility: "hidden" });
 
   useEffect(() => {
       axios
@@ -48,11 +49,18 @@ const PastInterests = ({checkListAndUpdate}) => {
 				</header>
 				<section className="past-interests">
 					{pastInterests.map((interest, i) => (
-						<p key={`past-${interest.value}-${i}`}>
-							<span className='past-interest' onClick={() => checkListAndUpdate(interest)}>
+						<p
+							key={`past-${interest.value}-${i}`}
+							onMouseEnter={(e) => setStyle({ visibility: "visible" })}
+							onMouseLeave={(e) => setStyle({ visibility: "hidden" })}
+						>
+							<span
+								className="past-interest"
+								onClick={() => checkListAndUpdate(interest)}
+							>
 								{interest.value}: {interest.priority}
 							</span>
-              <button onClick={() => handleDelete(interest._id)}>X</button>
+							<button style={style} onClick={() => handleDelete(interest._id)}>x</button>
 						</p>
 					))}
 				</section>
