@@ -32,8 +32,13 @@ button {
 
 .App {
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
 }
 
 button {

@@ -17,6 +17,23 @@ function SignIn(props) {
 
   const signInInput = useRef(null)
 
+  const getSession = async () => {
+		try {
+			const session = await axios.get(
+				`${process.env.REACT_APP_DEV_URL}/api/sessions`,
+				{ withCredentials: true }
+			);
+      console.log(session.data);
+			if (session.data > 0) {
+        setSignedIn(true)
+        navigate("../../", { replace: true });        
+			}
+		} catch (err) {
+      console.error(err)
+    }
+	}
+  getSession()
+
   useEffect(() => {
     // focus on rendering
     let signInTimer = setTimeout(() => {

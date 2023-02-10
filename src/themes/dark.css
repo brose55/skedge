@@ -11,6 +11,11 @@
   background-color: #23272E;
 }
 
+#dark .daily-forms input {
+  background-color: #282c34;
+  border-bottom: 1px solid #0AF29F;
+}
+
 #dark select {
   background-color: #23272E;
 }

@@ -42,7 +42,7 @@ function Daily() {
 	}
 
 	return (
-		<main style={{ padding: "1rem 0" }}>
+		<main style={{ padding: "2vh 0" }}>
 			<p>{updateInterestsError}</p>
 			<Display interests={interests} options={options} />
 			<PastInterests checkListAndUpdate={checkListAndUpdate} />
