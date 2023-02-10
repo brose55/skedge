@@ -4,10 +4,19 @@
   margin-inline: 5vw;
 }
 
-.daily-forms * {
-  width: 23vw;
+.daily-forms section {
+  width: 24vw;
+  box-shadow: 4px 4px 5px #242526;
 }
 
-.daily-forms section {
-  box-shadow: 4px 4px 5px #242526;
+@media screen and (max-width: 900px) {
+  .daily-forms {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .daily-forms section {
+    width: 70vw;
+    margin-top: 2vh;
+  }
 }

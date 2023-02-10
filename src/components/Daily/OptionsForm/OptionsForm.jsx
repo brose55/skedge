@@ -20,7 +20,7 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
   const { time, learningStyle, displayType } = formState;
   
 	return (
-		<section style={{ padding: "1rem 0" }}>
+		<section style={{ padding: "2vh 0" }}>
 			<h2>options...</h2>
 			<form id="options-form" onSubmit={handleSubmit}>
 				<div>

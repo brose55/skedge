@@ -34,7 +34,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
 	}, [])
 	
   return (
-		<section style={{ padding: "1rem 0" }}>
+		<section style={{ padding: "2vh 0" }}>
 			<h2>add interest...</h2>
 			<form id="daily-interest-form" onSubmit={handleSubmit}>
 					<label htmlFor="interest">Interest:</label>

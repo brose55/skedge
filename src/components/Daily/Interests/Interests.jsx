@@ -14,7 +14,7 @@ const Interests = ({ interests, setInterests }) => {
 	}
 	
 	return (
-		<section style={{ padding: "1rem 0" }}>
+		<section style={{ padding: "2vh 0" }}>
 			<h2>interests...</h2>
 			<ul className="interests">
 				{interests.map(({ value, priority }, i) => (

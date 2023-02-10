@@ -16,6 +16,7 @@ const AuthSwitcher = () => {
 
   const handleClick = () => {
     signOut()
+    // TODO: change this
     setSignedIn(isSignedIn ? false : true)
   }
 
