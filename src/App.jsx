@@ -5,6 +5,7 @@ import Main from "./Main";
 import './themes/dark.css'
 import './themes/light.css'
 // comment for student
+// other comment
 
 function App() {
 	// set isSignedIn to true to develop
