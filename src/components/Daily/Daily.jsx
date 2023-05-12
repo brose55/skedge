@@ -42,18 +42,18 @@ function Daily() {
 	}
 
 	return (
-		<main style={{ padding: "2vh 0" }}>
+		<section style={{ padding: "2vh 0" }}>
 			<p>{updateInterestsError}</p>
-			<Display interests={interests} options={options} />
 			<PastInterests checkListAndUpdate={checkListAndUpdate} />
-			<div className="daily-forms">
+			<section className="daily-forms">
 				<Interests interests={interests} setInterests={setInterests} />
 				<InterestsForm
 					checkListAndUpdate={checkListAndUpdate}
 				/>
 				<OptionsForm setOptions={setOptions} storeInterests={storeInterests} />
-			</div>
-		</main>
+			</section>
+			<Display interests={interests} options={options} />
+		</section>
 	);
 }
 
