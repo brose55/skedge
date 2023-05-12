@@ -9,6 +9,11 @@
   box-shadow: 4px 4px 5px #242526;
 }
 
+.daily-forms button {
+  width: 75%;
+  margin-inline: auto;
+}
+
 @media screen and (max-width: 900px) {
   .daily-forms {
     flex-direction: column;

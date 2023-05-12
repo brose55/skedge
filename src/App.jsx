@@ -4,12 +4,10 @@ import AuthContext from "./contexts/AuthContext";
 import Main from "./Main";
 import './themes/dark.css'
 import './themes/light.css'
-// comment for student
-// other comment
 
 function App() {
 	// set isSignedIn to true to develop
-  const [isSignedIn, setSignedIn] = useState(false);
+  const [isSignedIn, setSignedIn] = useState(true);
   const authValue = { isSignedIn, setSignedIn};
   const [theme, setTheme] = useState('dark')
 
