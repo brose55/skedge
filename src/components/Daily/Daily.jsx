@@ -46,11 +46,11 @@ function Daily() {
 			<p>{updateInterestsError}</p>
 			<PastInterests checkListAndUpdate={checkListAndUpdate} className='daily-section' />
 			<section className="daily-forms">
-				<Interests interests={interests} setInterests={setInterests} />
 				<InterestsForm
 					checkListAndUpdate={checkListAndUpdate}
 				/>
 				<OptionsForm setOptions={setOptions} storeInterests={storeInterests} />
+				<Interests interests={interests} setInterests={setInterests} />
 			</section>
 			<Display interests={interests} options={options} />
 		</section>
