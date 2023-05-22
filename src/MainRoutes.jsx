@@ -10,6 +10,7 @@ import Daily from './components/Daily/Daily';
 import Success from './components/Success/Success';
 import Weekly from './components/Weekly/Weekly';
 
+// routes are seperated between public and protected depending on if signed in
 const MainRoutes = () => {
   return (
 		<Routes>

@@ -1,14 +1,12 @@
 footer {
   min-height: 6vh;
   padding-top: 1vh;
+  display: flex;
+  justify-content: center;
 }
 
 footer img {
   height: 4vh;
   width: auto;
+  padding-inline: .5vw;
 }
-
-footer > :nth-child(2) {
-  padding-inline: 1vw;
-}
-

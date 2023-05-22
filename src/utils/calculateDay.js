@@ -1,5 +1,6 @@
 import shuffleArray from "./shuffle"
 
+// the main algorithm used for scheduling
 const calculateDay = (interests, options) => {
 	const { time, learningStyle } = options;
 	let minutes = time * 60;

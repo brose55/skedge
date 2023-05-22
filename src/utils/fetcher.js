@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// custom fetching function
 const fetcher = async url => {
   try {
     const { data } = await axios.get(url, {

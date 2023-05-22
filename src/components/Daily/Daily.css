@@ -2,16 +2,20 @@
   display: flex;
   justify-content: space-around;
   margin-inline: 5vw;
+  margin-bottom: 4vh;
 }
 
 .daily-forms section {
   width: 24vw;
-  box-shadow: 4px 4px 5px #242526;
 }
 
 .daily-forms button {
   width: 75%;
   margin-inline: auto;
+}
+
+.daily-forms select {
+  margin-left: 0.5vw;
 }
 
 @media screen and (max-width: 900px) {

@@ -24,8 +24,7 @@ const Interests = ({ interests, setInterests }) => {
 						onMouseEnter={(e) => setStyle({ visibility: 'visible' })}
 						onMouseLeave={(e) => setStyle({ visibility: 'hidden' })}
 					>
-						<span
-						>
+						<span>
 							{value}: {priority}
 						</span>
 						{/* TODO: change value here to be less confusing */}

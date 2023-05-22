@@ -42,9 +42,9 @@ function Daily() {
 	}
 
 	return (
-		<section style={{ padding: "2vh 0" }}>
+		<section>
 			<p>{updateInterestsError}</p>
-			<PastInterests checkListAndUpdate={checkListAndUpdate} />
+			<PastInterests checkListAndUpdate={checkListAndUpdate} className='daily-section' />
 			<section className="daily-forms">
 				<Interests interests={interests} setInterests={setInterests} />
 				<InterestsForm

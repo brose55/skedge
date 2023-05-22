@@ -1,3 +1,4 @@
+// quantifies priority
 const calculateWeight = (priority) => {
 	if (priority === "high") {
 		return 3;

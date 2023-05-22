@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './OptionsForm.css';
 
 const OptionsForm = ({ setOptions, storeInterests }) => {
 	const [formState, setFormState] = useState({
@@ -23,7 +24,6 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 		<section style={{ padding: "2vh 0" }}>
 			<h2>options...</h2>
 			<form id="options-form" onSubmit={handleSubmit}>
-				<div>
 					<label htmlFor="time">
 						hours available:
 						<select name="time" value={time} onChange={handleChange}>
@@ -46,7 +46,6 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 							<option value="10">10</option>
 						</select>
 					</label>
-				</div>
 				{/* TODO: implement breaks */}
 				{/* <div>
 					<label htmlFor="breaks">
@@ -58,7 +57,6 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 						</select>
 					</label>
 				</div> */}
-				<div>
 					<label htmlFor="learningStyle">
 						learning style:
 						<select
@@ -72,19 +70,6 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 							<option value="rng">RNGenius</option>
 						</select>
 					</label>
-				</div>
-				<div>
-					<label htmlFor="displayType">
-						display type:
-						<select name="displayType" 
-							value={displayType}
-							onChange={handleChange}
-						>
-							<option value="grid">grid</option>	
-							<option value="list">list</option>	
-						</select>
-					</label>
-				</div>
 				<button type="submit">update</button>
 			</form>
 		</section>

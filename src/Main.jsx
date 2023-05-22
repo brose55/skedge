@@ -3,14 +3,15 @@ import MainRoutes from "./MainRoutes";
 import Footer from "./components/Footer/Footer";
 import "./Main.css";
 
+// the actual app lives here
 const Main = (props) => {
 	return (
-		<div className="main">
-			<Header className="one" setTheme={props.setTheme} theme={props.theme} />
-			<main className="two">
+		<div className="main-app">
+			<Header setTheme={props.setTheme} theme={props.theme} />
+			<main>
 				<MainRoutes />
 			</main>
-			<Footer className="three" theme={props.theme} />
+			<Footer theme={props.theme} />
 		</div>
 	);
 };

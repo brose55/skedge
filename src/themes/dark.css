@@ -1,3 +1,4 @@
+/* Universal Styles */
 #dark {
   background-color: #282c34;
   color: #0AF29F;
@@ -7,16 +8,20 @@
   color: #0AF29F;
 }
 
+/* Main/Tag Styles  */
+#dark main {
+  background-color: #282c34;
+}
+
 #dark input {
   background-color: #23272E;
 }
 
-#dark .daily-forms input {
-  background-color: #282c34;
-  border-bottom: 1px solid #0AF29F;
+#dark select {
+  background-color: #23272E;
 }
 
-#dark select {
+#dark button {
   background-color: #23272E;
 }
 
@@ -27,30 +32,36 @@ nav a:visited,
   color: #0aF29f;
 }
 
+/* header */
 #dark .App-header {
   background-color: #242526;
 }
 
-#dark button {
-  background-color: #23272E;
-}
-
-.form-field:focus {
+/* forms */
+#dark .form-field:focus {
   border-color: #0aF29f;
-}
-
-#dark footer {
-  background-color: #242526;
 }
 
 #dark #sign-in-form p {
   color: white;
 }
 
-#dark .interest button {
-  background-color: #282c34;
+#dark .daily-forms section {
+  /* box-shadow: 4px 4px 5px #242526; */
+  box-shadow: 0 8px 8px -4px #0AF29F;
 }
 
+#dark .daily-forms input {
+  background-color: #282c34;
+  border-bottom: 1px solid #0AF29F;
+}
+
+/* footer */
+#dark footer {
+  background-color: #242526;
+}
+
+/* daily section */
 #dark .interest button {
   background-color: #282c34;
 }
@@ -58,4 +69,12 @@ nav a:visited,
 #dark .past-interests p {
   border: 1px solid #242526;
   background-color: #23272E;
+}
+
+#dark .daily-blocks {
+  background-color: #303846;
+}
+
+#dark .daily-blocks p {
+  border: 1px solid aquamarine;
 }
