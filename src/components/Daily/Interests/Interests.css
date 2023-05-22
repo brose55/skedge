@@ -1,12 +1,12 @@
 .interest {
-  font-style: italic;
   font-weight: bold;
   display: flex;
-  width: 15vw;
+  justify-content: center;
   padding-block: .2vh;
   margin: auto;
 }
 
 .interest button {
-  width: 2vw
+  width: fit-content;
+  margin-inline: 1vw 0;
 }

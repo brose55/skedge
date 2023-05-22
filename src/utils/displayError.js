@@ -1,3 +1,4 @@
+// display messages for all error codes
 export default function displayError(error) {
   const { status, data } = error.response;
   switch (status) {

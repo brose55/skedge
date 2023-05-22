@@ -9,7 +9,7 @@ const Display = ({ interests, options }) => {
 		return (
 			<div className='daily-display'>
 				<p>{options.time} hours, {options.learningStyle}</p>
-				<div className={`daily-blocks ${options.displayType}`}>
+				<div className={`daily-blocks`}>
 					{
 						schedule.map((block, i) => {
 							return (
