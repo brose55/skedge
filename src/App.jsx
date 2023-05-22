@@ -7,6 +7,7 @@ import './themes/light.css'
 
 // contains the sign in and theme state
 function App() {
+
 	// set isSignedIn to true to develop
   const [isSignedIn, setSignedIn] = useState(false);
   const authValue = { isSignedIn, setSignedIn};

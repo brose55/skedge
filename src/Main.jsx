@@ -5,6 +5,7 @@ import "./Main.css";
 
 // the actual app lives here
 const Main = (props) => {
+
 	return (
 		<div className="main-app">
 			<Header setTheme={props.setTheme} theme={props.theme} />

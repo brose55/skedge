@@ -4,7 +4,7 @@ import './Home.css'
 
 const Home = () => {
   const { data } = useSwr(`${process.env.REACT_APP_DEV_URL}/api/users/me`, fetcher)
-
+  
   return (
 		<div>
 			{/* 

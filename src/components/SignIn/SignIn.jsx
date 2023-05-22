@@ -12,9 +12,11 @@ function SignIn(props) {
     email: "",
     password: "",
   });
-
+  
   const [loginError, setLoginError] = useState(null)
-
+  
+  const navigate = useNavigate()
+  
   const signInInput = useRef(null)
 
   const getSession = async () => {
@@ -23,30 +25,34 @@ function SignIn(props) {
 				`${process.env.REACT_APP_DEV_URL}/api/sessions`,
 				{ withCredentials: true }
 			);
-      console.log(session.data);
-			if (session.data > 0) {
-        setSignedIn(true)
-        navigate("../../", { replace: true });        
+      console.log("session data: " + JSON.stringify(session.data));
+      // TODO: Change this
+			if (session.data.length > 0) {
+        setSignedIn(true)    
 			}
 		} catch (err) {
       console.error(err)
     }
 	}
-  getSession()
-
+  
   useEffect(() => {
-    // focus on rendering
-    let signInTimer = setTimeout(() => {
-			signInInput.current.focus()
-		}, 2500);
-    return () => { clearTimeout(signInTimer) }
+    getSession()
+    
+    let signInTimerId = setTimeout(() => {
+      console.log('focus');
+      signInInput.current.focus()
+    }, 2500);
+
+    return () => {
+      clearTimeout(signInTimerId) 
+    }
+
   }, []);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  let navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
