@@ -1,13 +1,16 @@
 import axios from "axios";
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom'
+import { useCookies } from "react-cookie";
 import AuthContext from "../../contexts/AuthContext";
 import displayError from "../../utils/displayError";
 import "./SignIn.css";
 
+// TODO: It may be a good idea to separate concerns here
+// consider pulling the sign-in html out of this component
 function SignIn(props) {
   const { setSignedIn } = useContext(AuthContext);
-
+  const [ , removeCookie] = useCookies()
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -20,22 +23,28 @@ function SignIn(props) {
   const signInInput = useRef(null)
 
   const getSession = async () => {
+
 		try {
+
 			const session = await axios.get(
 				`${process.env.REACT_APP_DEV_URL}/api/sessions`,
 				{ withCredentials: true }
-			);
-      console.log("session data: " + JSON.stringify(session.data));
-      // TODO: Change this
+			)
+
 			if (session.data.length > 0) {
         setSignedIn(true)    
-			}
+			} else {
+        // troll hackers if they are trying to steal cookies
+        removeCookie('accessToken')
+        removeCookie('refreshToken')
+      }
 		} catch (err) {
       console.error(err)
     }
 	}
   
   useEffect(() => {
+    
     getSession()
     
     let signInTimerId = setTimeout(() => {
