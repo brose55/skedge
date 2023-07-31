@@ -9,9 +9,10 @@
   width: 24vw;
 }
 
-.daily-forms button {
+.daily-forms .daily-button {
   width: 75%;
   margin-inline: auto;
+  margin-block: 2vh;
 }
 
 .daily-forms select {

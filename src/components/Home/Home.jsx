@@ -1,10 +1,13 @@
 import useSwr from 'swr'
+import { useLocation } from 'react-router-dom'
 import fetcher from '../../utils/fetcher'
 import './Home.css'
 
 const Home = () => {
   const { data } = useSwr(`${process.env.REACT_APP_DEV_URL}/api/users/me`, fetcher)
-  
+
+  localStorage.setItem('page', useLocation().pathname)
+
   return (
 		<div>
 			{/* 

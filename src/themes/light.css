@@ -13,10 +13,6 @@ color: #FF3F93;
   background-color: #f5f5f5;
 }
 
-#light input {
-  background-color: white;
-}
-
 #light select {
   background-color: white;
 }
@@ -30,6 +26,10 @@ nav a:visited,
 .App-link,
 .App-link:visited {
   color: #FF3F93;
+}
+
+#light input::placeholder {
+  color: #818589;
 }
 
 /* header */
@@ -48,6 +48,10 @@ nav a:visited,
 
 #light #sign-in-form p {
   color: black;
+}
+
+#light #sign-in-form input {
+  background-color: white;
 }
 
 #light footer {

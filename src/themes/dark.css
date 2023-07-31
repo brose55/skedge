@@ -13,10 +13,6 @@
   background-color: #282c34;
 }
 
-#dark input {
-  background-color: #23272E;
-}
-
 #dark select {
   background-color: #23272E;
 }
@@ -30,6 +26,10 @@ nav a:visited,
 .App-link,
 .App-link:visited {
   color: #0aF29f;
+}
+
+#dark input::placeholder {
+  color: #818589;
 }
 
 /* header */
@@ -46,9 +46,8 @@ nav a:visited,
   color: white;
 }
 
-#dark .daily-forms section {
-  /* box-shadow: 4px 4px 5px #242526; */
-  box-shadow: 0 8px 8px -4px #0AF29F;
+#dark #sign-in-form input {
+  background-color: #23272E;
 }
 
 #dark .daily-forms input {
@@ -56,9 +55,9 @@ nav a:visited,
   border-bottom: 1px solid #0AF29F;
 }
 
-/* footer */
-#dark footer {
-  background-color: #242526;
+#dark .daily-forms section {
+  /* box-shadow: 4px 4px 5px #242526; */
+  box-shadow: 0 8px 8px -4px #0AF29F;
 }
 
 /* daily section */
@@ -77,4 +76,9 @@ nav a:visited,
 
 #dark .daily-blocks p {
   border: 1px solid aquamarine;
+}
+
+/* footer */
+#dark footer {
+  background-color: #242526;
 }

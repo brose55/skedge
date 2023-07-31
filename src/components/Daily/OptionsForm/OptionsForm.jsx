@@ -18,10 +18,10 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 		storeInterests()
 	};
   
-  const { time, learningStyle, displayType } = formState;
+  const { time, learningStyle } = formState;
   
 	return (
-		<section style={{ padding: "2vh 0" }}>
+		<section>
 			<h2>options...</h2>
 			<form id="options-form" onSubmit={handleSubmit}>
 					<label htmlFor="time">
@@ -70,7 +70,7 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 							<option value="rng">RNGenius</option>
 						</select>
 					</label>
-				<button type="submit">update</button>
+				<button type="submit" className="daily-button">update</button>
 			</form>
 		</section>
 	);
