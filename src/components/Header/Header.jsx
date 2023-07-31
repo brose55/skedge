@@ -14,6 +14,12 @@ const Header = (props) => {
 	
 	const logo = `${process.env.PUBLIC_URL}/icons/${props.theme}_logo.svg`;
 	const title = `${process.env.PUBLIC_URL}/icons/${props.theme}_skedge.svg`;
+	
+	const handleClick = () => {
+		let userTheme = props.theme === "dark" ? "light" : "dark"
+		props.setTheme(userTheme)
+		localStorage.setItem('theme', userTheme)
+	 }
 
 	return (
 		<header className="App-header">
@@ -31,9 +37,7 @@ const Header = (props) => {
 			<section>
 				<img src={props.theme === 'dark' ? sun : moon} alt=''
 					className="theme-button"
-					onClick={() =>
-						props.setTheme(props.theme === "dark" ? "light" : "dark")
-					}
+					onClick={handleClick}
 				/>
 				<AuthSwitcher />
 			</section>

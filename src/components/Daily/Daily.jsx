@@ -1,11 +1,12 @@
 import { useState } from "react";
-import "./Daily.css";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import Display from "./Display/Display";
 import InterestsForm from "./InterestsForm/InterestForm";
 import Interests from "./Interests/Interests";
 import OptionsForm from "./OptionsForm/OptionsForm";
 import PastInterests from "./PastInterests/PastInterests";
-import axios from "axios";
+import "./Daily.css";
 
 function Daily() {
 	const [interests, setInterests] = useState([]);
@@ -40,6 +41,8 @@ function Daily() {
 		}
 
 	}
+
+	localStorage.setItem('page', useLocation().pathname)
 
 	return (
 		<section>

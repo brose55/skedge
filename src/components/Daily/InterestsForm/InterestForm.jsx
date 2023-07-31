@@ -34,19 +34,21 @@ const InterestForm = ({ checkListAndUpdate }) => {
 	}, [])
 	
   return (
-		<section style={{ padding: "2vh 0" }}>
+		<section>
 			<h2>add interest...</h2>
 			<form id="daily-interest-form" onSubmit={handleSubmit}>
-					<label htmlFor="interest">Interest:</label>
-					<input
-						type="text"
-						name="interest"
-						ref={interestInput}
-						defaultValue={interest}
-						placeholder='coding...'
-						onChange={handleChange}
-						autoComplete='off'
-					/>
+					<>
+						<label htmlFor="interest">Interest:</label>
+						<input
+							type="text"
+							name="interest"
+							ref={interestInput}
+							defaultValue={interest}
+							placeholder='coding...'
+							onChange={handleChange}
+							autoComplete='off'
+						/>
+					</>
 					<label htmlFor="priority">
 						Interest Level:
 						<select name='interestLevel' value={interestLevel} onChange={handleChange} className='dropdown'>
@@ -55,7 +57,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
 							<option value="low">low</option>
 						</select>
 					</label>
-				<button type="submit">add</button>
+				<button type="submit" className='daily-button'>add</button>
 			</form>
 		</section>
 	);

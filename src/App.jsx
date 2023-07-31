@@ -12,8 +12,9 @@ function App() {
   const [isSignedIn, setSignedIn] = useState(false);
   const authValue = { isSignedIn, setSignedIn};
   
-	const [theme, setTheme] = useState('dark')
-
+	// keep page theme on refresh
+	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
+		
   return (
 		<div id={theme} className="App">
 			<AuthContext.Provider value={authValue}>

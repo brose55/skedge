@@ -1,6 +1,11 @@
-#daily-interest-form input {
-  width: 75%;
-  margin-inline: auto;
-  margin-block: 0.5vh 1vh;
-  padding-left: .5vw;
+#daily-interest-form {
+  display: block;
 }
+
+#daily-interest-form input {
+  width: 39%;
+  margin-block: 0.5vh 1vh;
+  margin-left: .5vw;
+  padding-left: .2vw;
+}
+

@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 const PublicRoutes = () => {
 	const { isSignedIn } = useContext(AuthContext)
+  
+  const path = localStorage.getItem('page') || '/'
 
-  return (isSignedIn) ? <Navigate to="/" /> : <Outlet />;
-};
+  return (isSignedIn) ? <Navigate to={path} /> : <Outlet />
+}
 
-export default PublicRoutes;
+export default PublicRoutes
