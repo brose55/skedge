@@ -8,7 +8,7 @@ import './themes/light.css'
 // contains the sign in and theme state
 function App() {
 
-	// set isSignedIn to true to develop
+	// set isSignedIn to true to develop without the backend
   const [isSignedIn, setSignedIn] = useState(false);
   const authValue = { isSignedIn, setSignedIn};
   
@@ -16,7 +16,9 @@ function App() {
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
 		
   return (
+		// this wrapper gets an id of either dark or light to handle theming
 		<div id={theme} className="App">
+			{/* Context wraps our main component so that other parts of our app can access the global signedIn state */}
 			<AuthContext.Provider value={authValue}>
 				<Main
 					theme={theme} 

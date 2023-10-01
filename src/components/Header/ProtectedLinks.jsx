@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 
+// the links that show if a user is signed in
 const ProtectedLinks = () => {
 	const location = useLocation()
   return (
-		<div>
-      {
-        location.pathname === '/'
+    // if the user is on the home, show the other pages
+    // otherwise show home
+    // TODO: change this once Weekly has been finished
+    location.pathname === '/'
         ? 
           <>
             <Link to="/daily">
@@ -20,8 +22,6 @@ const ProtectedLinks = () => {
           <Link to="/">
             <code>home</code>
           </Link>
-      }
-		</div>
 	);
 };
 

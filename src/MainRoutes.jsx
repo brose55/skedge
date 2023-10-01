@@ -10,10 +10,13 @@ import Daily from './components/Daily/Daily';
 import Success from './components/Success/Success';
 import Weekly from './components/Weekly/Weekly';
 
-// routes are seperated between public and protected depending on if signed in
+// the main routing compenent
+// routes are seperated between public and protected depending on if signedIn
 const MainRoutes = () => {
   return (
 		<Routes>
+
+			{/* Protected Routes */}
 			<Route path="/" element={<ProtectedRoutes />}>
 				<Route path="/" element={<InnerContent />}>
 					<Route
@@ -35,7 +38,8 @@ const MainRoutes = () => {
 					{/* TODO: Info/FAQs */}
 				</Route>
 			</Route>
-      
+
+      {/* Public Routes */}
       <Route path='pub' element={<PublicRoutes />}>
         <Route
           path="signin"

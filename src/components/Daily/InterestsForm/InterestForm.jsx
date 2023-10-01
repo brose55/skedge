@@ -19,7 +19,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
   const handleSubmit = (e) => {
 		e.preventDefault();
 		const candidate = {
-			value: interest.toLowerCase(),
+			topic: interest.toLowerCase(),
 			priority: interestLevel,
 			weight: calculateWeight(interestLevel),
 		};
@@ -49,14 +49,15 @@ const InterestForm = ({ checkListAndUpdate }) => {
 							autoComplete='off'
 						/>
 					</>
+					<br />
 					<label htmlFor="priority">
 						Interest Level:
+					</label>
 						<select name='interestLevel' value={interestLevel} onChange={handleChange} className='dropdown'>
 							<option value="high">high</option>
 							<option value="med">med</option>
 							<option value="low">low</option>
 						</select>
-					</label>
 				<button type="submit" className='daily-button'>add</button>
 			</form>
 		</section>
