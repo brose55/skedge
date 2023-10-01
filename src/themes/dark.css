@@ -13,9 +13,10 @@
   background-color: #282c34;
 }
 
-#dark select {
+#dark input {
   background-color: #23272E;
 }
+
 
 #dark button {
   background-color: #23272E;
@@ -46,11 +47,7 @@ nav a:visited,
   color: white;
 }
 
-#dark #sign-in-form input {
-  background-color: #23272E;
-}
-
-#dark .daily-forms input {
+#dark .daily-forms input, select {
   background-color: #282c34;
   border-bottom: 1px solid #0AF29F;
 }

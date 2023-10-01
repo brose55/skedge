@@ -16,13 +16,8 @@ function Daily() {
 	const checkListAndUpdate = (candidateInterest) => {
 		// do a quick loop and see if it already exists...
 		// note: I don't use .includes() here because it doesn't play well with objects
-		let included = false
-		interests.forEach(interest => {
-			if (interest.value === candidateInterest.value) {
-				included = true
-				return
-			}
-		})
+		let included = interests.some(interest => interest.topic === candidateInterest.topic)
+		console.log(included);
 		if (!included) {
 			setInterests([...interests, candidateInterest])
 		}

@@ -13,13 +13,13 @@ const Display = ({ interests, options }) => {
 					{
 						schedule.map((block, i) => {
 							return (
-								// order: the order lol
+								// order: the order that it will be displayed
 								// priority: the priority level (high, med, low)
-								// values: hobby value
+								// topic: the name of the hobby
 								// time: time in minutes
 								// weight: directly related to priority, higher = more important
 								<p key={`daily_schedule_${i}`} className={block.priority}>
-									{block.order}. {block.value}: {block.time} minutes, {block.priority} priority
+									{block.order}. {block.topic}: {block.time} minutes, {block.priority} priority
 								</p>
 							);
 						})

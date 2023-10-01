@@ -23,10 +23,12 @@
   .daily-forms {
     flex-direction: column;
     align-items: center;
+    min-height: 20vh;
   }
   
   .daily-forms section {
-    width: 70vw;
+    width: 60vw;
     margin-top: 2vh;
   }
+
 }

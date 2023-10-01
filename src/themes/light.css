@@ -50,6 +50,10 @@ nav a:visited,
   color: black;
 }
 
+#light .daily-forms input, select {
+  border-bottom: 1px solid #D3D3D3;
+}
+
 #light #sign-in-form input {
   background-color: white;
 }

@@ -1,15 +1,12 @@
-import { useState } from 'react'
-import './Interests.css'
+import { useState } from "react";
+import "./Interests.css";
 
 const Interests = ({ interests, setInterests }) => {
-
-	const [style, setStyle] = useState({ visibility: 'hidden' })
-  
-	const handleClick = (e) => {
+	const [hoveredIndex, setHoveredIndex] = useState(null)
+	
+	const handleClick = (topic) => {
 		setInterests(
-			interests.filter(
-				interest => interest.value !== e.target.value
-			)
+			interests.filter((interest) => interest.topic !== topic)
 		)
 	}
 	
@@ -17,26 +14,30 @@ const Interests = ({ interests, setInterests }) => {
 		<section>
 			<h2>interests...</h2>
 			<ul className="interests">
-				{interests.map(({ value, priority }, i) => (
-					<li
-						className="interest"
-						key={value + i}
-						onMouseEnter={(e) => setStyle({ visibility: 'visible' })}
-						onMouseLeave={(e) => setStyle({ visibility: 'hidden' })}
-					>
-						<span>
-							{value}: {priority}
-						</span>
-						{/* TODO: change value here to be less confusing */}
-						<button value={value} onClick={handleClick} style={style}>
-							x
-						</button>
-					</li>
-				))}
+				{interests.map(({ topic, priority }, i) => {
+					let style =
+						i === hoveredIndex
+							? { visibility: "visible" }
+							: { visibility: "hidden" }
+					return (
+						<li
+							key={`interest-${topic}`}
+							className="interest"
+							onMouseEnter={() => setHoveredIndex(i)}
+							onMouseLeave={() => setHoveredIndex(null)}
+						>
+							<span>
+								{topic}: {priority}
+							</span>
+							<button onClick={() => handleClick(topic)} style={style}>
+								x
+							</button>
+						</li>
+					);
+				})}
 			</ul>
 		</section>
 	);
-}
- 
-export default Interests
- 
+};
+
+export default Interests;
