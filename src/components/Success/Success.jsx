@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom'
-import './Success.css'
+import SignInContainer from "../SignIn/SignInContainer"
+import "./Success.css"
 
 const Success = () => {
-  return (
-    <div>
-      <p>Success</p>
-      <Link to='/signin'>Sign In</Link>
-    </div>
-  )
+	return (
+		<div id="success">
+			<SignInContainer message={"success... "} mainSignIn={false} />
+		</div>
+	)
 }
- 
+
 export default Success
- 

@@ -1,68 +1,80 @@
-import { useState, useRef, useEffect } from 'react';
-import calculateWeight from '../../../utils/calculateWeight';
-import './InterestForm.css'
+import { useState, useRef, useEffect } from "react"
+import calculateWeight from "../../../utils/calculateWeight"
+import "./InterestForm.css"
 
 const InterestForm = ({ checkListAndUpdate }) => {
+	const [formState, setFormState] = useState({
+		interestValue: "",
+		interestLevel: "high",
+	})
+	const { interestValue, interestLevel } = formState
 
-  const [formState, setFormState] = useState({
-    interest: "",
-    interestLevel: "high",
-  });
-  const { interest, interestLevel } = formState;
+	const interestInputRef = useRef(null)
 
-	const interestInput = useRef(null)
+	const handleChange = (e) => {
+		setFormState({ ...formState, [e.target.name]: e.target.value })
+	}
 
-  const handleChange = (e) => {
-		setFormState({ ...formState, [e.target.name]: e.target.value });
-	};
-
-  const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = (e) => {
+		e.preventDefault()
 		const candidate = {
-			topic: interest.toLowerCase(),
+			topic: interestValue.toLowerCase(),
 			priority: interestLevel,
 			weight: calculateWeight(interestLevel),
-		};
-		checkListAndUpdate(candidate);
-		interestInput.current.value = ''
-		interestInput.current.focus()
-	};
+		}
+		checkListAndUpdate(candidate)
+
+		// Reset the form state
+		setFormState({
+			interestValue: "",
+			interestLevel: "high",
+		})
+
+		// refocus input for UX
+		interestInputRef.current.focus()
+	}
 
 	useEffect(() => {
 		// focus on rendering
-		interestInput.current.focus()
+		interestInputRef.current.focus()
 	}, [])
-	
-  return (
+
+	return (
 		<section>
 			<h2>add interest...</h2>
 			<form id="daily-interest-form" onSubmit={handleSubmit}>
-					<>
-						<label htmlFor="interest">Interest:</label>
-						<input
-							type="text"
-							name="interest"
-							ref={interestInput}
-							defaultValue={interest}
-							placeholder='coding...'
-							onChange={handleChange}
-							autoComplete='off'
-						/>
-					</>
-					<br />
-					<label htmlFor="priority">
-						Interest Level:
-					</label>
-						<select name='interestLevel' value={interestLevel} onChange={handleChange} className='dropdown'>
-							<option value="high">high</option>
-							<option value="med">med</option>
-							<option value="low">low</option>
-						</select>
-				<button type="submit" className='daily-button'>add</button>
+				<>
+					<label htmlFor="interestInput">Interest:</label>
+					<input
+						id="interestInput"
+						name="interestValue"
+						type="text"
+						ref={interestInputRef}
+						defaultValue={interestValue}
+						placeholder="coding..."
+						onChange={handleChange}
+						autoComplete="off"
+					/>
+				</>
+				<br />
+				<label htmlFor="priorityInput">Interest Level:</label>
+				<select
+					id="priorityInput"
+					name="interestLevel"
+					value={interestLevel}
+					onChange={handleChange}
+					className="dropdown"
+				>
+					<option value="high">high</option>
+					<option value="med">med</option>
+					<option value="low">low</option>
+				</select>
+				<button type="submit" className="daily-button">
+					add
+				</button>
 			</form>
 		</section>
-	);
+	)
 }
- 
+
 export default InterestForm
- 

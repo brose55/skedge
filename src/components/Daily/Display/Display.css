@@ -1,22 +1,22 @@
 .daily-display {
-  width: 90%;
-  margin-inline: auto;
-  margin-bottom: 4vh;
+	width: 90%;
+	margin-inline: auto;
+	margin-bottom: 4vh;
 }
 
 .daily-blocks {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  justify-content: space-between;
-  flex-direction: column;
-  width: fit-content;
-  flex-wrap: wrap;
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	justify-content: space-between;
+	flex-direction: column;
+	width: fit-content;
+	flex-wrap: wrap;
 }
 
 .daily-blocks p {
-  margin: 0;
-  border: 1px solid aquamarine;
-  padding-block: 1vh;
-  padding-inline: 1vw;
+	margin: 0;
+	border: 1px solid aquamarine;
+	padding-block: 1vh;
+	padding-inline: 1vw;
 }

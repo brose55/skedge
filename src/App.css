@@ -1,64 +1,72 @@
 /* global styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,300&display=swap");
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: 'Source Code Pro', monospace;
+	font-family: "Source Code Pro", monospace;
+}
+
+h2 {
+	margin: 0.25vh;
+}
+
+p {
+	margin: 0;
 }
 
 button {
-  font-family: 'Source Code Pro', monospace;
-  font-weight: bold;
+	font-family: "Source Code Pro", monospace;
+	font-weight: bold;
 }
 
 ul {
-  padding: 0;
+	padding: 0;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 input {
-  font-family: inherit;
-  font-weight: bold;
+	font-family: inherit;
+	font-weight: bold;
 }
 
 input::placeholder {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 input:focus-visible {
-  /* to remove outline completely change outline to none */
-  outline: none;
-  /* to change the color of the outline, go to theme files*/
+	/* to remove outline completely change outline to none */
+	outline: none;
+	/* to change the color of the outline, go to theme files*/
 }
 
 input,
 select,
 button {
-  padding: 0;
-  margin: 0;
-  border: none;
+	padding: 0;
+	margin: 0;
+	border: none;
 }
 
 .App {
-  text-align: center;
-  min-height: 100vh;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+	text-align: center;
+	min-height: 100vh;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 .App::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* pointer-events: none; */
