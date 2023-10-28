@@ -1,24 +1,25 @@
 .past-interests {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2vh;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2vh;
 }
 
 .past-interests p {
-  padding-inline: 1vw;
-  margin-inline: .5vw;
-  border-radius: 1vw;
+	padding-inline: 1vw;
+	margin-inline: 0.5vw;
+	border-radius: 1vw;
+	margin-block: 2vh;
 }
 
 .past-interests button {
-  margin-left: .2vw;
+	margin-left: 0.2vw;
 }
 
 .past-interests span {
-  padding-left: 1vw;
+	padding-left: 1vw;
 }
 
 .past-interest {
-  cursor: pointer;
-  margin-right: .5vw;
+	cursor: pointer;
+	margin-right: 0.5vw;
 }
