@@ -22,6 +22,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
 			priority: interestLevel,
 			weight: calculateWeight(interestLevel),
 		}
+
 		checkListAndUpdate(candidate)
 
 		// Reset the form state
@@ -29,7 +30,6 @@ const InterestForm = ({ checkListAndUpdate }) => {
 			interestValue: "",
 			interestLevel: "high",
 		})
-
 		// refocus input for UX
 		interestInputRef.current.focus()
 	}
@@ -40,7 +40,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
 	}, [])
 
 	return (
-		<section>
+		<section id="daily-interests">
 			<h2>add interest...</h2>
 			<form id="daily-interest-form" onSubmit={handleSubmit}>
 				<>
@@ -50,7 +50,7 @@ const InterestForm = ({ checkListAndUpdate }) => {
 						name="interestValue"
 						type="text"
 						ref={interestInputRef}
-						defaultValue={interestValue}
+						value={interestValue}
 						placeholder="coding..."
 						onChange={handleChange}
 						autoComplete="off"

@@ -51,7 +51,7 @@ const SignInForm = ({
 					name="email"
 					className="form-field animation a2"
 					ref={signInInput}
-					defaultValue={email}
+					value={email}
 					placeholder="email..."
 					onChange={handleChange}
 					autoComplete="email"
@@ -60,7 +60,7 @@ const SignInForm = ({
 					type="password"
 					name="password"
 					className="form-field animation a3"
-					defaultValue={password}
+					value={password}
 					placeholder="********"
 					onChange={handleChange}
 				/>

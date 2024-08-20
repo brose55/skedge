@@ -1,7 +1,12 @@
 # Getting Started with Create React App
 
 ## Comments
+
 Main Routes
+
+## Break points
+
+1000px
 
 ###### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

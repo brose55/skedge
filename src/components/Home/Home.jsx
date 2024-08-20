@@ -1,27 +1,28 @@
-import useSwr from 'swr'
-import { useLocation } from 'react-router-dom'
-import fetcher from '../../utils/fetcher'
-import './Home.css'
+import useSwr from "swr"
+import { useLocation } from "react-router-dom"
+import fetcher from "../../utils/fetcher"
+import "./Home.css"
 
 const Home = () => {
-  const { data } = useSwr(`${process.env.REACT_APP_DEV_URL}/api/users/me`, fetcher)
+	// get user data from server
+	const { data } = useSwr(
+		`${process.env.REACT_APP_DEV_URL}/api/users/me`,
+		fetcher
+	)
 
-  localStorage.setItem('page', useLocation().pathname)
+	// keep track of the page in local storage
+	localStorage.setItem("page", useLocation().pathname)
 
-  return (
+	return (
 		<div>
 			{/* 
-        This is really strange. If I just use data.username the 
-        app will crash on the user's first load. This conditional 
-        makes it so that it always renders correctly. Revisit this 
-        in the future.
+        check if data exists before trying to access data.username.
+        since this is asynchronous, data starts off as null. 
+        if we try to access data.username when data is null, the app will crash.
       */}
-			<h1>welcome{data ? `, ${data.username}` : null}...</h1>
-			<h1>TODO</h1>
-			<p>{JSON.stringify(data)}</p>
+			<h1 id="welcome">welcome{data ? `, ${data.username}` : null}...</h1>
 		</div>
-	);
+	)
 }
- 
+
 export default Home
- 

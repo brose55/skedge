@@ -6,15 +6,15 @@ import AuthContext from "../../contexts/AuthContext"
 import SignInForm from "./SignInForm"
 import "./SignIn.css"
 
+// this is where the sign in logic lives
 function SignInContainer(props) {
 	const { setSignedIn } = useContext(AuthContext)
 	const [loginError, setLoginError] = useState(null)
-
 	const [, removeCookie] = useCookies()
-
 	const navigate = useNavigate()
 
 	useEffect(() => {
+		// see if user has any active sessions
 		const getSession = async () => {
 			try {
 				const session = await axios.get(
@@ -26,7 +26,7 @@ function SignInContainer(props) {
 					setSignedIn(true)
 				} else {
 					localStorage.clear("page")
-					// troll hackers if they are trying to steal cookies
+					// troll hackers if they are trying to use someone else's cookies
 					removeCookie("accessToken")
 					removeCookie("refreshToken")
 				}

@@ -21,14 +21,14 @@ const OptionsForm = ({ setOptions, storeInterests }) => {
 	const { timeValue, learningStyle } = formState
 
 	return (
-		<section>
+		<section id="options">
 			<h2>options...</h2>
 			<form id="options-form" onSubmit={handleSubmit}>
 				<label htmlFor="timeInput">
 					hours available:
 					<select
 						id="timeInput"
-						name="timeValue"
+						name="timeOptions"
 						value={timeValue}
 						onChange={handleChange}
 					>
