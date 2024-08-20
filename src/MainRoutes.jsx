@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import ProtectedRoutes from "./components/ProtectedRoutes"
 import PublicRoutes from "./components/PublicRoutes"
 import InnerContent from "./InnerContent"
+// TODO: implement Lazy Loading here:
 import Home from "./components/Home/Home"
 import MainSignIn from "./components/SignIn/MainSignIn"
 import Register from "./components/Register/Register"
