@@ -1,0 +1,41 @@
+.daily-forms {
+	display: flex;
+	justify-content: space-around;
+	margin-inline: 5vw;
+	margin-bottom: 4vh;
+}
+
+.daily {
+	margin-top: 6vh;
+}
+
+.daily-forms section {
+	width: 24vw;
+}
+
+.daily-forms h2 {
+	padding: 2vh;
+}
+
+.daily-forms .daily-button {
+	width: 75%;
+	margin-inline: auto;
+	margin-block: 2vh;
+}
+
+.daily-forms select {
+	margin-left: 0.5vw;
+}
+
+@media screen and (max-width: 900px) {
+	.daily-forms {
+		flex-direction: column;
+		align-items: center;
+		min-height: 20vh;
+	}
+
+	.daily-forms section {
+		width: 60vw;
+		margin-top: 2vh;
+	}
+}

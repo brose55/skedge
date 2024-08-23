@@ -1,0 +1,86 @@
+/* Universal Styles */
+#dark {
+	background-color: #282c34;
+	color: #0af29f;
+}
+
+#dark * {
+	color: #0af29f;
+}
+
+/* Main/Tag Styles  */
+#dark main {
+	background-color: #282c34;
+}
+
+#dark input {
+	background-color: #23272e;
+}
+
+#dark button {
+	background-color: #23272e;
+}
+
+#dark nav a,
+nav a:visited,
+.App-link,
+.App-link:visited {
+	color: #0af29f;
+}
+
+#dark input::placeholder {
+	color: #818589;
+}
+
+/* header */
+#dark .App-header {
+	background-color: #242526;
+}
+
+/* forms */
+#dark .form-field:focus {
+	border-color: #0af29f;
+}
+
+#dark #sign-in-form p {
+	color: white;
+}
+
+#dark .daily-forms input,
+select {
+	background-color: #282c34;
+	border-bottom: 1px solid #0af29f;
+}
+
+#dark .daily-forms section {
+	/* box-shadow: 4px 4px 5px #242526; */
+	box-shadow: 0 8px 8px -4px #0af29f;
+}
+
+/* TODO: what is this lol*/
+#success {
+	box-shadow: 0 8px 8px -4px #0af29f;
+}
+
+/* daily section */
+#dark .interest button {
+	background-color: #282c34;
+}
+
+#dark .past-interests p {
+	border: 1px solid #242526;
+	background-color: #23272e;
+}
+
+#dark .daily-blocks {
+	background-color: #303846;
+}
+
+#dark .daily-blocks p {
+	border: 1px solid aquamarine;
+}
+
+/* footer */
+#dark footer {
+	background-color: #242526;
+}

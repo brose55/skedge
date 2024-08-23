@@ -1,0 +1,30 @@
+.register {
+  display: flex;
+  height: 100%;
+}
+
+.register .left {
+  flex: 1;
+  background-color: black;
+  background-image: url(https://images.unsplash.com/photo-1515847049296-a281d6401047?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.register .right {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-style: italic;
+  opacity: 1;
+  padding: 2vh 4vw;
+  width: 440px;
+  margin: 0 5vw;
+}
+
+.register .right header {
+  padding-top: 30%;
+}

@@ -1,0 +1,76 @@
+/* Universal Styles */
+#light {
+background-color: #f5f5f5;
+color: #FF3F93;
+}
+
+#light * {
+  color: #FF3F93;
+}
+
+/* Main/Tag Styles */
+#light main {
+  background-color: #f5f5f5;
+}
+
+#light select {
+  background-color: white;
+}
+
+#light button {
+  background-color: #E5E4E2; 
+}
+
+#light nav a,
+nav a:visited,
+.App-link,
+.App-link:visited {
+  color: #FF3F93;
+}
+
+#light input::placeholder {
+  color: #818589;
+}
+
+/* header */
+#light .App-header {
+  background-color: #E5E4E2;
+}
+
+#light .daily-forms section {
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  box-shadow: 0 8px 8px -4px #FF3F93;
+}
+
+#light .form-field:focus {
+  border-color: #FF3F93;
+}
+
+#light #sign-in-form p {
+  color: black;
+}
+
+#light .daily-forms input, select {
+  border-bottom: 1px solid #D3D3D3;
+}
+
+#light #sign-in-form input {
+  background-color: white;
+}
+
+#light footer {
+  background-color: #E5E4E2;
+}
+
+#light .past-interests p {
+  border: 1px solid #D3D3D3;
+  background-color: #E5E4E2;
+}
+
+#light .daily-blocks {
+  background-color: #E5E4E2;
+}
+
+#light .daily-blocks p {
+  border: 1px solid pink;
+}

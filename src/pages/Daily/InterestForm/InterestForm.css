@@ -1,0 +1,16 @@
+#daily-interest-form {
+	display: block;
+}
+
+#daily-interest-form input {
+	width: 8vw;
+	margin-block: 0.5vh 1vh;
+	margin-left: 0.5vw;
+	padding-left: 0.2vw;
+}
+
+@media screen and (max-width: 1050px) {
+	#daily-interests h2 {
+		font-size: 1rem;
+	}
+}
