@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect, ChangeEvent, FormEvent } from "react"
+import { FormEvent } from "react"
 import { Link } from "react-router-dom"
 import displayError from "../../utils/displayError"
 import { AxiosError } from "axios"
 import { SignInFormData } from "../../types/interfaces"
+import { usePublicFormState } from "../../hooks/usePublicFormState"
 import styles from "./SignIn.module.scss"
 
 interface SignInFormProps {
@@ -20,26 +21,14 @@ const SignInForm: React.FC<SignInFormProps> = ({
 	mainSignIn,
 	focusTimer,
 }) => {
-	const [formState, setFormState] = useState<SignInFormData>({
-		email: "",
-		password: "",
-	})
-
-	const signInInput = useRef<HTMLInputElement>(null)
-
-	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setFormState({ ...formState, [e.target.name]: e.target.value })
-	}
-
-	useEffect(() => {
-		const signInTimerId = setTimeout(() => {
-			signInInput.current?.focus()
-		}, focusTimer)
-
-		return () => {
-			clearTimeout(signInTimerId)
-		}
-	}, [focusTimer])
+	const { formState, handleChange, inputRef } = usePublicFormState(
+		{
+			email: "",
+			password: "",
+		} as SignInFormData,
+		"email",
+		focusTimer
+	)
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
@@ -62,7 +51,7 @@ const SignInForm: React.FC<SignInFormProps> = ({
 					type="email"
 					name="email"
 					className={`${styles.formField} ${styles.animation} ${styles.a2}`}
-					ref={signInInput}
+					ref={inputRef}
 					value={email}
 					placeholder="email..."
 					onChange={handleChange}

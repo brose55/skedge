@@ -5,6 +5,13 @@ export interface SignInFormData {
 	password: string
 }
 
+export interface RegisterFormData {
+	username: string
+	email: string
+	password: string
+	passwordConfirmation: string
+}
+
 /**
  * BaseInterest is used to demonstrate a flexible and extendable design pattern.
  * While it may be slightly overengineered for this specific use case, it serves

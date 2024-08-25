@@ -1,7 +1,7 @@
 import useSwr from "swr"
 import { useLocation } from "react-router-dom"
 import fetcher from "../../utils/fetcher"
-import "./Home.css"
+import styles from "./Home.module.scss"
 
 const Home = () => {
 	// get user data from server
@@ -20,7 +20,9 @@ const Home = () => {
         since this is asynchronous, data starts off as null. 
         if we try to access data.username when data is null, the app will crash.
       */}
-			<h1 id="welcome">welcome{data ? `, ${data.username}` : null}...</h1>
+			<h1 className={styles.welcome}>
+				welcome{data ? `, ${data.username}` : null}...
+			</h1>
 		</div>
 	)
 }

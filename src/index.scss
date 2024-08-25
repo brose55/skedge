@@ -1,6 +1,17 @@
+// Import external fonts
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,300&display=swap");
+
+// Variables
 $font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
 	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-code: "Source Code Pro", source-code-pro, Menlo, Monaco, Consolas,
+	"Courier New", monospace;
+$font-weight-bold: bold;
+
+// Reset and base styles
+* {
+	box-sizing: border-box;
+}
 
 body {
 	margin: 0;
@@ -9,6 +20,44 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+// Reusable component styles
+button,
+input,
 code {
 	font-family: $font-code;
+}
+
+button {
+	font-weight: $font-weight-bold;
+	cursor: pointer;
+}
+
+p,
+ul,
+li,
+input,
+select,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+input {
+	font-weight: $font-weight-bold;
+
+	&::placeholder {
+		font-weight: $font-weight-bold;
+	}
+
+	&:focus-visible {
+		outline: none; // Adjust as needed per theme
+	}
 }

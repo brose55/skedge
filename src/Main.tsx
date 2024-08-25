@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header"
 import MainRoutes from "./routes/MainRoutes"
 import Footer from "./components/Footer/Footer"
-import "./Main.css"
+import styles from "./Main.module.scss"
 
 interface MainProps {
 	theme: string
@@ -13,12 +13,10 @@ interface MainProps {
 // and a dynamic main section
 const Main: React.FC<MainProps> = ({ theme, setTheme }) => {
 	return (
-		<div id={theme} className="main-app">
+		<div id={theme} className={styles.main}>
 			<Header setTheme={setTheme} theme={theme} />
-			<main>
-				{/* we use a container component for routing to allow for public and protected routes */}
-				<MainRoutes />
-			</main>
+			{/* we use a container component for routing to allow for public and protected routes */}
+			<MainRoutes />
 			<Footer theme={theme} />
 		</div>
 	)

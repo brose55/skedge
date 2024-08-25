@@ -1,0 +1,38 @@
+// Define variables for reusable values
+$background-url: url("https://images.unsplash.com/photo-1515847049296-a281d6401047?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80");
+$padding-vertical: 2vh;
+$padding-horizontal: 4vw;
+$right-width: 60%;
+$right-margin: 0 5vw;
+$header-padding-top: 30%;
+
+.register {
+	display: flex;
+	height: 100%;
+
+	.left {
+		flex: 1;
+		background-color: black;
+		background-image: $background-url;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.right {
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: flex-start;
+		font-style: italic;
+		opacity: 1;
+		padding: $padding-vertical $padding-horizontal;
+		width: $right-width;
+		margin: $right-margin;
+
+		header {
+			padding-top: $header-padding-top;
+		}
+	}
+}

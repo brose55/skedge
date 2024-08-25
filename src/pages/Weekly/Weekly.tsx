@@ -1,10 +1,10 @@
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner"
-import "./Weekly.css"
+import styles from "./Weekly.module.scss"
 
 const Weekly = () => {
 	return (
 		<>
-			<p style={{ paddingTop: "5vh" }}>coming soon...</p>
+			<p className={styles.weekly}>coming soon...</p>
 			<LoadingSpinner />
 		</>
 	)
