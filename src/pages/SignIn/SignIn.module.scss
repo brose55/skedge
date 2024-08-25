@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
+
+$transition-duration: 1s;
+$border-color: #ddd;
+$primary-color: #000;
+$animation-delay-base: 2s;
+$background-url: url(https://images.unsplash.com/photo-1515847049296-a281d6401047?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80);
+
+/* Responsive units */
+$form-field-height: 6vh; // Responsive height using viewport height
+$form-field-padding: 0 5%; // Responsive padding using percentage
+$form-field-border-radius: 0.5vw; // Responsive border radius using viewport width
+
+/* Font sizes - Convert to rem or em based on base font size */
+$font-size-small: 0.875rem; // ~14px
+$font-size-medium: 1rem; // 16px
+$font-size-large: 1.25rem; // 20px
+
+@mixin animation-delay($n) {
+	animation-delay: $animation-delay-base + $n * 0.1s;
+}
+
+.signIn {
+	display: flex;
+	height: 100%; /* Ensure it takes full viewport height */
+
+	.left {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 0;
+		min-width: 0;
+		animation: left 1s both 1s;
+		font-style: italic;
+		box-sizing: border-box; /* Ensure padding doesn't add to width */
+
+		header {
+			padding-top: 5vh; /* Adjusted to vh for responsiveness */
+
+			h2 {
+				margin: 0;
+				&.animation {
+					@include animation-delay(0);
+				}
+			}
+
+			h4 {
+				margin-top: 2%;
+				font-weight: bold;
+				font-size: $font-size-small;
+			}
+		}
+
+		.signInForm {
+			display: flex;
+			flex-direction: column;
+
+			label {
+				font-weight: bold;
+				font-size: $font-size-small;
+			}
+
+			p {
+				text-align: right;
+				margin-top: 1vh;
+
+				a {
+					color: $primary-color;
+					font-size: $font-size-small;
+				}
+			}
+
+			.formField {
+				height: $form-field-height;
+				padding: $form-field-padding;
+				border: 2px solid $border-color;
+				border-radius: $form-field-border-radius;
+				outline: 0;
+				transition: 0.2s;
+				margin-top: 2vh;
+				font-style: italic;
+			}
+
+			button {
+				padding: 2% 5%;
+				border: 0;
+				border-radius: 0.5vw;
+				margin-top: 2vh;
+				letter-spacing: 0.1rem;
+				@include animation-delay(5);
+			}
+		}
+	}
+
+	.right {
+		flex: 1; /* Allow this side to shrink */
+		background-color: black;
+		transition: $transition-duration;
+		background-image: $background-url;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		min-width: 60%; /* Ensure it takes at least half the space */
+
+		@media (max-width: 1024px) {
+			display: none; /* Hide the right side at 1024px or less */
+		}
+	}
+
+	.animation {
+		animation: move 0.4s both $animation-delay-base;
+	}
+
+	.a1 {
+		@include animation-delay(0);
+	}
+	.a2 {
+		@include animation-delay(1);
+	}
+	.a3 {
+		@include animation-delay(2);
+	}
+	.a4 {
+		@include animation-delay(3);
+	}
+	.a5 {
+		@include animation-delay(4);
+	}
+	.a6 {
+		@include animation-delay(5);
+	}
+}
+
+@keyframes move {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4vh);
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+
+@keyframes left {
+	0% {
+		opacity: 0;
+		width: 0;
+		padding: 0;
+	}
+	100% {
+		opacity: 1;
+		width: 40%;
+		padding: 5% 10%;
+	}
+}

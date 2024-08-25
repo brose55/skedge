@@ -1,0 +1,97 @@
+// Color Variables
+$background-color-light: #f5f5f5;
+$text-color-primary-light: #ff3f93;
+$background-color-button-light: #e5e4e2;
+$placeholder-color-light: #818589;
+$border-color-light: #d3d3d3;
+$box-shadow-color-light: #ff3f93;
+$daily-blocks-background-light: #e5e4e2;
+$past-interests-background-light: #e5e4e2;
+$past-interests-border-light: #d3d3d3;
+$daily-blocks-border-light: pink;
+$input-background-light: white;
+
+// Universal Styles
+#light {
+	background-color: $background-color-light;
+	color: $text-color-primary-light;
+
+	* {
+		color: $text-color-primary-light;
+	}
+
+	// Main/Tag Styles
+	main {
+		background-color: $background-color-light;
+	}
+
+	select {
+		background-color: $input-background-light;
+	}
+
+	button {
+		background-color: $background-color-button-light;
+	}
+
+	nav a,
+	nav a:visited,
+	.App-link,
+	.App-link:visited {
+		color: $text-color-primary-light;
+	}
+
+	input::placeholder {
+		color: $placeholder-color-light;
+	}
+
+	// Header
+	.App-header {
+		background-color: $background-color-button-light;
+	}
+
+	// Forms
+	.daily-forms {
+		section {
+			/* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+			box-shadow: 0 8px 8px -4px $box-shadow-color-light;
+		}
+
+		input,
+		select {
+			border-bottom: 1px solid $border-color-light;
+		}
+	}
+
+	.form-field:focus {
+		border-color: $text-color-primary-light;
+	}
+
+	#sign-in-form {
+		p {
+			color: black;
+		}
+
+		input {
+			background-color: $input-background-light;
+		}
+	}
+
+	// Daily Section
+	.past-interests p {
+		border: 1px solid $past-interests-border-light;
+		background-color: $past-interests-background-light;
+	}
+
+	.daily-blocks {
+		background-color: $daily-blocks-background-light;
+
+		p {
+			border: 1px solid $daily-blocks-border-light;
+		}
+	}
+
+	// Footer
+	footer {
+		background-color: $background-color-button-light;
+	}
+}

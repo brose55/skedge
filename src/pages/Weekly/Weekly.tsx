@@ -1,4 +1,4 @@
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner"
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner"
 import "./Weekly.css"
 
 const Weekly = () => {

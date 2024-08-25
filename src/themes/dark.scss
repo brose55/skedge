@@ -1,0 +1,101 @@
+// Color Variables
+$background-color-dark: #282c34;
+$text-color-primary: #0af29f;
+$background-color-input: #23272e;
+$background-color-header-footer: #242526;
+$placeholder-color: #818589;
+$border-color-primary: #0af29f;
+$box-shadow-color: #0af29f;
+$daily-blocks-background: #303846;
+$past-interests-background: #23272e;
+$past-interests-border: #242526;
+$daily-blocks-border: aquamarine;
+
+// Universal Styles
+#dark {
+	background-color: $background-color-dark;
+	color: $text-color-primary;
+
+	* {
+		color: $text-color-primary;
+	}
+
+	// Main/Tag Styles
+	main {
+		background-color: $background-color-dark;
+	}
+
+	input {
+		background-color: $background-color-input;
+
+		&::placeholder {
+			color: $placeholder-color;
+		}
+	}
+
+	button {
+		background-color: $background-color-input;
+	}
+
+	nav a,
+	nav a:visited,
+	.App-link,
+	.App-link:visited {
+		color: $text-color-primary;
+	}
+
+	// Header
+	.App-header {
+		background-color: $background-color-header-footer;
+	}
+
+	// Forms
+	.form-field:focus {
+		border-color: $border-color-primary;
+	}
+
+	.signInForm p {
+		color: white;
+	}
+
+	.daily-forms {
+		input,
+		select {
+			background-color: $background-color-dark;
+			border-bottom: 1px solid $border-color-primary;
+		}
+
+		section {
+			/* box-shadow: 4px 4px 5px $background-color-header-footer; */
+			box-shadow: 0 8px 8px -4px $box-shadow-color;
+		}
+	}
+
+	// Daily Section
+	.interest button {
+		background-color: $background-color-dark;
+	}
+
+	.past-interests p {
+		border: 1px solid $past-interests-border;
+		background-color: $past-interests-background;
+	}
+
+	.daily-blocks {
+		background-color: $daily-blocks-background;
+
+		p {
+			border: 1px solid $daily-blocks-border;
+		}
+	}
+
+	// Footer
+	footer {
+		background-color: $background-color-header-footer;
+	}
+}
+
+// TODO: what is this lol
+#success {
+	box-shadow: 0 8px 8px -4px $box-shadow-color;
+}

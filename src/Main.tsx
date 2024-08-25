@@ -13,7 +13,7 @@ interface MainProps {
 // and a dynamic main section
 const Main: React.FC<MainProps> = ({ theme, setTheme }) => {
 	return (
-		<div className="main-app">
+		<div id={theme} className="main-app">
 			<Header setTheme={setTheme} theme={theme} />
 			<main>
 				{/* we use a container component for routing to allow for public and protected routes */}

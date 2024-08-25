@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom"
 import displayError from "../../utils/displayError"
-import "./SignIn.css"
 import { AxiosError } from "axios"
 import { SignInFormData } from "../../types/interfaces"
+import styles from "./SignIn.module.scss"
 
 interface SignInFormProps {
 	onSubmit: (formData: SignInFormData) => void
@@ -49,17 +49,19 @@ const SignInForm: React.FC<SignInFormProps> = ({
 	const { email, password } = formState
 
 	return (
-		<section className="left">
+		<section className={styles.left}>
 			<header>
-				<h2 className="animation a1">{message}</h2>
-				<h2 className="animation a1">please sign in...</h2>
+				<h2 className={`${styles.animation} ${styles.a1}`}>{message}</h2>
+				<h2 className={`${styles.animation} ${styles.a1}`}>
+					please sign in...
+				</h2>
 				<p>{loginError ? displayError(loginError) : null}</p>
 			</header>
-			<form id="sign-in-form" onSubmit={handleSubmit}>
+			<form className={styles.signInForm} onSubmit={handleSubmit}>
 				<input
 					type="email"
 					name="email"
-					className="form-field animation a2"
+					className={`${styles.formField} ${styles.animation} ${styles.a2}`}
 					ref={signInInput}
 					value={email}
 					placeholder="email..."
@@ -69,17 +71,20 @@ const SignInForm: React.FC<SignInFormProps> = ({
 				<input
 					type="password"
 					name="password"
-					className="form-field animation a3"
+					className={`${styles.formField} ${styles.animation} ${styles.a3}`}
 					value={password}
 					placeholder="********"
 					onChange={handleChange}
 				/>
 				{mainSignIn ? (
-					<p className="animation a4">
+					<p className={`${styles.animation} ${styles.a4}`}>
 						don't have an account? <Link to="/pub/register">sign up</Link>
 					</p>
 				) : null}
-				<button className="form-field animation a5" type="submit">
+				<button
+					className={`${styles.formField} ${styles.animation} ${styles.a5}`}
+					type="submit"
+				>
 					login
 				</button>
 			</form>

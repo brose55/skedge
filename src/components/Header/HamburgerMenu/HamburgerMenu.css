@@ -36,7 +36,7 @@
 	left: 0;
 	right: auto;
 	transform: none; /* Ensure it doesn’t go beyond the right edge */
-	background-color: #242526;
+	background-color: #242526; /* TODO: move this to themes */
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Replaced px with rem */
 	z-index: 1000;
 	padding: 0.625rem; /* Replaced px with rem */

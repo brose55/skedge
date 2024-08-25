@@ -2,10 +2,8 @@ import { useState } from "react"
 import "./App.css"
 import AuthContext from "./contexts/AuthContext"
 import Main from "./Main"
-import "./themes/dark.css"
-import "./themes/light.css"
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import "./themes/dark.scss"
+import "./themes/light.scss"
 
 // contains the sign in and theme state
 function App() {
