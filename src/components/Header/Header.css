@@ -1,51 +1,77 @@
 .App-header {
-  min-height: 10vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  padding-inline: 1vw;
-  padding-bottom: 1vh;
+	min-height: 5.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: calc(10px + 2vmin);
+	padding-inline: 1vw;
+	padding-block: 1vh;
 }
 
 .App-header section {
-  display: flex;
-  align-items: flex-end;
-  padding: 0;
+	display: flex;
+	align-items: flex-end;
+	padding: 0;
 }
 
 .header-logo {
-  height: 7vh;
-  width: auto;
+	height: 5.5vh;
+	width: auto;
+	display: block;
 }
 
 .site-title {
-  height: 4vh;
-  width: auto;
-  /* margin-right: 5vw; */
+	height: 4vh;
+	width: auto;
+	display: block;
+	/* margin-right: 5vw; */
 }
 
 .App-header > :first-child {
-  width: fit-content;
+	width: fit-content;
 }
 
 .App-header > :nth-child(2) {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 .App-header > :last-child {
-  width: fit-content;
-  margin-left: auto;
+	width: fit-content;
+	margin-left: auto;
 }
 
-.header-logo, .theme-button {
-  margin-right: 1vw;
+.header-logo,
+.theme-button {
+	margin-right: 1vw;
 }
 
 .theme-button {
-  height: 4vh;
-  width: auto;
-  cursor: pointer;
+	height: 4vh;
+	width: auto;
+	cursor: pointer;
+}
+
+@media (max-width: 900px) {
+	.header-logo {
+		display: none;
+	}
+	.desktop-links {
+		display: none;
+	}
+
+	.hamburger-menu {
+		display: block;
+	}
+}
+
+@media (min-width: 901px) {
+	.hamburger-menu {
+		display: none;
+	}
+
+	.header-logo {
+		display: block;
+	}
 }
