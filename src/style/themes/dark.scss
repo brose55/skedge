@@ -1,0 +1,102 @@
+// dark.scss
+
+// Define CSS variables for the dark theme
+:root {
+	--background-color-dark: #282c34;
+	--text-color-dark: #0af29f;
+	--background-color-input-dark: #23272e;
+	--background-color-header-footer-dark: #242526;
+	--placeholder-color-dark: #818589;
+	--border-color-dark: #0af29f;
+	--box-shadow-color-dark: #0af29f;
+	--daily-blocks-background-dark: #303846;
+	--past-interests-background-dark: #23272e;
+	--past-interests-border-dark: #242526;
+	--daily-blocks-border-dark: aquamarine;
+
+	// Set default theme (optional)
+	--background-color: var(--background-color-dark);
+	--text-color: var(--text-color-dark);
+}
+
+// Apply the dark theme
+.dark {
+	--background-color: var(--background-color-dark);
+	--text-color: var(--text-color-dark);
+
+	* {
+		color: var(--text-color-dark);
+	}
+
+	main {
+		background-color: var(--background-color-dark);
+	}
+
+	input {
+		background-color: var(--background-color-input-dark);
+
+		&::placeholder {
+			color: var(--placeholder-color-dark);
+		}
+	}
+
+	button {
+		background-color: var(--background-color-input-dark);
+	}
+
+	nav a,
+	nav a:visited,
+	.appLink,
+	.appLink:visited {
+		color: var(--text-color-dark);
+	}
+
+	.appHeader {
+		background-color: red; /* Adjust as needed */
+	}
+
+	.formField:focus {
+		border-color: var(--border-color-dark);
+	}
+
+	.signInForm p {
+		color: white;
+	}
+
+	.daily-forms {
+		input,
+		select {
+			background-color: var(--background-color-dark);
+			border-bottom: 1px solid var(--border-color-dark);
+		}
+
+		section {
+			box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
+		}
+	}
+
+	.interest button {
+		background-color: var(--background-color-dark);
+	}
+
+	.past-interests p {
+		border: 1px solid var(--past-interests-border-dark);
+		background-color: var(--past-interests-background-dark);
+	}
+
+	.daily-blocks {
+		background-color: var(--daily-blocks-background-dark);
+
+		p {
+			border: 1px solid var(--daily-blocks-border-dark);
+		}
+	}
+
+	.footer {
+		background-color: var(--background-color-header-footer-dark);
+	}
+
+	#success {
+		box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
+	}
+}

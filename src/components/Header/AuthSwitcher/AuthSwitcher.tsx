@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useContext } from "react"
-import AuthContext from "../../contexts/AuthContext"
+import AuthContext from "../../../contexts/AuthContext"
 import { useCookies } from "react-cookie"
 
 // handle signing out of the app

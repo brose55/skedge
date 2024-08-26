@@ -1,0 +1,27 @@
+// Variables
+$form-field-height: 6vh;
+$form-field-padding: 0 5%;
+$form-field-border-radius: 0.5vw;
+$form-top-margin: 2vh;
+$font-size-small: 0.875rem; // ~14px
+$font-size-medium: 1rem;
+$font-size-large: 1.25rem;
+
+// Common form field styles
+.formField {
+	height: $form-field-height;
+	padding: $form-field-padding;
+	border: 2px solid #ddd;
+	border-radius: $form-field-border-radius;
+	outline: 0;
+	margin-top: $form-top-margin;
+	font-style: italic;
+}
+
+button.formField {
+	padding: 2% 5%;
+	border: 0;
+	border-radius: 0.5vw;
+	margin-top: $form-top-margin;
+	letter-spacing: 0.1rem;
+}

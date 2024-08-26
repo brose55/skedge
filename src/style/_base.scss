@@ -1,0 +1,55 @@
+@import "./fonts";
+
+// Reset and base styles
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: $font-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Reusable component styles
+button,
+input,
+code {
+	font-family: $font-code;
+}
+
+button {
+	font-weight: $font-weight-bold;
+	cursor: pointer;
+}
+
+p,
+ul,
+li,
+input,
+select,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+input {
+	font-weight: $font-weight-bold;
+
+	&::placeholder {
+		font-weight: $font-weight-bold;
+	}
+
+	&:focus-visible {
+		outline: none; // Adjust as needed in theme files
+	}
+}

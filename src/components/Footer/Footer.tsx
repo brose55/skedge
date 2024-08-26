@@ -1,4 +1,4 @@
-import "./Footer.css"
+import styles from "./Footer.module.scss"
 
 interface FooterProps {
 	theme: string
@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
 	const linkedinIcon = `/icons/${theme}-linkedin.svg`
 
 	return (
-		<footer>
+		<footer className={styles.footer}>
 			{/* TODO: replace with personal website */}
 			<a
 				href="https://www.linkedin.com/in/brandon-d-rose/"

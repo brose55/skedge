@@ -1,20 +1,14 @@
+@import "../../style/formElements";
+//TODO: this should be moved to the _fonts file
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
 
+$background-url: url(https://images.unsplash.com/photo-1515847049296-a281d6401047?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80);
 $transition-duration: 1s;
+$animation-delay-base: 2s;
+
+// TODO: move to theme files
 $border-color: #ddd;
 $primary-color: #000;
-$animation-delay-base: 2s;
-$background-url: url(https://images.unsplash.com/photo-1515847049296-a281d6401047?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80);
-
-/* Responsive units */
-$form-field-height: 6vh; // Responsive height using viewport height
-$form-field-padding: 0 5%; // Responsive padding using percentage
-$form-field-border-radius: 0.5vw; // Responsive border radius using viewport width
-
-/* Font sizes - Convert to rem or em based on base font size */
-$font-size-small: 0.875rem; // ~14px
-$font-size-medium: 1rem; // 16px
-$font-size-large: 1.25rem; // 20px
 
 @mixin animation-delay($n) {
 	animation-delay: $animation-delay-base + $n * 0.1s;
@@ -71,22 +65,10 @@ $font-size-large: 1.25rem; // 20px
 			}
 
 			.formField {
-				height: $form-field-height;
-				padding: $form-field-padding;
-				border: 2px solid $border-color;
-				border-radius: $form-field-border-radius;
-				outline: 0;
 				transition: 0.2s;
-				margin-top: 2vh;
-				font-style: italic;
 			}
 
-			button {
-				padding: 2% 5%;
-				border: 0;
-				border-radius: 0.5vw;
-				margin-top: 2vh;
-				letter-spacing: 0.1rem;
+			button.formField {
 				@include animation-delay(5);
 			}
 		}

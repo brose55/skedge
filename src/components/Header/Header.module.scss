@@ -1,0 +1,68 @@
+.appHeader {
+	// background-color: var(--background-color);
+	min-height: 5.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: calc(10px + 2vmin);
+	padding-inline: 1vw;
+	padding-block: 1vh;
+
+	section {
+		display: flex;
+		align-items: flex-end;
+		padding: 0;
+	}
+
+	> :first-child {
+		width: fit-content;
+	}
+
+	> :nth-child(2) {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	> :last-child {
+		width: fit-content;
+		margin-left: auto;
+	}
+}
+
+.headerLogo {
+	height: 5.5vh;
+	width: auto;
+	display: block;
+	margin-right: 1vw;
+}
+
+.siteTitle {
+	height: 4vh;
+	width: auto;
+	display: block;
+	// margin-right: 5vw; // Uncomment if needed
+}
+
+.themeButton {
+	height: 4vh;
+	width: auto;
+	cursor: pointer;
+	margin-right: 1vw;
+}
+
+@media (max-width: 1024px) {
+	.headerLogo {
+		display: none;
+	}
+
+	.desktopLinks {
+		display: none;
+	}
+}
+
+@media (min-width: 1025px) {
+	.headerLogo {
+		display: block;
+	}
+}

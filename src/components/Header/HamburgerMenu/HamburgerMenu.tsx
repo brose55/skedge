@@ -1,7 +1,7 @@
 import { useState } from "react"
-import "./HamburgerMenu.css"
-import ProtectedLinks from "../ProtectedLinks"
-import PublicLinks from "../PublicLinks"
+import ProtectedLinks from "../AuthSwitcher/ProtectedLinks"
+import PublicLinks from "../AuthSwitcher/PublicLinks"
+import styles from "./HamburgerMenu.module.scss"
 
 interface HamburgerMenuProps {
 	isSignedIn: boolean
@@ -15,14 +15,17 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isSignedIn }) => {
 	}
 
 	return (
-		<div className="hamburger-menu">
-			<div className={`menu-icon ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+		<div className={styles.hamburgerMenu}>
+			<div
+				className={`${styles.menuIcon} ${isOpen ? styles.open : ""}`}
+				onClick={toggleMenu}
+			>
 				<div></div>
 				<div></div>
 				<div></div>
 			</div>
 			{isOpen && (
-				<nav className="dropdown-menu">
+				<nav className={styles.dropdownMenu}>
 					{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
 				</nav>
 			)}

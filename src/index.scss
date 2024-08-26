@@ -1,63 +1,6 @@
-// Import external fonts
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;1,300&display=swap");
+// index.scss is the middle man that pulls together various partials
+// which are compiled into a single CSS file.
 
-// Variables
-$font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-code: "Source Code Pro", source-code-pro, Menlo, Monaco, Consolas,
-	"Courier New", monospace;
-$font-weight-bold: bold;
-
-// Reset and base styles
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	font-family: $font-base;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-// Reusable component styles
-button,
-input,
-code {
-	font-family: $font-code;
-}
-
-button {
-	font-weight: $font-weight-bold;
-	cursor: pointer;
-}
-
-p,
-ul,
-li,
-input,
-select,
-button {
-	margin: 0;
-	padding: 0;
-}
-
-ul {
-	padding: 0;
-}
-
-li {
-	list-style-type: none;
-}
-
-input {
-	font-weight: $font-weight-bold;
-
-	&::placeholder {
-		font-weight: $font-weight-bold;
-	}
-
-	&:focus-visible {
-		outline: none; // Adjust as needed per theme
-	}
-}
+@import "./style/themes.scss";
+@import "./style/fonts";
+@import "./style/base";

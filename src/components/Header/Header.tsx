@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import AuthContext from "../../contexts/AuthContext"
-import AuthSwitcher from "./AuthSwitcher"
-import ProtectedLinks from "./ProtectedLinks"
-import PublicLinks from "./PublicLinks"
+import AuthSwitcher from "./AuthSwitcher/AuthSwitcher"
+import ProtectedLinks from "./AuthSwitcher/ProtectedLinks"
+import PublicLinks from "./AuthSwitcher/PublicLinks"
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu"
-import "./Header.css"
+import styles from "./Header.module.scss"
 
 const sun = "/icons/dark-sun.svg"
 const moon = "/icons/light-moon.svg"
@@ -28,30 +28,30 @@ const Header: React.FC<HeaderProps> = (props) => {
 	}
 
 	return (
-		<header className="App-header">
+		<header className={styles.appHeader}>
 			<section>
 				<HamburgerMenu isSignedIn={isSignedIn} />
 				<Link to="/">
 					<img
-						className="header-logo"
+						className={styles.headerLogo}
 						src={logo}
 						alt="calendar with checkmark"
 					/>
 				</Link>
-				<nav className="desktop-links">
+				<nav className={styles.desktopLinks}>
 					{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
 				</nav>
 			</section>
 			<section>
 				<Link to="/">
-					<img className="site-title" src={title} alt="skedge" />
+					<img className={styles.siteTitle} src={title} alt="skedge" />
 				</Link>
 			</section>
 			<section>
 				<img
 					src={props.theme === "dark" ? sun : moon}
 					alt=""
-					className="theme-button"
+					className={styles.themeButton}
 					onClick={handleClick}
 				/>
 				<AuthSwitcher />
