@@ -57,9 +57,9 @@ $primary-color: #000;
 			p {
 				text-align: right;
 				margin-top: 1vh;
+				color: white;
 
 				a {
-					color: $primary-color;
 					font-size: $font-size-small;
 				}
 			}
@@ -69,6 +69,7 @@ $primary-color: #000;
 			}
 
 			button.formField {
+				background-color: var(--tertiary-background);
 				@include animation-delay(5);
 			}
 		}
@@ -128,12 +129,10 @@ $primary-color: #000;
 
 @keyframes left {
 	0% {
-		opacity: 0;
 		width: 0;
 		padding: 0;
 	}
 	100% {
-		opacity: 1;
 		width: 40%;
 		padding: 5% 10%;
 	}

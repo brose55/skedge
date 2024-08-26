@@ -1,0 +1,29 @@
+.app {
+	text-align: center;
+	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	background-color: var(--main-background);
+	color: var(--main-accent);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&:first-child {
+		flex: 1 1 auto;
+	}
+
+	// allow main content to grow
+	& > *:nth-child(2) {
+		flex: 3 1 auto;
+	}
+
+	&:last-child {
+		flex: 1 1 auto;
+	}
+}

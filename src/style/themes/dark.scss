@@ -2,65 +2,51 @@
 
 // Define CSS variables for the dark theme
 :root {
-	--background-color-dark: #282c34;
-	--text-color-dark: #0af29f;
-	--background-color-input-dark: #23272e;
-	--background-color-header-footer-dark: #242526;
+	--main-accent-dark: #0af29f;
+	--secondary-accent-dark: aquamarine;
+	--main-background-dark: #282c34;
+	--secondary-background-dark: #242526;
+	--tertiary-background-dark: #23272e;
+	--quaternary-background-dark: #303846;
 	--placeholder-color-dark: #818589;
 	--border-color-dark: #0af29f;
 	--box-shadow-color-dark: #0af29f;
-	--daily-blocks-background-dark: #303846;
 	--past-interests-background-dark: #23272e;
 	--past-interests-border-dark: #242526;
-	--daily-blocks-border-dark: aquamarine;
 
 	// Set default theme (optional)
-	--background-color: var(--background-color-dark);
-	--text-color: var(--text-color-dark);
+	--main-accent: var(--main-accent-dark);
+	--secondary-accent: var(--secondary-accent-dark);
+	--main-background: var(--main-background-dark);
+	--secondary-background: var(--secondary-background-dark);
+	--tertiary-background: var(--tertiary-background-dark);
+	--quaternary-background: var(--quaternary-background-dark);
+	--placeholder-color: var(var(--placeholder-color-dark));
 }
 
 // Apply the dark theme
 .dark {
-	--background-color: var(--background-color-dark);
-	--text-color: var(--text-color-dark);
-
 	* {
-		color: var(--text-color-dark);
-	}
-
-	main {
-		background-color: var(--background-color-dark);
+		color: var(--main-accent);
 	}
 
 	input {
-		background-color: var(--background-color-input-dark);
+		background-color: var(--tertiary-background);
 
 		&::placeholder {
 			color: var(--placeholder-color-dark);
 		}
 	}
 
-	button {
-		background-color: var(--background-color-input-dark);
+	input:focus {
+		border-color: var(--main-accent);
 	}
 
 	nav a,
 	nav a:visited,
 	.appLink,
 	.appLink:visited {
-		color: var(--text-color-dark);
-	}
-
-	.appHeader {
-		background-color: red; /* Adjust as needed */
-	}
-
-	.formField:focus {
-		border-color: var(--border-color-dark);
-	}
-
-	.signInForm p {
-		color: white;
+		color: var(--main-accent);
 	}
 
 	.daily-forms {
@@ -92,10 +78,7 @@
 		}
 	}
 
-	.footer {
-		background-color: var(--background-color-header-footer-dark);
-	}
-
+	// TODO: wtf is this
 	#success {
 		box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
 	}
