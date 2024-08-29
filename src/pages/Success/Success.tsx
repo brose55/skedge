@@ -1,5 +1,5 @@
 import SignInContainer from "../SignIn/SignInContainer"
-import styles from "./Success.module.css"
+import styles from "./Success.module.scss"
 
 // the success page after registering
 const Success = () => {
