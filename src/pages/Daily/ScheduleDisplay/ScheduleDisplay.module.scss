@@ -1,10 +1,10 @@
-.daily-display {
+.dailyDisplay {
 	width: 90%;
 	margin-inline: auto;
 	margin-bottom: 4vh;
 }
 
-.daily-blocks {
+.dailyBlocks {
 	display: flex;
 	width: 90%;
 	margin: 0 auto;
@@ -12,11 +12,10 @@
 	flex-direction: column;
 	width: fit-content;
 	flex-wrap: wrap;
-}
-
-.daily-blocks p {
-	margin: 0;
-	border: 1px solid aquamarine;
-	padding-block: 1vh;
-	padding-inline: 1vw;
+	p {
+		margin: 0;
+		border: 1px solid aquamarine;
+		padding-block: 1vh;
+		padding-inline: 1vw;
+	}
 }

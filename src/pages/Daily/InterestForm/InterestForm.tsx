@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { NewInterest } from "../../../types/interfaces"
 import { Priority } from "../../../types/enums"
-import "./InterestForm.css"
+import styles from "./InterestForm.module.scss"
 
 interface InterestFormProps {
 	checkListAndUpdate: (candidateInterest: NewInterest) => void
@@ -63,9 +63,9 @@ const InterestForm: React.FC<InterestFormProps> = ({ checkListAndUpdate }) => {
 	}, [])
 
 	return (
-		<section id="daily-interests">
+		<section className={styles.dailySection}>
 			<h2>add interest...</h2>
-			<form id="daily-interest-form" onSubmit={handleSubmit}>
+			<form className={styles.dailyInterestForm} onSubmit={handleSubmit}>
 				<>
 					<label htmlFor="interestInput">Interest:</label>
 					<input
@@ -77,6 +77,7 @@ const InterestForm: React.FC<InterestFormProps> = ({ checkListAndUpdate }) => {
 						placeholder="coding..."
 						onChange={handleChange}
 						autoComplete="off"
+						className={styles.formField}
 					/>
 				</>
 				<br />
@@ -86,13 +87,13 @@ const InterestForm: React.FC<InterestFormProps> = ({ checkListAndUpdate }) => {
 					name="priority"
 					value={priority}
 					onChange={handleChange}
-					className="dropdown"
+					className={styles.formField}
 				>
 					<option value={Priority.High}>high</option>
 					<option value={Priority.Med}>medium</option>
 					<option value={Priority.Low}>low</option>
 				</select>
-				<button type="submit" className="daily-button">
+				<button type="submit" className={styles.formField}>
 					add
 				</button>
 			</form>

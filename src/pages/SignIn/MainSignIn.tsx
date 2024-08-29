@@ -1,10 +1,10 @@
 import SignInContainer from "./SignInContainer"
-import "./SignIn.css"
+import styles from "./SignIn.module.scss"
 
 // the main login component
 const MainSignIn = () => {
 	return (
-		<main className="sign-in">
+		<section className={styles.signIn}>
 			{/* using a container here so we can use the signIn component elsewhere */}
 			<SignInContainer
 				message={"welcome back..."}
@@ -12,8 +12,8 @@ const MainSignIn = () => {
 				focusTimer={2600}
 			/>
 			{/* the image to the right of the login */}
-			<section className="right"></section>
-		</main>
+			<section className={styles.right}></section>
+		</section>
 	)
 }
 

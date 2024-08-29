@@ -1,0 +1,68 @@
+.hamburgerMenu {
+	position: relative;
+	@media (max-width: 1024px) {
+		display: block;
+	}
+
+	@media (min-width: 1025px) {
+		display: none;
+	}
+}
+
+.menuIcon {
+	cursor: pointer;
+	width: 3vw;
+	height: 2.5vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	div {
+		background-color: var(--main-accent);
+		height: 0.4vh;
+		border-radius: 0.0625rem;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&.open {
+		div:nth-child(1) {
+			transform: translateY(1.03vh) rotate(45deg);
+		}
+
+		div:nth-child(2) {
+			opacity: 0;
+		}
+
+		div:nth-child(3) {
+			transform: translateY(-1.03vh) rotate(-45deg);
+		}
+	}
+}
+
+.dropdownMenu {
+	position: absolute;
+	top: 4.25vh; /* Adjusted top value to lower the dropdown */
+	left: auto;
+	right: 0;
+	background-color: var(--secondary-background);
+	z-index: 1000;
+	padding-block: 0.625rem;
+	padding-inline: 1rem;
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	align-items: baseline;
+
+	a {
+		display: flex;
+		margin-bottom: 0.3rem;
+		text-decoration: none;
+	}
+
+	.dropdownFooter {
+		display: flex;
+		// align-items: baseline;
+		gap: 1rem;
+		margin-inline: auto;
+	}
+}

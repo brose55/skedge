@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom"
 import AuthContext from "../../contexts/AuthContext"
 import SignInForm from "./SignInForm"
 import { SignInFormData } from "../../types/interfaces"
-import "./SignIn.css"
 
 // this is where the sign-in logic lives
 interface SignInContainerProps {

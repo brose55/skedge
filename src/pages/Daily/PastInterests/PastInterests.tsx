@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import axios, { AxiosError } from "axios"
 import { PastInterest } from "../../../types/interfaces"
-import "./PastInterests.css"
 import useHover from "../../../hooks/useHover"
+import styles from "./PastInterests.module.scss"
 
 interface PastInterestsProps {
 	checkListAndUpdate: (interest: PastInterest) => void
@@ -73,18 +73,18 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 	}
 
 	return (
-		<section>
+		<section className={styles.dailySection}>
 			<header>
 				<h2>Past Interests...</h2>
 			</header>
-			<ul className="past-interests">
+			<ul className={styles.pastInterests}>
 				{pastInterests.map((interest, i) => {
 					return (
 						<li
 							key={`past-${interest.name}`}
 							onMouseEnter={() => handleMouseEnter(i)}
 							onMouseLeave={handleMouseLeave}
-							className="past-interest"
+							className={styles.pastInterest}
 							onClick={() => checkListAndUpdate(interest)}
 						>
 							{interest.name}: {interest.priority}

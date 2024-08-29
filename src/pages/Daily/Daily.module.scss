@@ -1,0 +1,16 @@
+.dailyForms {
+	display: flex;
+	justify-content: space-around;
+	margin-inline: 5vw;
+	margin-bottom: 4vh;
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+		min-height: 20vh;
+	}
+}
+
+.daily {
+	margin-top: 6vh;
+}

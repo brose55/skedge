@@ -1,0 +1,6 @@
+// index.scss is the middle man that pulls together various partials
+// which are compiled into a single CSS file.
+
+@import "./style/themes.scss";
+@import "./style/fonts";
+@import "./style/base";

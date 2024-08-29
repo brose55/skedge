@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, ChangeEvent, FormEvent } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
-import "./Register.css"
 import displayError from "../../utils/displayError"
+import styles from "./Register.module.scss"
 
 interface FormState {
 	username: string
@@ -49,17 +49,17 @@ function Register() {
 	const { username, email, password, passwordConfirmation } = formState
 	return (
 		// TODO: DRY CSS
-		<main className="register">
-			<section className="left"></section>
-			<section className="right">
+		<section className={styles.register}>
+			<section className={styles.left}></section>
+			<section className={styles.right}>
 				<header>
 					<h4>sign up...</h4>
 					<p>{registerError ? displayError(registerError) : null}</p>
 				</header>
-				<form id="register-form" onSubmit={handleSubmit}>
+				<form className={styles.registerForm} onSubmit={handleSubmit}>
 					<input
 						name="username"
-						className="form-field"
+						className={styles.formField}
 						ref={registerInput}
 						value={username}
 						placeholder="username..."
@@ -68,7 +68,7 @@ function Register() {
 					<input
 						type="email"
 						name="email"
-						className="form-field"
+						className={styles.formField}
 						value={email}
 						placeholder="email..."
 						onChange={handleChange}
@@ -76,7 +76,7 @@ function Register() {
 					<input
 						type="password"
 						name="password"
-						className="form-field"
+						className={styles.formField}
 						value={password}
 						placeholder="password..."
 						onChange={handleChange}
@@ -84,15 +84,17 @@ function Register() {
 					<input
 						type="password"
 						name="passwordConfirmation"
-						className="form-field"
+						className={styles.formField}
 						value={passwordConfirmation}
 						placeholder="password confirmation..."
 						onChange={handleChange}
 					/>
-					<button type="submit">sign up</button>
+					<button className={styles.formField} type="submit">
+						sign up
+					</button>
 				</form>
 			</section>
-		</main>
+		</section>
 	)
 }
 

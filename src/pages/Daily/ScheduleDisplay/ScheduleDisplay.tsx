@@ -1,6 +1,6 @@
 import React from "react"
 import { Options, ProcessedInterest } from "../../../types/interfaces"
-import "./ScheduleDisplay.css"
+import styles from "./ScheduleDisplay.module.scss"
 
 interface ScheduleDisplayProps {
 	interests: ProcessedInterest[]
@@ -14,11 +14,11 @@ const ScheduleDisplay: React.FC<ScheduleDisplayProps> = ({
 	if (!options || !interests) return null
 
 	return (
-		<div className="daily-display">
+		<div className={styles.dailyDisplay}>
 			<p>
 				{options.hoursAvailable} hours, {options.learningStyle}
 			</p>
-			<div className="daily-blocks">
+			<div className={styles.dailyBlocks}>
 				{interests.map((interest, i) => (
 					<p key={`daily_schedule_${i}`} className={interest.priority}>
 						{interest.order}. {interest.name}: {interest.duration} minutes,{" "}

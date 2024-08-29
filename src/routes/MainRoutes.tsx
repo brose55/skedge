@@ -26,9 +26,9 @@ const MainRoutes: React.FC = () => {
 						<Route
 							path="*"
 							element={
-								<main style={{ padding: "2vh" }}>
+								<section style={{ padding: "2vh" }}>
 									<p>There's nothing here!</p>
-								</main>
+								</section>
 							}
 						/>
 						{/* TODO: Info/FAQs */}
@@ -40,7 +40,6 @@ const MainRoutes: React.FC = () => {
 					<Route path="signin" element={<MainSignIn />} />
 					<Route path="register" element={<Register />} />
 					{/* TODO: About */}
-					{/* TODO: Make Success Page */}
 					<Route path="success" element={<Success />} />
 				</Route>
 			</Routes>

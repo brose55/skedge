@@ -1,0 +1,13 @@
+.footer {
+	background-color: var(--secondary-background);
+	min-height: 6vh;
+	padding-top: 1vh;
+	display: flex;
+	justify-content: center;
+
+	img {
+		height: 4vh;
+		width: auto;
+		padding-inline: 0.5vw;
+	}
+}

@@ -1,0 +1,42 @@
+// dark.scss
+
+// Define CSS variables for the dark theme
+:root {
+	--border-color-dark: #0af29f;
+	--box-shadow-color-dark: #0af29f;
+	--past-interests-background-dark: #23272e;
+	--past-interests-border-dark: #242526;
+	--idk: #ddd;
+
+	// Set default theme (dark)
+	--main-accent: #0af29f;
+	--secondary-accent: aquamarine;
+	--tertiary-accent: white;
+	--main-background: #282c34;
+	--secondary-background: #242526;
+	--tertiary-background: #23272e;
+	--quaternary-background: #303846;
+	--placeholder-color: #818589;
+}
+
+.interest button {
+	background-color: var(--background-color-dark);
+}
+
+.past-interests p {
+	border: 1px solid var(--past-interests-border-dark);
+	background-color: var(--past-interests-background-dark);
+}
+
+.daily-blocks {
+	background-color: var(--daily-blocks-background-dark);
+
+	p {
+		border: 1px solid var(--daily-blocks-border-dark);
+	}
+}
+
+// TODO: wtf is this
+#success {
+	box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
+}
