@@ -50,12 +50,12 @@
 	padding-inline: 1rem;
 	display: flex;
 	flex-direction: column;
-	gap: 0.3rem;
 	width: max-content;
 	align-items: baseline;
 
 	a {
-		display: block;
+		display: flex;
+		margin-bottom: 0.3rem;
 		text-decoration: none;
 	}
 

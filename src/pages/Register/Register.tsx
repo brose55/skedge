@@ -49,7 +49,7 @@ function Register() {
 	const { username, email, password, passwordConfirmation } = formState
 	return (
 		// TODO: DRY CSS
-		<main className={styles.register}>
+		<section className={styles.register}>
 			<section className={styles.left}></section>
 			<section className={styles.right}>
 				<header>
@@ -94,7 +94,7 @@ function Register() {
 					</button>
 				</form>
 			</section>
-		</main>
+		</section>
 	)
 }
 

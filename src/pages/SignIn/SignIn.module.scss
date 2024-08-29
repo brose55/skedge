@@ -1,4 +1,5 @@
 @import "../../style/formElements";
+@import "../../style/mixins";
 //TODO: this should be moved to the _fonts file
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
 
@@ -6,16 +7,13 @@ $background-url: url(https://images.unsplash.com/photo-1515847049296-a281d640104
 $transition-duration: 1s;
 $animation-delay-base: 2s;
 
-// TODO: move to theme files
-$border-color: #ddd;
-
 @mixin animation-delay($n) {
 	animation-delay: $animation-delay-base + $n * 0.1s;
 }
 
 .signIn {
+	@include fill-space;
 	display: flex;
-	height: 100%; /* Ensure it takes full viewport height */
 
 	.left {
 		display: flex;

@@ -19,6 +19,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ theme, setTheme }) => {
 		setIsOpen(!isOpen)
 	}
 
+	const closeMenu = () => {
+		setIsOpen(false)
+	}
+
 	return (
 		<div className={styles.hamburgerMenu}>
 			<div
@@ -31,8 +35,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ theme, setTheme }) => {
 			</div>
 			{isOpen && (
 				<nav className={styles.dropdownMenu}>
-					{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
-					<span className={styles.dropdownFooter}>
+					<span onClick={closeMenu}>
+						{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
+					</span>
+					<span className={styles.dropdownFooter} onClick={closeMenu}>
 						<AuthSwitcher />
 						<ThemeSwitcher theme={theme} setTheme={setTheme} />
 					</span>

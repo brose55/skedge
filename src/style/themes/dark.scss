@@ -19,62 +19,24 @@
 	--placeholder-color: #818589;
 }
 
-// Apply the dark theme
-.dark {
-	* {
-		color: var(--main-accent);
+.interest button {
+	background-color: var(--background-color-dark);
+}
+
+.past-interests p {
+	border: 1px solid var(--past-interests-border-dark);
+	background-color: var(--past-interests-background-dark);
+}
+
+.daily-blocks {
+	background-color: var(--daily-blocks-background-dark);
+
+	p {
+		border: 1px solid var(--daily-blocks-border-dark);
 	}
+}
 
-	input {
-		background-color: var(--tertiary-background);
-
-		&::placeholder {
-			color: var(--placeholder-color-dark);
-		}
-	}
-
-	input:focus {
-		border-color: var(--main-accent);
-	}
-
-	nav a,
-	nav a:visited,
-	.appLink,
-	.appLink:visited {
-		color: var(--main-accent);
-	}
-
-	.daily-forms {
-		input,
-		select {
-			background-color: var(--background-color-dark);
-			border-bottom: 1px solid var(--border-color-dark);
-		}
-
-		section {
-			box-shadow: 0 8px 8px -4px var(--main-accent);
-		}
-	}
-
-	.interest button {
-		background-color: var(--background-color-dark);
-	}
-
-	.past-interests p {
-		border: 1px solid var(--past-interests-border-dark);
-		background-color: var(--past-interests-background-dark);
-	}
-
-	.daily-blocks {
-		background-color: var(--daily-blocks-background-dark);
-
-		p {
-			border: 1px solid var(--daily-blocks-border-dark);
-		}
-	}
-
-	// TODO: wtf is this
-	#success {
-		box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
-	}
+// TODO: wtf is this
+#success {
+	box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
 }

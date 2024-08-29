@@ -1,3 +1,21 @@
 // themes.scss
 @import "./themes/dark";
 @import "./themes/light";
+
+* {
+	color: var(--main-accent);
+}
+
+input,
+select,
+button {
+	background-color: var(--tertiary-background);
+	&::placeholder {
+		color: var(--placeholder-color);
+	}
+}
+
+a,
+a:visited {
+	color: var(--main-accent);
+}
