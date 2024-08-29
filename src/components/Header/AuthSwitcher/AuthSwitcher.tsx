@@ -2,6 +2,7 @@ import axios from "axios"
 import { useContext } from "react"
 import AuthContext from "../../../contexts/AuthContext"
 import { useCookies } from "react-cookie"
+import styles from "../Header.module.scss"
 
 // handle signing out of the app
 const AuthSwitcher: React.FC = () => {
@@ -28,7 +29,11 @@ const AuthSwitcher: React.FC = () => {
 
 	return (
 		// only show if user is signed in
-		isSignedIn ? <button onClick={signOut}>Sign out</button> : null
+		isSignedIn ? (
+			<button className={styles.authSwitcher} onClick={signOut}>
+				<code>sign out</code>
+			</button>
+		) : null
 	)
 }
 

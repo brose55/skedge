@@ -6,10 +6,10 @@ import OptionsForm from "./OptionsForm/OptionsForm"
 import PastInterests from "./PastInterests/PastInterests"
 import { CandidateInterest } from "../../types/types"
 import { Options, ProcessedInterest } from "../../types/interfaces"
-import "./Daily.css"
 import ScheduleDisplay from "./ScheduleDisplay/ScheduleDisplay"
 import CandidateInterests from "./CandidateInterests/CandidateInterests"
 import calculateDay from "../../utils/calculateDay"
+import styles from "./Daily.module.scss"
 
 function Daily() {
 	const [candidateInterests, setCandidateInterests] = useState<
@@ -78,11 +78,11 @@ function Daily() {
 	}
 
 	return (
-		<section className="daily">
+		<section className={styles.daily}>
 			{updateInterestsError && <p>{updateInterestsError}</p>}
 
 			<PastInterests checkListAndUpdate={checkListAndUpdate} />
-			<section className="daily-forms">
+			<section className={styles.dailyForms}>
 				<InterestForm checkListAndUpdate={checkListAndUpdate} />
 				<OptionsForm setOptions={setOptions} />
 				<CandidateInterests

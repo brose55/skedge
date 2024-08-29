@@ -8,7 +8,6 @@ $animation-delay-base: 2s;
 
 // TODO: move to theme files
 $border-color: #ddd;
-$primary-color: #000;
 
 @mixin animation-delay($n) {
 	animation-delay: $animation-delay-base + $n * 0.1s;
@@ -22,8 +21,6 @@ $primary-color: #000;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		width: 0;
-		min-width: 0;
 		animation: left 1s both 1s;
 		font-style: italic;
 		box-sizing: border-box; /* Ensure padding doesn't add to width */
@@ -57,7 +54,7 @@ $primary-color: #000;
 			p {
 				text-align: right;
 				margin-top: 1vh;
-				color: white;
+				color: var(--tertiary-accent);
 
 				a {
 					font-size: $font-size-small;
@@ -77,17 +74,13 @@ $primary-color: #000;
 
 	.right {
 		flex: 1; /* Allow this side to shrink */
-		background-color: black;
+		background-color: var(--secondary-background);
 		transition: $transition-duration;
 		background-image: $background-url;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		min-width: 60%; /* Ensure it takes at least half the space */
-
-		@media (max-width: 1024px) {
-			display: none; /* Hide the right side at 1024px or less */
-		}
+		min-width: 60%;
 	}
 
 	.animation {
@@ -135,5 +128,15 @@ $primary-color: #000;
 	100% {
 		width: 40%;
 		padding: 5% 10%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.left {
+		min-width: 70vw;
+		margin-inline: auto;
+	}
+	.right {
+		display: none;
 	}
 }

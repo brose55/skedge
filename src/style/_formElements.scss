@@ -11,11 +11,12 @@ $font-size-large: 1.25rem;
 .formField {
 	height: $form-field-height;
 	padding: $form-field-padding;
-	border: 2px solid #ddd;
+	border: 2px solid var(--idk);
 	border-radius: $form-field-border-radius;
 	outline: 0;
 	margin-top: $form-top-margin;
 	font-style: italic;
+	background-color: var(--tertiary-background);
 }
 
 button.formField {

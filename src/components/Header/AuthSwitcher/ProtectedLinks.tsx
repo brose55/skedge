@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
+import styles from "../Header.module.scss"
 
 // the links that show if a user is signed in
 const ProtectedLinks = () => {
@@ -11,15 +12,17 @@ const ProtectedLinks = () => {
 				<Link to="/daily">
 					<code>daily</code>
 				</Link>
-				|
+				<span className={styles.linkSeperator}>|</span>
 				<Link to="/weekly">
 					<code>weekly</code>
 				</Link>
 			</>
 		) : (
-			<Link to="/">
-				<code>home</code>
-			</Link>
+			<>
+				<Link to="/">
+					<code>home</code>
+				</Link>
+			</>
 		)
 	)
 }

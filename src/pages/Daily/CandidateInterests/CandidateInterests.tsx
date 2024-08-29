@@ -1,7 +1,7 @@
 import React from "react"
 import { CandidateInterest } from "../../../types/types"
 import useHover from "../../../hooks/useHover"
-import "./CandidateInterests.css"
+import styles from "./CandidateInterests.module.scss"
 
 interface CandidateInterestsProps {
 	interests: CandidateInterest[]
@@ -17,9 +17,9 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 	const { hoveredIndex, handleMouseEnter, handleMouseLeave } = useHover()
 
 	return (
-		<section>
+		<section className={styles.dailySection}>
 			<h2>interests...</h2>
-			<ul className="interests">
+			<ul className={`${styles.interests} ${styles.dailyForm}`}>
 				{interests.map((interest, i) => (
 					<li
 						key={`interest-${interest.name}`}
@@ -42,7 +42,7 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 				))}
 			</ul>
 
-			<button type="button" className="submit-button" onClick={onSubmit}>
+			<button type="button" className={styles.formField} onClick={onSubmit}>
 				Submit Interests
 			</button>
 		</section>

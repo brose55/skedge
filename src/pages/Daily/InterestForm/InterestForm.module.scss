@@ -1,0 +1,19 @@
+@import "../../../style/formElements";
+@import "../../../style/dailyElements";
+
+.dailyInterestForm {
+	display: block;
+}
+
+.dailyInterestForm input {
+	width: 18vw;
+	margin-block: 0.5vh 1vh;
+	margin-left: 0.5vw;
+	padding-left: 0.2vw;
+}
+
+@media screen and (max-width: 1050px) {
+	.dailyInterests h2 {
+		font-size: 1rem;
+	}
+}

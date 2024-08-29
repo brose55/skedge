@@ -1,0 +1,10 @@
+.themeButton {
+	height: 3vh;
+	width: auto;
+	cursor: pointer;
+	margin-top: auto;
+
+	@media (max-width: 1024px) {
+		height: 2.5vh;
+	}
+}

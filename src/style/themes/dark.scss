@@ -2,26 +2,21 @@
 
 // Define CSS variables for the dark theme
 :root {
-	--main-accent-dark: #0af29f;
-	--secondary-accent-dark: aquamarine;
-	--main-background-dark: #282c34;
-	--secondary-background-dark: #242526;
-	--tertiary-background-dark: #23272e;
-	--quaternary-background-dark: #303846;
-	--placeholder-color-dark: #818589;
 	--border-color-dark: #0af29f;
 	--box-shadow-color-dark: #0af29f;
 	--past-interests-background-dark: #23272e;
 	--past-interests-border-dark: #242526;
+	--idk: #ddd;
 
-	// Set default theme (optional)
-	--main-accent: var(--main-accent-dark);
-	--secondary-accent: var(--secondary-accent-dark);
-	--main-background: var(--main-background-dark);
-	--secondary-background: var(--secondary-background-dark);
-	--tertiary-background: var(--tertiary-background-dark);
-	--quaternary-background: var(--quaternary-background-dark);
-	--placeholder-color: var(var(--placeholder-color-dark));
+	// Set default theme (dark)
+	--main-accent: #0af29f;
+	--secondary-accent: aquamarine;
+	--tertiary-accent: white;
+	--main-background: #282c34;
+	--secondary-background: #242526;
+	--tertiary-background: #23272e;
+	--quaternary-background: #303846;
+	--placeholder-color: #818589;
 }
 
 // Apply the dark theme
@@ -57,7 +52,7 @@
 		}
 
 		section {
-			box-shadow: 0 8px 8px -4px var(--box-shadow-color-dark);
+			box-shadow: 0 8px 8px -4px var(--main-accent);
 		}
 	}
 

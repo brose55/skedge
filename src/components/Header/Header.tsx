@@ -6,9 +6,7 @@ import ProtectedLinks from "./AuthSwitcher/ProtectedLinks"
 import PublicLinks from "./AuthSwitcher/PublicLinks"
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu"
 import styles from "./Header.module.scss"
-
-const sun = "/icons/dark-sun.svg"
-const moon = "/icons/light-moon.svg"
+import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
 
 interface HeaderProps {
 	theme: string
@@ -21,16 +19,10 @@ const Header: React.FC<HeaderProps> = (props) => {
 	const logo = `/icons/${props.theme}_logo.svg`
 	const title = `/icons/${props.theme}_skedge.svg`
 
-	const handleClick = () => {
-		const userTheme = props.theme === "dark" ? "light" : "dark"
-		props.setTheme(userTheme)
-		localStorage.setItem("theme", userTheme)
-	}
-
 	return (
 		<header className={styles.appHeader}>
-			<section>
-				<HamburgerMenu isSignedIn={isSignedIn} />
+			{/* class name here */}
+			<section className={styles.logoSection}>
 				<Link to="/">
 					<img
 						className={styles.headerLogo}
@@ -38,23 +30,19 @@ const Header: React.FC<HeaderProps> = (props) => {
 						alt="calendar with checkmark"
 					/>
 				</Link>
+				<Link to="/">
+					<img className={styles.siteTitle} src={title} alt="skedge" />
+				</Link>
 				<nav className={styles.desktopLinks}>
 					{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
 				</nav>
 			</section>
-			<section>
-				<Link to="/">
-					<img className={styles.siteTitle} src={title} alt="skedge" />
-				</Link>
+			<section className={styles.hamburgerMenu}>
+				<HamburgerMenu theme={props.theme} setTheme={props.setTheme} />
 			</section>
-			<section>
-				<img
-					src={props.theme === "dark" ? sun : moon}
-					alt=""
-					className={styles.themeButton}
-					onClick={handleClick}
-				/>
+			<section className={styles.hiddenSection}>
 				<AuthSwitcher />
+				<ThemeSwitcher theme={props.theme} setTheme={props.setTheme} />
 			</section>
 		</header>
 	)

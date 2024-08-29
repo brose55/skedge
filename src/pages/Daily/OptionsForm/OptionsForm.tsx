@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { timeOptions, learningStyleOptions } from "./options"
-import "./OptionsForm.css"
 import { LearningStyle } from "../../../types/enums"
 import { Options } from "../../../types/interfaces"
+import styles from "./OptionsForm.module.scss"
 
 interface OptionsFormProps {
 	setOptions: (options: Options) => void
@@ -29,9 +29,9 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 	const { hoursAvailable, learningStyle } = formState
 
 	return (
-		<section id="options">
+		<section className={`${styles.dailySection} ${styles.options}`}>
 			<h2>options...</h2>
-			<div id="options-form">
+			<div className={`${styles.dailyForm} ${styles.optionsForm}`}>
 				<label htmlFor="timeInput">
 					hours available:
 					<select
@@ -39,6 +39,7 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 						name="hoursAvailable"
 						value={hoursAvailable}
 						onChange={handleChange}
+						className={styles.formField}
 					>
 						{timeOptions.map((choice) => (
 							<option key={`hour${choice}`} value={choice}>
@@ -54,6 +55,7 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 						name="learningStyle"
 						value={learningStyle}
 						onChange={handleChange}
+						className={styles.formField}
 					>
 						{learningStyleOptions.map((choice) => (
 							<option key={choice.value} value={choice.value}>

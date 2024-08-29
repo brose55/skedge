@@ -1,0 +1,24 @@
+@import "../../../style/dailyElements";
+
+.pastInterests {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2vh;
+	p {
+		padding-inline: 1vw;
+		margin-inline: 0.5vw;
+		border-radius: 1vw;
+		margin-block: 2vh;
+	}
+	button {
+		margin-left: 0.2vw;
+	}
+	span {
+		padding-left: 1vw;
+	}
+}
+
+.pastInterest {
+	cursor: pointer;
+	margin-right: 0.5vw;
+}
