@@ -4,7 +4,7 @@ import { LearningStyle, Priority } from "../types/enums"
 import shuffleArray from "./shuffle"
 
 // This type is used only in the context where weight is relevant, keeping other types clean.
-type ProcessedInterestWithWeight = CandidateInterest & { weight: number }
+export type ProcessedInterestWithWeight = CandidateInterest & { weight: number }
 
 // The main algorithm used for scheduling
 export default function calculateDay(

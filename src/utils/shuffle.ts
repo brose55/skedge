@@ -1,6 +1,8 @@
-import { Interest } from "../types/interfaces"
+import { ProcessedInterestWithWeight } from "./calculateDay"
 
-export default function shuffleArray(arr: Interest[]): Interest[] {
+export default function shuffleArray(
+	arr: ProcessedInterestWithWeight[]
+): ProcessedInterestWithWeight[] {
 	// create a shallow copy of the array to keep it immutable
 	let shuffled = [...arr]
 
