@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react"
 export default defineConfig({
 	plugins: [react()],
 	build: {
-		outDir: "dist", // Ensure this is set correctly
+		outDir: "dist",
 	},
-	base: "/https://github.com/brose55/skedge/",
+	base: "/skedge/",
 })
