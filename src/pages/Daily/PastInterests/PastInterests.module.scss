@@ -1,5 +1,4 @@
 @import "../../../style/dailyElements";
-
 .pastInterests {
 	display: flex;
 	justify-content: center;
@@ -21,4 +20,8 @@
 .pastInterest {
 	cursor: pointer;
 	margin-right: 0.5vw;
+}
+
+.header {
+	padding-bottom: 2vh;
 }

@@ -2,14 +2,7 @@
 @import "../../../style/formElements";
 
 .interest {
-	font-weight: bold;
-	display: flex;
-	justify-content: center;
-	padding-block: 0.2vh;
+	padding: 0.2vh 0;
 	margin: auto;
-}
-
-.interest button {
-	width: fit-content;
-	margin-inline: 1vw 0;
+	font-weight: bold;
 }

@@ -93,7 +93,10 @@ const InterestForm: React.FC<InterestFormProps> = ({ checkListAndUpdate }) => {
 					<option value={Priority.Med}>medium</option>
 					<option value={Priority.Low}>low</option>
 				</select>
-				<button type="submit" className={styles.formField}>
+				<button
+					type="submit"
+					className={`${styles.formField} ${styles.submitButton}`}
+				>
 					add
 				</button>
 			</form>

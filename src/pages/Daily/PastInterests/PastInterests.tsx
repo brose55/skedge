@@ -24,6 +24,8 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 					`${import.meta.env.VITE_DEV_URL}/api/interests`,
 					{ withCredentials: true }
 				)
+
+				console.log("result: ", result.data)
 				setPastInterests(result.data)
 			} catch (err: any) {
 				if (err instanceof AxiosError) {
@@ -73,8 +75,8 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 	}
 
 	return (
-		<section className={styles.dailySection}>
-			<header>
+		<section>
+			<header className={styles.header}>
 				<h2>Past Interests...</h2>
 			</header>
 			<ul className={styles.pastInterests}>
@@ -89,6 +91,7 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 						>
 							{interest.name}: {interest.priority}
 							<button
+								className={styles.deleteButton}
 								style={{
 									visibility: i === hoveredIndex ? "visible" : "hidden",
 								}}
