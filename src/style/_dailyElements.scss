@@ -5,13 +5,33 @@
 	h2 {
 		padding: 2vh;
 	}
-	button {
+	select {
+		margin-left: 0.5vw;
+	}
+	.submitButton {
 		width: 75%;
 		margin-inline: auto;
 		margin-block: 2vh;
 	}
-	select {
-		margin-left: 0.5vw;
+}
+
+.deleteButton {
+	background: none; /* No background color */
+	border: none; /* No border */
+	color: var(--main-accent); /* Text color set to your accent color */
+	font-size: 1rem; /* Adjust font size as needed */
+	cursor: pointer; /* Pointer cursor on hover */
+	width: fit-content;
+	margin-inline: 1vw 0;
+	box-shadow: none; /* No initial shadow */
+	transition: box-shadow 0.2s ease; /* Smooth transition for hover effect */
+
+	> :hover {
+		box-shadow: 0 2px 4px var(--main-accent); /* Subtle shadow effect on hover */
+	}
+
+	> :focus {
+		outline: none; /* Remove the focus outline */
 	}
 }
 

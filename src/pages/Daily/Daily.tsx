@@ -52,9 +52,16 @@ function Daily() {
 
 	const storeInterests = async () => {
 		try {
+			const trimmedInterests = processedInterests.map((interest) => ({
+				name: interest.name,
+				priority: interest.priority,
+			}))
+
+			console.log("trimmed: ", trimmedInterests)
+
 			await axios.put(
 				`${import.meta.env.VITE_DEV_URL}/api/interests`,
-				processedInterests,
+				trimmedInterests,
 				{
 					withCredentials: true,
 				}
@@ -74,6 +81,8 @@ function Daily() {
 			return
 		}
 		setProcessedInterests(calculateDay(candidateInterests, options))
+		console.log("after submit: ", processedInterests)
+
 		storeInterests()
 	}
 

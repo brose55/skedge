@@ -27,10 +27,9 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 						onMouseEnter={() => handleMouseEnter(i)}
 						onMouseLeave={handleMouseLeave}
 					>
-						<span>
-							{interest.name}: {interest.priority}
-						</span>
+						{interest.name}: {interest.priority}
 						<button
+							className={styles.deleteButton}
 							onClick={() => onDeleteInterest(interest)}
 							style={{
 								visibility: i === hoveredIndex ? "visible" : "hidden",
@@ -42,7 +41,11 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 				))}
 			</ul>
 
-			<button type="button" className={styles.formField} onClick={onSubmit}>
+			<button
+				type="button"
+				className={`${styles.formField} ${styles.submitButton}`}
+				onClick={onSubmit}
+			>
 				Submit Interests
 			</button>
 		</section>
