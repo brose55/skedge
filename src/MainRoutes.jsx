@@ -12,7 +12,7 @@ import Success from "./components/Success/Success"
 import Weekly from "./components/Weekly/Weekly"
 
 // the main routing component
-// routes are seperated between public and protected depending on if signedIn
+// routes are separated between public and protected depending on if signedIn
 const MainRoutes = () => {
 	return (
 		<Routes>

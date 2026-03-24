@@ -17,7 +17,7 @@ function Daily() {
 		// do a quick loop and see if it already exists...
 		// note: I don't use .includes() here because it doesn't play well with objects
 		let included = interests.some(
-			(interest) => interest.topic === candidateInterest.topic
+			(interest) => interest.topic === candidateInterest.topic,
 		)
 		if (!included) {
 			setInterests([...interests, candidateInterest])
@@ -26,7 +26,7 @@ function Daily() {
 
 	const storeInterests = async () => {
 		try {
-			axios.put(`${process.env.REACT_APP_DEV_URL}/api/interests`, interests, {
+			axios.put(`${process.env.REACT_APP_API_URL}/api/interests`, interests, {
 				withCredentials: true,
 			})
 		} catch (err) {

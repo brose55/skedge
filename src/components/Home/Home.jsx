@@ -6,8 +6,8 @@ import "./Home.css"
 const Home = () => {
 	// get user data from server
 	const { data } = useSwr(
-		`${process.env.REACT_APP_DEV_URL}/api/users/me`,
-		fetcher
+		`${process.env.REACT_APP_API_URL}/api/users/me`,
+		fetcher,
 	)
 
 	// keep track of the page in local storage

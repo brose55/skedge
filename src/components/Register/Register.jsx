@@ -30,7 +30,7 @@ function Register() {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
-			await axios.post(`${process.env.REACT_APP_DEV_URL}/api/users`, formState)
+			await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, formState)
 			navigate("../success", { replace: true })
 		} catch (err) {
 			setRegisterError(err)

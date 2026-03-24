@@ -65,7 +65,7 @@ const SignInForm = ({
 					onChange={handleChange}
 				/>
 				{mainSignIn ? (
-					<p className="animation a4">
+					<p className="animation a4 subtext">
 						don't have an account? <Link to="/pub/register">sign up</Link>
 					</p>
 				) : (

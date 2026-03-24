@@ -18,8 +18,8 @@ function SignInContainer(props) {
 		const getSession = async () => {
 			try {
 				const session = await axios.get(
-					`${process.env.REACT_APP_DEV_URL}/api/sessions`,
-					{ withCredentials: true }
+					`${process.env.REACT_APP_API_URL}/api/sessions`,
+					{ withCredentials: true },
 				)
 
 				if (session.data.length > 0) {
@@ -41,9 +41,9 @@ function SignInContainer(props) {
 	const handleSubmit = async (formState) => {
 		try {
 			await axios.post(
-				`${process.env.REACT_APP_DEV_URL}/api/sessions`,
+				`${process.env.REACT_APP_API_URL}/api/sessions`,
 				formState,
-				{ withCredentials: true }
+				{ withCredentials: true },
 			)
 			setSignedIn(true)
 			navigate("../../", { replace: true })
