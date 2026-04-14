@@ -1,0 +1,116 @@
+@import "../../style/formElements";
+@import "../../style/mixins";
+
+$animation-delay-base: 2s;
+
+@mixin animation-delay($n) {
+	animation-delay: $animation-delay-base + $n * 0.1s;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	animation: left-panel 1s both 1s;
+	font-style: italic;
+	box-sizing: border-box;
+
+	header {
+		padding-top: 5vh;
+
+		h2 {
+			margin: 0;
+		}
+
+		h4 {
+			margin-top: 2%;
+			font-weight: bold;
+			font-size: $font-size-small;
+		}
+	}
+
+	.signInForm {
+		display: flex;
+		flex-direction: column;
+
+		label {
+			font-weight: bold;
+			font-size: $font-size-small;
+		}
+
+		p {
+			text-align: right;
+			margin-top: 1vh;
+			color: var(--tertiary-accent);
+
+			a {
+				font-size: $font-size-small;
+			}
+		}
+
+		.formField {
+			transition: 0.2s;
+		}
+
+		button.formField {
+			background-color: var(--tertiary-background);
+			@include animation-delay(5);
+		}
+	}
+
+	// animation classes nested here to match original scoping
+	.animation {
+		animation: move 0.4s both $animation-delay-base;
+	}
+
+	.a1 {
+		@include animation-delay(0);
+	}
+	.a2 {
+		@include animation-delay(1);
+	}
+	.a3 {
+		@include animation-delay(2);
+	}
+	.a4 {
+		@include animation-delay(3);
+	}
+	.a5 {
+		@include animation-delay(4);
+	}
+	.a6 {
+		@include animation-delay(5);
+	}
+}
+
+// overrides keyframe width on mobile — must stay outside .left
+@media (max-width: 1024px) {
+	.left {
+		min-width: 70vw;
+		margin-inline: auto;
+	}
+}
+
+@keyframes left-panel {
+	0% {
+		width: 0;
+		padding: 0;
+	}
+	100% {
+		width: 40%;
+		padding: 5% 10%;
+	}
+}
+
+@keyframes move {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4vh);
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}

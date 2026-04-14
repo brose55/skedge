@@ -1,27 +1,29 @@
-@import "../../../style/dailyElements";
+.header {
+	text-align: center;
+	padding-bottom: 1vh;
+}
+
 .pastInterests {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 2vh;
-	p {
-		padding-inline: 1vw;
-		margin-inline: 0.5vw;
-		border-radius: 1vw;
-		margin-block: 2vh;
-	}
-	button {
-		margin-left: 0.2vw;
-	}
-	span {
-		padding-left: 1vw;
-	}
+	gap: 1vw;
+	margin-bottom: 3vh;
 }
 
 .pastInterest {
 	cursor: pointer;
-	margin-right: 0.5vw;
-}
+	border: 1px solid var(--secondary-accent);
+	border-radius: 0.3vw;
+	padding-block: 0.5vh;
+	padding-inline: 0.75vw;
+	display: flex;
+	align-items: center;
+	transition: background-color 0.2s;
+	background-color: var(--tertiary-background);
 
-.header {
-	padding-bottom: 2vh;
+	&:hover {
+		background-color: var(--main-background);
+		box-shadow: 0 4px 4px -2px var(--secondary-accent);
+	}
 }

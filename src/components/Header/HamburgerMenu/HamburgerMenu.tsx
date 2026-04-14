@@ -1,10 +1,9 @@
-import { useContext, useState } from "react"
-import ProtectedLinks from "../AuthSwitcher/ProtectedLinks"
-import PublicLinks from "../AuthSwitcher/PublicLinks"
-import styles from "./HamburgerMenu.module.scss"
-import AuthContext from "../../../contexts/AuthContext"
-import AuthSwitcher from "../AuthSwitcher/AuthSwitcher"
+import { useState } from "react"
+
+import { ActiveLinks, AuthSwitcher } from "../Nav"
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
+
+import styles from "./HamburgerMenu.module.scss"
 
 interface HamburgerMenuProps {
 	theme: string
@@ -12,7 +11,6 @@ interface HamburgerMenuProps {
 }
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ theme, setTheme }) => {
-	const { isSignedIn } = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleMenu = () => {
@@ -36,7 +34,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ theme, setTheme }) => {
 			{isOpen && (
 				<nav className={styles.dropdownMenu}>
 					<span onClick={closeMenu}>
-						{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
+						<ActiveLinks />
 					</span>
 					<span className={styles.dropdownFooter} onClick={closeMenu}>
 						<AuthSwitcher />

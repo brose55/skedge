@@ -1,7 +1,7 @@
 import { useState } from "react"
-import Header from "./components/Header/Header"
-import MainRoutes from "./routes/MainRoutes"
-import Footer from "./components/Footer/Footer"
+import Header from "../components/Header/Header"
+import { MainRoutes } from "../routes"
+import Footer from "../components/Footer/Footer"
 import styles from "./Layout.module.scss"
 
 // the actual app lives here

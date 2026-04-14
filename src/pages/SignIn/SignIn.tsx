@@ -1,12 +1,12 @@
-import SignInContainer from "./SignInContainer"
+import { AuthContainer } from "../../components/AuthContainer"
 import styles from "./SignIn.module.scss"
 
 // the main login component
-const MainSignIn = () => {
+const SignIn = () => {
 	return (
 		<section className={styles.signIn}>
 			{/* using a container here so we can use the signIn component elsewhere */}
-			<SignInContainer
+			<AuthContainer
 				message={"welcome back..."}
 				mainSignIn={true}
 				focusTimer={2600}
@@ -17,4 +17,4 @@ const MainSignIn = () => {
 	)
 }
 
-export default MainSignIn
+export default SignIn

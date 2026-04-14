@@ -1,11 +1,11 @@
-import SignInContainer from "../SignIn/SignInContainer"
+import { AuthContainer } from "../../components/AuthContainer"
 import styles from "./Success.module.scss"
 
 // the success page after registering
 const Success = () => {
 	return (
 		<div className={styles.success}>
-			<SignInContainer
+			<AuthContainer
 				message={"success... "}
 				mainSignIn={false}
 				focusTimer={0}

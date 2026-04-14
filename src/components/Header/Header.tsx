@@ -1,12 +1,10 @@
-import { useContext } from "react"
 import { Link } from "react-router-dom"
-import AuthContext from "../../contexts/AuthContext"
-import AuthSwitcher from "./AuthSwitcher/AuthSwitcher"
-import ProtectedLinks from "./AuthSwitcher/ProtectedLinks"
-import PublicLinks from "./AuthSwitcher/PublicLinks"
+
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu"
-import styles from "./Header.module.scss"
+import { ActiveLinks, AuthSwitcher } from "./Nav"
 import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
+
+import styles from "./Header.module.scss"
 
 interface HeaderProps {
 	theme: string
@@ -14,14 +12,11 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-	const { isSignedIn } = useContext(AuthContext)
-
 	const logo = `/icons/${props.theme}_logo.svg`
 	const title = `/icons/${props.theme}_skedge.svg`
 
 	return (
 		<header className={styles.appHeader}>
-			{/* class name here */}
 			<section className={styles.logoSection}>
 				<Link to="/">
 					<img
@@ -34,7 +29,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 					<img className={styles.siteTitle} src={title} alt="skedge" />
 				</Link>
 				<nav className={styles.desktopLinks}>
-					{isSignedIn ? <ProtectedLinks /> : <PublicLinks />}
+					<ActiveLinks />
 				</nav>
 			</section>
 			<section className={styles.hamburgerMenu}>

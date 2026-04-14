@@ -2,7 +2,7 @@ import axios from "axios"
 import { useContext } from "react"
 import AuthContext from "../../../contexts/AuthContext"
 import { useCookies } from "react-cookie"
-import styles from "../Header.module.scss"
+import styles from "./Nav.module.scss"
 
 // handle signing out of the app
 const AuthSwitcher: React.FC = () => {
@@ -12,7 +12,7 @@ const AuthSwitcher: React.FC = () => {
 	const signOut = async () => {
 		try {
 			// remove the session from the db
-			await axios.delete(`${import.meta.env.VITE_DEV_URL}/api/sessions`, {
+			await axios.delete(`${import.meta.env.VITE_API_URL}/api/sessions`, {
 				withCredentials: true,
 			})
 

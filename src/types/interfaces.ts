@@ -12,7 +12,7 @@ export interface SignInFormData {
  * complex applications.
  */
 export interface BaseInterest {
-	name: string
+	topic: string
 	priority: Priority
 }
 
@@ -20,8 +20,8 @@ export interface NewInterest extends BaseInterest {}
 
 // Represents an interest that has been saved in the database
 export interface PastInterest extends BaseInterest {
-	_id: number
-	userId: number
+	_id: string
+	userId: string
 }
 
 // Represents an interest after it has been processed by the algorithm

@@ -1,0 +1,37 @@
+.authSwitcher {
+	background-color: transparent;
+	border: none;
+	text-decoration: underline;
+	padding: 0;
+	cursor: pointer;
+	font-size: inherit;
+
+	> :focus {
+		outline: 2px solid var(--main-accent);
+		outline-offset: 4px;
+	}
+}
+
+.linkSeperator {
+	margin-inline: 1vw;
+}
+
+.desktopLinks {
+	margin-left: 2vw;
+}
+
+@media (max-width: 1024px) {
+	.desktopLinks {
+		display: none;
+	}
+
+	.linkSeperator {
+		display: none;
+	}
+}
+
+@media (min-width: 1025px) {
+	.desktopLinks {
+		display: block;
+	}
+}

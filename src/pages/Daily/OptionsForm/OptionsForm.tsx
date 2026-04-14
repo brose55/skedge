@@ -1,7 +1,9 @@
-import { useState } from "react"
-import { timeOptions, learningStyleOptions } from "./options"
+import { useState, useEffect } from "react"
+
 import { LearningStyle } from "../../../types/enums"
 import { Options } from "../../../types/interfaces"
+import { timeOptions, learningStyleOptions } from "./options"
+
 import styles from "./OptionsForm.module.scss"
 
 interface OptionsFormProps {
@@ -19,6 +21,11 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 		learningStyle: LearningStyle.StartStrong,
 	})
 
+	// set initial options on mount so parent has values even if user doesn't change anything
+	useEffect(() => {
+		setOptions(formState)
+	}, [])
+
 	const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const { name, value } = e.target
 		const updatedFormState = { ...formState, [name]: value }
@@ -29,17 +36,17 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 	const { hoursAvailable, learningStyle } = formState
 
 	return (
-		<section className={`${styles.dailySection} ${styles.options}`}>
+		<section className={`dailySection ${styles.options}`}>
 			<h2>options...</h2>
-			<div className={`${styles.dailyForm} ${styles.optionsForm}`}>
-				<label htmlFor="timeInput">
-					hours available:
+			<div className={styles.optionsForm}>
+				<div className={styles.formGroup}>
+					<label htmlFor="timeInput">hours available:</label>
 					<select
 						id="timeInput"
 						name="hoursAvailable"
 						value={hoursAvailable}
 						onChange={handleChange}
-						className={styles.formField}
+						className="formField"
 					>
 						{timeOptions.map((choice) => (
 							<option key={`hour${choice}`} value={choice}>
@@ -47,15 +54,15 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 							</option>
 						))}
 					</select>
-				</label>
-				<label htmlFor="learningStyleInput">
-					learning style:
+				</div>
+				<div className={styles.formGroup}>
+					<label htmlFor="learningStyleInput">learning style:</label>
 					<select
 						id="learningStyleInput"
 						name="learningStyle"
 						value={learningStyle}
 						onChange={handleChange}
-						className={styles.formField}
+						className="formField"
 					>
 						{learningStyleOptions.map((choice) => (
 							<option key={choice.value} value={choice.value}>
@@ -63,7 +70,7 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ setOptions }) => {
 							</option>
 						))}
 					</select>
-				</label>
+				</div>
 			</div>
 		</section>
 	)

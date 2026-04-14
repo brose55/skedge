@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 import axios, { AxiosError } from "axios"
+
 import { PastInterest } from "../../../types/interfaces"
+import { displayError } from "../../../utils"
 import useHover from "../../../hooks/useHover"
+
 import styles from "./PastInterests.module.scss"
 
 interface PastInterestsProps {
@@ -21,17 +24,15 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 		const fetchPastInterests = async () => {
 			try {
 				const result = await axios.get(
-					`${import.meta.env.VITE_DEV_URL}/api/interests`,
-					{ withCredentials: true }
+					`${import.meta.env.VITE_API_URL}/api/interests`,
+					{ withCredentials: true },
 				)
-
-				console.log("result: ", result.data)
 				setPastInterests(result.data)
-			} catch (err: any) {
+			} catch (err) {
 				if (err instanceof AxiosError) {
-					setInterestsError(err.message)
+					setInterestsError(displayError(err) as string)
 				} else {
-					setInterestsError("Could not store interests")
+					setInterestsError("Could not fetch interests")
 				}
 			} finally {
 				setIsLoaded(true)
@@ -41,38 +42,29 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 		fetchPastInterests()
 	}, [])
 
-	const handleDelete = async (id: number) => {
+	const handleDelete = async (id: string) => {
+		// native confirm dialog — consider a custom modal in the future
 		const confirmDelete = window.confirm(
-			"Are you sure you want to delete this interest forever?"
+			"Are you sure you want to delete this interest forever?",
 		)
 
 		if (!confirmDelete) return
 
 		try {
 			await axios.delete(
-				`${import.meta.env.VITE_DEV_URL}/api/interests/${id}`,
-				{ withCredentials: true }
+				`${import.meta.env.VITE_API_URL}/api/interests/${id}`,
+				{ withCredentials: true },
 			)
-
-			setPastInterests((prevInterests) =>
-				prevInterests.filter((interest) => interest._id !== id)
-			)
-		} catch (error) {
-			console.error("Failed to delete the interest:", error)
+			// optimistic update — remove from local state immediately
+			setPastInterests((prev) => prev.filter((interest) => interest._id !== id))
+		} catch (err) {
+			console.error("Failed to delete the interest:", err)
 		}
 	}
 
-	if (interestsError) {
-		return <p>Error: {interestsError}</p>
-	}
-
-	if (!isLoaded) {
-		return <p>Loading...</p>
-	}
-
-	if (pastInterests.length === 0) {
-		return null
-	}
+	if (interestsError) return <p>Error: {interestsError}</p>
+	if (!isLoaded) return <p>Loading...</p>
+	if (pastInterests.length === 0) return null
 
 	return (
 		<section>
@@ -80,31 +72,30 @@ const PastInterests: React.FC<PastInterestsProps> = ({
 				<h2>Past Interests...</h2>
 			</header>
 			<ul className={styles.pastInterests}>
-				{pastInterests.map((interest, i) => {
-					return (
-						<li
-							key={`past-${interest.name}`}
-							onMouseEnter={() => handleMouseEnter(i)}
-							onMouseLeave={handleMouseLeave}
-							className={styles.pastInterest}
-							onClick={() => checkListAndUpdate(interest)}
+				{pastInterests.map((interest, i) => (
+					<li
+						key={`past-${interest.topic}`}
+						onMouseEnter={() => handleMouseEnter(i)}
+						onMouseLeave={handleMouseLeave}
+						className={styles.pastInterest}
+						onClick={() => checkListAndUpdate(interest)}
+					>
+						{interest.topic}: {interest.priority}
+						<button
+							className="deleteButton"
+							style={{
+								visibility: i === hoveredIndex ? "visible" : "hidden",
+							}}
+							onClick={(e) => {
+								// stop propagation so delete doesn't also trigger checkListAndUpdate
+								e.stopPropagation()
+								handleDelete(interest._id)
+							}}
 						>
-							{interest.name}: {interest.priority}
-							<button
-								className={styles.deleteButton}
-								style={{
-									visibility: i === hoveredIndex ? "visible" : "hidden",
-								}}
-								onClick={(e) => {
-									e.stopPropagation() // Prevent triggering checkListAndUpdate when clicking delete
-									handleDelete(interest._id)
-								}}
-							>
-								x
-							</button>
-						</li>
-					)
-				})}
+							x
+						</button>
+					</li>
+				))}
 			</ul>
 		</section>
 	)

@@ -1,8 +1,25 @@
-@import "../../../style/dailyElements";
-@import "../../../style/formElements";
+.candidateInterests {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 1vh;
+}
+
+.interests {
+	flex: 1;
+	padding-inline: 1.5vw;
+	padding-block: 1vh;
+	text-align: center;
+	margin-inline: auto;
+}
 
 .interest {
-	padding: 0.2vh 0;
-	margin: auto;
+	padding: 0.5vh 0.75vw;
 	font-weight: bold;
+	border: 1px solid var(--secondary-accent);
+	border-radius: 0.5vw;
+	margin-block: 0.5vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

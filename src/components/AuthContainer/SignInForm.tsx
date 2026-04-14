@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom"
-import displayError from "../../utils/displayError"
 import { AxiosError } from "axios"
+
 import { SignInFormData } from "../../types/interfaces"
-import styles from "./SignIn.module.scss"
+import displayError from "../../utils/displayError"
+
+import styles from "./SignInForm.module.scss"
 
 interface SignInFormProps {
 	onSubmit: (formData: SignInFormData) => void

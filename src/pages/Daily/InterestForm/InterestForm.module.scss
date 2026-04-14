@@ -1,19 +1,31 @@
-@import "../../../style/formElements";
-@import "../../../style/dailyElements";
-
 .dailyInterestForm {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	padding-inline: 1.5vw;
+	padding-block: 1vh;
 }
 
-.dailyInterestForm input {
-	width: 18vw;
-	margin-block: 0.5vh 1vh;
-	margin-left: 0.5vw;
-	padding-left: 0.5vw;
-}
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-block: 0.5vh;
 
+	label {
+		margin-bottom: 0.5vh;
+	}
+
+	input,
+	select {
+		width: 100%;
+		margin-top: 0;
+		box-sizing: border-box;
+	}
+}
 @media screen and (max-width: 1050px) {
-	.dailyInterests h2 {
-		font-size: 1rem;
+	.dailyInterestForm {
+		h2 {
+			font-size: 1rem;
+		}
 	}
 }

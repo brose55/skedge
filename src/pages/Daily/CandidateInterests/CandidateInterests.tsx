@@ -1,4 +1,3 @@
-import React from "react"
 import { CandidateInterest } from "../../../types/types"
 import useHover from "../../../hooks/useHover"
 import styles from "./CandidateInterests.module.scss"
@@ -6,7 +5,7 @@ import styles from "./CandidateInterests.module.scss"
 interface CandidateInterestsProps {
 	interests: CandidateInterest[]
 	onDeleteInterest: (interest: CandidateInterest) => void
-	onSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void
+	onSubmit: () => void
 }
 
 const CandidateInterests: React.FC<CandidateInterestsProps> = ({
@@ -17,19 +16,19 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 	const { hoveredIndex, handleMouseEnter, handleMouseLeave } = useHover()
 
 	return (
-		<section className={styles.dailySection}>
+		<section className={`dailySection ${styles.candidateInterests}`}>
 			<h2>interests...</h2>
-			<ul className={`${styles.interests} ${styles.dailyForm}`}>
+			<ul className={styles.interests}>
 				{interests.map((interest, i) => (
 					<li
-						key={`interest-${interest.name}`}
-						className="interest"
+						key={`interest-${interest.topic}`}
+						className={styles.interest}
 						onMouseEnter={() => handleMouseEnter(i)}
 						onMouseLeave={handleMouseLeave}
 					>
-						{interest.name}: {interest.priority}
+						{interest.topic}: {interest.priority}
 						<button
-							className={styles.deleteButton}
+							className="deleteButton"
 							onClick={() => onDeleteInterest(interest)}
 							style={{
 								visibility: i === hoveredIndex ? "visible" : "hidden",
@@ -40,13 +39,12 @@ const CandidateInterests: React.FC<CandidateInterestsProps> = ({
 					</li>
 				))}
 			</ul>
-
 			<button
 				type="button"
-				className={`${styles.formField} ${styles.submitButton}`}
+				className="formField submitButton"
 				onClick={onSubmit}
 			>
-				Submit Interests
+				make schedule
 			</button>
 		</section>
 	)

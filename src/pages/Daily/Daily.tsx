@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios, { AxiosError } from "axios"
+
+import { CandidateInterest } from "../../types/types"
+import { Options, ProcessedInterest } from "../../types/interfaces"
+import { calculateDay, displayError } from "../../utils"
 import InterestForm from "./InterestForm/InterestForm"
 import OptionsForm from "./OptionsForm/OptionsForm"
 import PastInterests from "./PastInterests/PastInterests"
-import { CandidateInterest } from "../../types/types"
-import { Options, ProcessedInterest } from "../../types/interfaces"
 import ScheduleDisplay from "./ScheduleDisplay/ScheduleDisplay"
 import CandidateInterests from "./CandidateInterests/CandidateInterests"
-import calculateDay from "../../utils/calculateDay"
+
 import styles from "./Daily.module.scss"
 
 function Daily() {
@@ -19,56 +21,50 @@ function Daily() {
 		ProcessedInterest[]
 	>([])
 	const [options, setOptions] = useState<Options | null>(null)
-	// TODO: use displayError util
 	const [updateInterestsError, setUpdateInterestsError] = useState<string>("")
 
 	const location = useLocation()
 
 	useEffect(() => {
+		// track current page for redirect after sign in
 		localStorage.setItem("page", location.pathname)
 	}, [location.pathname])
 
+	// prevent duplicate interests by topic
 	const checkListAndUpdate = (candidateInterest: CandidateInterest) => {
-		// do a quick loop and see if it already exists...
-		// note: I don't use .includes() here because it doesn't play well with objects
+		// note: .includes() doesn't work reliably with objects, so we use .some()
 		setCandidateInterests((interests) => {
-			let included = interests.some(
-				(interest) => interest.name === candidateInterest.name
+			const included = interests.some(
+				(interest) => interest.topic === candidateInterest.topic,
 			)
-			if (!included) {
-				return [...interests, candidateInterest]
-			}
-			return interests
+			return included ? interests : [...interests, candidateInterest]
 		})
 	}
 
 	const handleDeleteInterest = (deletedInterest: CandidateInterest) => {
 		setCandidateInterests(
 			candidateInterests.filter(
-				(interest) => interest.name !== deletedInterest.name
-			)
+				(interest) => interest.topic !== deletedInterest.topic,
+			),
 		)
 	}
 
-	const storeInterests = async () => {
+	const storeInterests = async (interests: ProcessedInterest[]) => {
 		try {
-			const trimmedInterests = processedInterests.map((interest) => ({
-				name: interest.name,
-				priority: interest.priority,
+			// only send topic and priority to the backend
+			const trimmedInterests = interests.map(({ topic, priority }) => ({
+				topic,
+				priority,
 			}))
 
-			console.log("trimmed: ", trimmedInterests)
-
 			await axios.put(
-				`${import.meta.env.VITE_DEV_URL}/api/interests`,
+				`${import.meta.env.VITE_API_URL}/api/interests`,
 				trimmedInterests,
-				{
-					withCredentials: true,
-				}
+				{ withCredentials: true },
 			)
-		} catch (err: any) {
+		} catch (err) {
 			if (err instanceof AxiosError) {
-				setUpdateInterestsError(err.message)
+				setUpdateInterestsError(displayError(err) as string)
 			} else {
 				setUpdateInterestsError("Could not store interests")
 			}
@@ -80,16 +76,17 @@ function Daily() {
 			setUpdateInterestsError("Options are required to process interests")
 			return
 		}
-		setProcessedInterests(calculateDay(candidateInterests, options))
-		console.log("after submit: ", processedInterests)
 
-		storeInterests()
+		// calculate synchronously then pass directly to storeInterests
+		// avoids stale state from setProcessedInterests being async
+		const calculated = calculateDay(candidateInterests, options)
+		setProcessedInterests(calculated)
+		storeInterests(calculated)
 	}
 
 	return (
 		<section className={styles.daily}>
 			{updateInterestsError && <p>{updateInterestsError}</p>}
-
 			<PastInterests checkListAndUpdate={checkListAndUpdate} />
 			<section className={styles.dailyForms}>
 				<InterestForm checkListAndUpdate={checkListAndUpdate} />

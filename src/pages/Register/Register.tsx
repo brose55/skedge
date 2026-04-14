@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, ChangeEvent, FormEvent } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import displayError from "../../utils/displayError"
 import styles from "./Register.module.scss"
 
@@ -19,7 +19,7 @@ function Register() {
 		passwordConfirmation: "",
 	})
 
-	const [registerError, setRegisterError] = useState<string | null>(null)
+	const [registerError, setRegisterError] = useState<AxiosError | null>(null)
 
 	const registerInput = useRef<HTMLInputElement>(null)
 
@@ -39,10 +39,12 @@ function Register() {
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 		try {
-			await axios.post(`${import.meta.env.VITE_DEV_URL}/api/users`, formState)
+			await axios.post(`${import.meta.env.VITE_API_URL}/api/users`, formState)
 			navigate("../success", { replace: true })
-		} catch (err: any) {
-			setRegisterError(err.message)
+		} catch (err) {
+			if (axios.isAxiosError(err)) {
+				setRegisterError(err)
+			}
 		}
 	}
 

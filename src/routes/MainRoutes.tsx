@@ -1,13 +1,13 @@
 import React, { Suspense, lazy } from "react"
 import { Routes, Route } from "react-router-dom"
 import PublicRoutes from "./PublicRoutes"
-import MainSignIn from "../pages/SignIn/MainSignIn"
+import ProtectedRoutes from "./ProtectedRoutes"
+import { InnerContent } from "../layout"
+import SignIn from "../pages/SignIn/SignIn"
 import Register from "../pages/Register/Register"
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner"
 
 // Lazy load the components
-const ProtectedRoutes = lazy(() => import("./ProtectedRoutes"))
-const InnerContent = lazy(() => import("./InnerContent"))
 const Home = lazy(() => import("../pages/Home/Home"))
 const Daily = lazy(() => import("../pages/Daily/Daily"))
 const Success = lazy(() => import("../pages/Success/Success"))
@@ -37,7 +37,7 @@ const MainRoutes: React.FC = () => {
 
 				{/* Public Routes */}
 				<Route path="pub" element={<PublicRoutes />}>
-					<Route path="signin" element={<MainSignIn />} />
+					<Route path="signin" element={<SignIn />} />
 					<Route path="register" element={<Register />} />
 					{/* TODO: About */}
 					<Route path="success" element={<Success />} />

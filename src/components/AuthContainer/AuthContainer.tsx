@@ -1,18 +1,19 @@
-import axios, { AxiosError } from "axios"
 import { useContext, useState, useEffect } from "react"
+import axios, { AxiosError } from "axios"
 import { useNavigate } from "react-router-dom"
+
+import { SignInFormData } from "../../types/interfaces"
 import AuthContext from "../../contexts/AuthContext"
 import SignInForm from "./SignInForm"
-import { SignInFormData } from "../../types/interfaces"
 
 // this is where the sign-in logic lives
-interface SignInContainerProps {
+interface AuthContainerProps {
 	message: string
 	mainSignIn: boolean
 	focusTimer: number
 }
 
-const SignInContainer: React.FC<SignInContainerProps> = ({
+const AuthContainer: React.FC<AuthContainerProps> = ({
 	message,
 	mainSignIn,
 	focusTimer,
@@ -26,8 +27,8 @@ const SignInContainer: React.FC<SignInContainerProps> = ({
 		const getSession = async () => {
 			try {
 				const session = await axios.get(
-					`${import.meta.env.VITE_DEV_URL}/api/sessions`,
-					{ withCredentials: true }
+					`${import.meta.env.VITE_API_URL}/api/sessions`,
+					{ withCredentials: true },
 				)
 
 				if (session.data.length > 0) {
@@ -46,9 +47,9 @@ const SignInContainer: React.FC<SignInContainerProps> = ({
 	const handleSubmit = async (formData: SignInFormData) => {
 		try {
 			await axios.post(
-				`${import.meta.env.VITE_DEV_URL}/api/sessions`,
+				`${import.meta.env.VITE_API_URL}/api/sessions`,
 				formData,
-				{ withCredentials: true }
+				{ withCredentials: true },
 			)
 			setSignedIn(true)
 			navigate("../../", { replace: true })
@@ -72,4 +73,4 @@ const SignInContainer: React.FC<SignInContainerProps> = ({
 	)
 }
 
-export default SignInContainer
+export default AuthContainer

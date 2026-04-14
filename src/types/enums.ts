@@ -7,6 +7,6 @@ export enum LearningStyle {
 
 export enum Priority {
 	High = "high",
-	Med = "medium",
+	Med = "med",
 	Low = "low",
 }

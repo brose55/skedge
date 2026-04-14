@@ -1,6 +1,7 @@
 import { useState } from "react"
 import AuthContext from "./contexts/AuthContext"
-import Layout from "./Layout"
+import { Layout } from "./layout"
+import { CookiesProvider } from "react-cookie"
 
 // App is responsible for application-level state
 export default function App() {
@@ -8,11 +9,14 @@ export default function App() {
 	const [isSignedIn, setSignedIn] = useState(false)
 	const authValue = { isSignedIn, setSignedIn }
 
+	// CookiesProvider is so that we can use react-cookie
 	// Context wraps our Layout so that any part of our app can access the global signedIn state
 	// any other global state in the future will go here
 	return (
-		<AuthContext.Provider value={authValue}>
-			<Layout />
-		</AuthContext.Provider>
+		<CookiesProvider>
+			<AuthContext.Provider value={authValue}>
+				<Layout />
+			</AuthContext.Provider>
+		</CookiesProvider>
 	)
 }

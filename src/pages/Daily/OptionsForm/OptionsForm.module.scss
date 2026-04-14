@@ -1,8 +1,25 @@
-@import "../../../style/formElements";
-@import "../../../style/dailyElements";
+.optionsForm {
+	display: flex;
+	flex-direction: column;
+	padding-inline: 1.5vw;
+	padding-block: 1vh;
+}
 
-.optionsForm select {
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	margin-block: 0.5vh;
+
+	label {
+		margin-bottom: 0.5vh;
+	}
+
+	select {
+		width: 100%;
+		margin-top: 0;
+		box-sizing: border-box;
+	}
 }
 
 @media screen and (max-width: 1000px) {

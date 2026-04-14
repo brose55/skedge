@@ -6,8 +6,8 @@ import styles from "./Home.module.scss"
 const Home = () => {
 	// get user data from server
 	const { data } = useSwr(
-		`${import.meta.env.VITE_DEV_URL}/api/users/me`,
-		fetcher
+		`${import.meta.env.VITE_API_URL}/api/users/me`,
+		fetcher,
 	)
 
 	// keep track of the page in local storage
